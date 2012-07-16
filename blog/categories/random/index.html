@@ -1,0 +1,492 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Category: Random - tim tregubov</title>
+  <meta name="author" content="timofei7">
+
+  
+  <meta name="description" content="Category: Random">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://timofei7.github.comblog/categories/random/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="tim tregubov" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href='http://fonts.googleapis.com/css?family=Muli:300,400,300italic,400italic' rel='stylesheet' type='text/css'>
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+<script type="text/javascript" src="http://www.linkedin.com/js/public-profile/widget-os.js"></script>
+<link type="text/css" rel="stylesheet" href="/javascripts/galleria/themes/classic/galleria.classic.css">
+<script type="text/javascript" src="/javascripts/galleria/galleria.min.js"></script>
+<script type="text/javascript" src="/javascripts/galleria/galleria.picasa.min.js"></script>
+<script type="text/javascript" src="/javascripts/galleria/themes/classic/galleria.classic.min.js"></script>
+
+<script type="text/javascript">
+	 	jQuery.noConflict();
+</script>
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-11362497-3']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">tim tregubov</a></h1>
+  
+    <h2>tell me a story</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:timofei7.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Home</a></li>
+  <li><a href="/about/">About</a></li>
+  <li><a href="/blog/categories/portfolio">Portfolio</a></li>
+  <li><a href="/blog/categories/writing">Writing</a></li>
+  <li><a href="/blog/categories/random">Random</a></li>
+  <li><a href="/resume/">Resume</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article role="article">
+  
+  <header>
+    <h1 class="entry-title">Category: Random</h1>
+    
+  </header>
+  
+  <div id="blog-archives" class="category">
+
+
+
+  
+  <h2>2012</h2>
+
+ <!--do need this-->
+
+
+<article>
+  
+<h1><a href="/blog/2012/04/26/unity-singletons/">generic singleton MonoBehavior class</a></h1>
+
+<!-- figure out how to include excerpt here-->
+<div class="entry-content"><p>In <a href="http://www.unity3d.com">Unity3D</a> having a <a href="http://en.wikipedia.org/wiki/Singleton_pattern">singleton</a> class is very useful, whether for "global" state or simply for the convenience of having a static accessor so you don't have to have lots of: <code>FindObjectOfType(typeof(Builder)) as Builder;</code></p>
+
+<p>So you code up a C# singleton and then realize that you actually need it to be a <a href="http://unity3d.com/support/documentation/ScriptReference/MonoBehaviour.html">MonoBehavior</a>, not just a <a href="http://unity3d.com/support/documentation/ScriptReference/ScriptableObject.html">ScriptableObject</a> -- say you want the singleton to run <a href="http://unity3d.com/support/documentation/ScriptReference/index.Coroutines_26_Yield.html">coroutines</a>, or have a transform, or any other MonoBehavior feature.  But monobehaviors <a href="http://unity3d.com/support/documentation/ScriptReference/MonoBehaviour.Awake.html">can't</a> be initialized with a constructor.</p>
+
+<p>So what you want is a monobehavior pseudo singleton pattern.  The unity community wiki has some <a href="http://unifycommunity.com/wiki/index.php?title=Singleton">good info</a>
+ about the various options.</p>
+
+<p>In my current Unity project I realized that I was using lots of singletons for various state manager classes and wanted to get rid of all the boilerplate singleton stuff.
+So I wrote a parametrized generic pseudo singleton monobehavior class.  I attempted to compile all the best advice out there, so it is threadsafe, has some extra stuff for setting a parent, doesn't implement an Awake, and initializes lazily.</p>
+
+<p>The key was the C# <a href="http://msdn.microsoft.com/en-us/library/d5x73970.aspx">where</a> keyword, used to constrain the parameterizing type. So in this case both the class is a MonoBehavior and its parameterization type is a MonoBehavior.</p>
+
+<p>So now this blog has its first code section:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>Singleton.cs # </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+<span class='line-number'>62</span>
+<span class='line-number'>63</span>
+<span class='line-number'>64</span>
+<span class='line-number'>65</span>
+<span class='line-number'>66</span>
+<span class='line-number'>67</span>
+<span class='line-number'>68</span>
+<span class='line-number'>69</span>
+<span class='line-number'>70</span>
+<span class='line-number'>71</span>
+<span class='line-number'>72</span>
+<span class='line-number'>73</span>
+<span class='line-number'>74</span>
+<span class='line-number'>75</span>
+<span class='line-number'>76</span>
+<span class='line-number'>77</span>
+<span class='line-number'>78</span>
+</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="n">using</span> <span class="n">UnityEngine</span><span class="p">;</span>
+</span><span class='line'><span class="n">using</span> <span class="n">System</span><span class="p">.</span><span class="n">Collections</span><span class="p">;</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="c1">/// &lt;summary&gt;</span>
+</span><span class='line'><span class="c1">/// MONOBEHAVIOR PSEUDO SINGLETON ABSTRACT CLASS</span>
+</span><span class='line'><span class="c1">/// usage       : best is to be attached to a gameobject but if not that is ok,</span>
+</span><span class='line'><span class="c1">///             : this will create one on first access</span>
+</span><span class='line'><span class="c1">/// example     : &#39;&#39;&#39;public sealed class MyClass : Singleton&lt;MyClass&gt; {&#39;&#39;&#39;</span>
+</span><span class='line'><span class="c1">/// references      : http://tinyurl.com/d498g8c</span>
+</span><span class='line'><span class="c1">///             : http://tinyurl.com/cc73a9h</span>
+</span><span class='line'><span class="c1">///             : http://unifycommunity.com/wiki/index.php?title=Singleton</span>
+</span><span class='line'><span class="c1">/// &lt;/summary&gt;</span>
+</span><span class='line'><span class="n">public</span> <span class="n">abstract</span> <span class="n">class</span> <span class="n">Singleton</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">:</span> <span class="n">MonoBehaviour</span> <span class="n">where</span> <span class="n">T</span> <span class="o">:</span> <span class="n">MonoBehaviour</span>
+</span><span class='line'><span class="p">{</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="n">private</span> <span class="k">static</span> <span class="n">T</span> <span class="n">_instance</span> <span class="o">=</span> <span class="n">null</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">/// &amp;lt;summary&amp;gt;</span>
+</span><span class='line'><span class="c1">/// gets the instance of this Singleton</span>
+</span><span class='line'><span class="c1">/// use this for all instance calls:</span>
+</span><span class='line'><span class="c1">/// MyClass.Instance.MyMethod();</span>
+</span><span class='line'><span class="c1">/// or make your public methods static</span>
+</span><span class='line'><span class="c1">/// and have them use Instance</span>
+</span><span class='line'><span class="c1">/// &amp;lt;/summary&amp;gt;</span>
+</span><span class='line'><span class="n">public</span> <span class="k">static</span> <span class="n">T</span> <span class="n">Instance</span> <span class="p">{</span>
+</span><span class='line'>    <span class="n">get</span> <span class="p">{</span>
+</span><span class='line'>        <span class="k">if</span> <span class="p">(</span><span class="n">_instance</span> <span class="o">==</span> <span class="n">null</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>            <span class="n">_instance</span> <span class="o">=</span> <span class="p">(</span><span class="n">T</span><span class="p">)</span><span class="n">FindObjectOfType</span> <span class="p">(</span><span class="n">typeof</span><span class="p">(</span><span class="n">T</span><span class="p">));</span>
+</span><span class='line'>            <span class="k">if</span> <span class="p">(</span><span class="n">_instance</span> <span class="o">==</span> <span class="n">null</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>
+</span><span class='line'>                <span class="n">string</span> <span class="n">goName</span> <span class="o">=</span> <span class="n">typeof</span><span class="p">(</span><span class="n">T</span><span class="p">).</span><span class="n">ToString</span> <span class="p">();</span>
+</span><span class='line'>
+</span><span class='line'>                <span class="n">GameObject</span> <span class="n">go</span> <span class="o">=</span> <span class="n">GameObject</span><span class="p">.</span><span class="n">Find</span> <span class="p">(</span><span class="n">goName</span><span class="p">);</span>
+</span><span class='line'>                <span class="k">if</span> <span class="p">(</span><span class="n">go</span> <span class="o">==</span> <span class="n">null</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>                    <span class="n">go</span> <span class="o">=</span> <span class="n">new</span> <span class="n">GameObject</span> <span class="p">();</span>
+</span><span class='line'>                    <span class="n">go</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">goName</span><span class="p">;</span>
+</span><span class='line'>                <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>                <span class="n">_instance</span> <span class="o">=</span> <span class="n">go</span><span class="p">.</span><span class="n">AddComponent</span><span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="n">T</span><span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="p">();</span>
+</span><span class='line'>            <span class="p">}</span>
+</span><span class='line'>        <span class="p">}</span>
+</span><span class='line'>        <span class="k">return</span> <span class="n">_instance</span><span class="p">;</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">/// &amp;lt;summary&amp;gt;</span>
+</span><span class='line'><span class="c1">/// for garbage collection</span>
+</span><span class='line'><span class="c1">/// &amp;lt;/summary&amp;gt;</span>
+</span><span class='line'><span class="n">public</span> <span class="k">virtual</span> <span class="kt">void</span> <span class="n">OnApplicationQuit</span> <span class="p">()</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>    <span class="c1">// release reference on exit</span>
+</span><span class='line'>    <span class="n">_instance</span> <span class="o">=</span> <span class="n">null</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// in your child class you can implement Awake()</span>
+</span><span class='line'><span class="c1">// and add any initialization code you want such as</span>
+</span><span class='line'><span class="c1">// DontDestroyOnLoad(go);</span>
+</span><span class='line'><span class="c1">// if you want this to persist across loads</span>
+</span><span class='line'><span class="c1">// or if you want to set a parent object with SetParent()</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">/// &amp;lt;summary&amp;gt;</span>
+</span><span class='line'><span class="c1">/// parent this to another gameobject by string</span>
+</span><span class='line'><span class="c1">/// call from Awake if you so desire</span>
+</span><span class='line'><span class="c1">/// &amp;lt;/summary&amp;gt;</span>
+</span><span class='line'><span class="n">protected</span> <span class="kt">void</span> <span class="n">SetParent</span> <span class="p">(</span><span class="n">string</span> <span class="n">parentGOName</span><span class="p">)</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>    <span class="k">if</span> <span class="p">(</span><span class="n">parentGOName</span> <span class="o">!=</span> <span class="n">null</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>        <span class="n">GameObject</span> <span class="n">parentGO</span> <span class="o">=</span> <span class="n">GameObject</span><span class="p">.</span><span class="n">Find</span> <span class="p">(</span><span class="n">parentGOName</span><span class="p">);</span>
+</span><span class='line'>        <span class="k">if</span> <span class="p">(</span><span class="n">parentGO</span> <span class="o">==</span> <span class="n">null</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>            <span class="n">parentGO</span> <span class="o">=</span> <span class="n">new</span> <span class="n">GameObject</span> <span class="p">();</span>
+</span><span class='line'>            <span class="n">parentGO</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">parentGOName</span><span class="p">;</span>
+</span><span class='line'>        <span class="p">}</span>
+</span><span class='line'>        <span class="n">this</span><span class="p">.</span><span class="n">transform</span><span class="p">.</span><span class="n">parent</span> <span class="o">=</span> <span class="n">parentGO</span><span class="p">.</span><span class="n">transform</span><span class="p">;</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+</div>
+    
+    
+
+<time datetime="2012-04-26T01:40:00-07:00" pubdate><span class='month'>Apr</span> <span class='day'>26</span> <span class='year'>2012</span></time>
+<!--
+
+<footer>
+  <span class="categories">posted in <a class='category' href='/blog/categories/random/'>Random</a></span>
+</footer>
+
+-->
+
+
+</article>
+
+</div>
+
+  
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+<h1>Elsewhere</h1>
+
+<div class="profile">
+ <ul>
+	 <li id="linkedin">
+	 <a href="http://www.linkedin.com/in/timtregubov" target="_blank">linkedin profile</a>
+	 </li>
+	 <li id="facebook">
+	 <a href="http://www.facebook.com/tim.tregubov" target="_blank">facebook profile</a>
+	 </li>
+	 <li id="picasa">
+	 <a href="https://picasaweb.google.com/timofei" target="_blank">picasa albums</a>
+	 </li>
+	 <li id="youtube">
+	 <a href="http://www.youtube.com/user/timofei7" target="_blank">youtube channel</a>
+	 </li>
+ </ul>
+ </div>
+
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/timofei7">@timofei7</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'timofei7',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/04/26/unity-singletons/">generic singleton MonoBehavior class</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/12/15/chessinvaders/">chessInvaders</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/04/27/kinectsculpt/">3D Mesh Sculpting using the Kinect</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/06/08/a-paper-the-neural-mechanisms-and-purposes-of-randomness-in-consciousness/">a paper: The Neural Mechanisms and Purposes of Randomness in Consciousness</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/06/02/engs21/">ENGS21: Gunkless Drain</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("timofei7", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/timofei7" class="twitter-follow-button" data-show-count="false">Follow @timofei7</a>
+  
+</section>
+
+
+
+<section class="tag-cloud">
+    <h1>Tags</h1>
+    <a style='font-size: 0.80em' href='//iOS'>iOS</a>
+<a style='font-size: 1.30em' href='//engineering'>engineering</a>
+<a style='font-size: 0.80em' href='//openCV'>openCV</a>
+<a style='font-size: 0.80em' href='//fear'>fear</a>
+<a style='font-size: 0.80em' href='//grad-school'>grad school</a>
+<a style='font-size: 0.80em' href='//openNI'>openNI</a>
+<a style='font-size: 0.80em' href='//life'>life</a>
+<a style='font-size: 0.80em' href='//digital-arts'>digital arts</a>
+<a style='font-size: 0.80em' href='//chess'>chess</a>
+<a style='font-size: 1.30em' href='//animation'>animation</a>
+<a style='font-size: 0.80em' href='//geometry'>geometry</a>
+<a style='font-size: 0.80em' href='//randomness'>randomness</a>
+<a style='font-size: 0.80em' href='//drawing'>drawing</a>
+<a style='font-size: 0.80em' href='//c-'>c#</a>
+<a style='font-size: 0.80em' href='//carving'>carving</a>
+<a style='font-size: 1.30em' href='//modeling'>modeling</a>
+<a style='font-size: 0.80em' href='//geopolitics'>geopolitics</a>
+<a style='font-size: 1.30em' href='//game'>game</a>
+<a style='font-size: 1.80em' href='//3D'>3D</a>
+<a style='font-size: 1.80em' href='//education'>education</a>
+<a style='font-size: 0.80em' href='//singleton'>singleton</a>
+<a style='font-size: 0.80em' href='//energy'>energy</a>
+<a style='font-size: 1.30em' href='//happiness'>happiness</a>
+<a style='font-size: 0.80em' href='//unity3d'>unity3d</a>
+<a style='font-size: 1.30em' href='//brain'>brain</a>
+<a style='font-size: 0.80em' href='//van'>van</a>
+<a style='font-size: 0.80em' href='//polarbear'>polarbear</a>
+<a style='font-size: 0.80em' href='//future'>future</a>
+<a style='font-size: 0.80em' href='//kinect'>kinect</a>
+<a style='font-size: 0.80em' href='//games'>games</a>
+ 
+</section>
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - timofei7 -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'timtregubov';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

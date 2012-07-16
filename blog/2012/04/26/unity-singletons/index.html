@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>tim tregubov</title>
+  <title>generic singleton MonoBehavior class - tim tregubov</title>
   <meta name="author" content="timofei7">
 
   
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://timofei7.github.com/">
+  <link rel="canonical" href="http://timofei7.github.com/blog/2012/04/26/unity-singletons/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -90,15 +90,12 @@
 </nav>
   <div id="main">
     <div id="content">
-      <div class="blog-index">
+      <div>
+<article class="hentry" role="article">
   
-  
-  
-    <article>
-      
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2012/04/26/unity-singletons/">Generic Singleton MonoBehavior Class</a></h1>
+      <h1 class="entry-title">Generic Singleton MonoBehavior Class</h1>
     
     
       <p class="meta">
@@ -121,7 +118,7 @@
   </header>
 
 
-  <div class="entry-content"><p>In <a href="http://www.unity3d.com">Unity3D</a> having a <a href="http://en.wikipedia.org/wiki/Singleton_pattern">singleton</a> class is very useful, whether for &#8220;global&#8221; state or simply for the convenience of having a static accessor so you don&#8217;t have to have lots of: <code>FindObjectOfType(typeof(Builder)) as Builder;</code></p>
+<div class="entry-content"><p>In <a href="http://www.unity3d.com">Unity3D</a> having a <a href="http://en.wikipedia.org/wiki/Singleton_pattern">singleton</a> class is very useful, whether for &#8220;global&#8221; state or simply for the convenience of having a static accessor so you don&#8217;t have to have lots of: <code>FindObjectOfType(typeof(Builder)) as Builder;</code></p>
 
 <p>So you code up a C# singleton and then realize that you actually need it to be a <a href="http://unity3d.com/support/documentation/ScriptReference/MonoBehaviour.html">MonoBehavior</a>, not just a <a href="http://unity3d.com/support/documentation/ScriptReference/ScriptableObject.html">ScriptableObject</a> &#8211; say you want the singleton to run <a href="http://unity3d.com/support/documentation/ScriptReference/index.Coroutines_26_Yield.html">coroutines</a>, or have a transform, or any other MonoBehavior feature.  But monobehaviors <a href="http://unity3d.com/support/documentation/ScriptReference/MonoBehaviour.Awake.html">can&#8217;t</a> be initialized with a constructor.</p>
 
@@ -293,70 +290,16 @@ So I wrote a parametrized generic pseudo singleton monobehavior class.  I attemp
 
 
 </div>
-  
-  
 
 
-    </article>
-  
-  
-    <article>
+  <footer>
+    <p class="meta">
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/12/15/chessinvaders/">chessInvaders</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
   
 
+<span class="byline author vcard">Posted by <span class="fn">timofei7</span></span>
 
-<time datetime="2011-12-15T01:40:00-08:00" pubdate data-updated="true">Dec 15<span>th</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>The current project I am working on is an iPad game that teaches basic rules of chess in a fast paced not-quite-chess environment. The game is a small, but fun combination of space invaders and chess.  It teaches and drills the basic movement rules while remaining engaging.</p>
-
-<p>A recentish clip of the 3D environment with touch zoom and pan:</p>
-
-<iframe id="3denv" width="640" height="480" src="http://www.youtube.com/embed/QnLySqbE1is?rel=0" frameborder="0" allowfullscreen></iframe>
-
-
-
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2011/12/15/chessinvaders/">more &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
-  
-    <article>
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/04/27/kinectsculpt/">3D Mesh Sculpting Using the Kinect</a></h1>
-    
-    
-      <p class="meta">
-        
 
 
 
@@ -368,410 +311,44 @@ So I wrote a parametrized generic pseudo singleton monobehavior class.  I attemp
   
 
 
-<time datetime="2011-04-27T01:40:00-07:00" pubdate data-updated="true">Apr 27<span>th</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><iframe id="kinectscuplt" width="853" height="480" src="http://www.youtube.com/embed/4tIXcKJwe8M?rel=0&amp;hd=1" frameborder="0" allowfullscreen></iframe>
-
-
-<p>(Tim Tregubov, CS80 Spring 2011)</p>
-
-<p>I had wanted to play/hack a Kinect so I completed an independent study project researching  motion detection techniques, physics reconstruction, and geometry sculpting. I implemented a program to sculpt some 3D geometry with your hands using the Kinect.</p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2011/04/27/kinectsculpt/">more &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
-  
-    <article>
+<time datetime="2012-04-26T01:40:00-07:00" pubdate data-updated="true">Apr 26<span>th</span>, 2012</time>
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/06/08/a-paper-the-neural-mechanisms-and-purposes-of-randomness-in-consciousness/">A Paper: The Neural Mechanisms and Purposes of Randomness in Consciousness</a></h1>
-    
-    
-      <p class="meta">
-        
 
-
-
-
-
-
-
-
+<span class="categories">
   
+    <a class='category' href='/blog/categories/random/'>Random</a>
+  
+</span>
 
 
-<time datetime="2010-06-08T01:21:36-07:00" pubdate data-updated="true">Jun 8<span>th</span>, 2010</time>
-        
-      </p>
+    </p>
     
-  </header>
-
-
-  <div class="entry-content"><p>Do you believe in free will or determinism?   Either way,  imagine you are
-creating a life form, and that you want it to have free will.  You figure out
-that you need to design an organ that would be responsible for this.  You
-decide to call it the &#8220;free willer&#8221;.</p>
-
-<p>What would this organ do? You realize that it must make decisions, as that is
-what &#8220;will&#8221; allows you to do.  But how will it do so?  You realize that
-learning is involved &#8211; that this organ needs to take into consideration past
-events. Oops, you have just created the deterministic willer!</p>
-
-<p>Ok ok, let&#8217;s back up a minute.  If we don&#8217;t take into consideration past
-events&#8230; well then the decisions it would make would have to be random.  Is
-that what we want? Not really, random decisions won&#8217;t get this new life form
-very far!</p>
-
-<p>What other decision mechanisms could we come up with for this organ?  Well it
-could be influenced by some predetermined set of rules or genes that get
-better over time, but that&#8217;s just another determinism!</p>
-
-<p>Ideally what we want is something that is influenced by past events
-(learning). Something that can improve its programming over generations
-(genes). And finally something that can decide to do OTHER than its
-deterministic inputs dictate (the free part).</p>
-
-<p>Turns out that the brain marries randomness with learning and genes in a
-perfect way to achieve just this!  We already have an organ that will
-purposefully introduce randomness into our thinking process so that we can
-come up with unique solutions and choices that are not predetermined by the
-universe or by our genes and past experiences (at least not exclusively).</p>
-
-<p>Here&#8217;s a paper I wrote about this that goes into this in more detail.  The
-brain is sooo cool.</p>
-
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://timofei7.github.com/blog/2012/04/26/unity-singletons/" data-via="timofei7" data-counturl="http://timofei7.github.com/blog/2012/04/26/unity-singletons/" >Tweet</a>
+  
+  
+  
 </div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2010/06/08/a-paper-the-neural-mechanisms-and-purposes-of-randomness-in-consciousness/">more &rarr;</a>
-    </footer>
-  
 
-
-    </article>
-  
-  
-    <article>
+    
+    <p class="meta">
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/06/02/engs21/">ENGS21: Gunkless Drain</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-06-02T01:43:00-07:00" pubdate data-updated="true">Jun 2<span>nd</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><iframe id="engs21" width="640" height="480" src="http://www.youtube.com/embed/Wk0fobSn1PY?rel=0&amp;hd=1" frameborder="0" allowfullscreen></iframe>
-
-
-<p>(Gunkless SolidWorks Design: Tim Tregubov,  Spring 2010)</p>
-
-<p>For the &#8220;flagship&#8221; engineering class my group, Divya Gunasekaran, Elizabeth Klinger, Alannah Linkhorn, Pavel Sotskov, and myself, designed and built a self-cleaning drain. It was a small device that would retrofit in your shower drain and was foot powered to help clear clogged drains.  By the end of the course we had a working, tested prototype.</p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2010/06/02/engs21/">more &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
-  
-    <article>
+        <a class="basic-alignment left" href="/blog/2011/12/15/chessinvaders/" title="Previous Post: chessInvaders">&laquo; chessInvaders</a>
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/04/30/why-the-dlpfc-is-the-coolest-part-of-the-brain/">Why the DLPFC Is the Coolest Part of the Brain</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-04-30T01:33:47-07:00" pubdate data-updated="true">Apr 30<span>th</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>want to learn about why the dorsolateral prefrontal cortex is the coolest part
-of the brain?</p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2010/04/30/why-the-dlpfc-is-the-coolest-part-of-the-brain/">more &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
-  
-    <article>
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/03/11/flow-and-education/">Flow, Education, and Ritalin: The Missing Link Between Addiction and Learning</a></h1>
-    
-    
-      <p class="meta">
-        
+    </p>
+  </footer>
+</article>
 
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-03-11T22:10:37-08:00" pubdate data-updated="true">Mar 11<span>th</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><strong>Flow, Education, and Ritalin</strong><br/>
-My eyes are glued to the screen. They rarely blink. They become irritated but
-I do not notice. I am in the zone. The force is with me. I feel it flow
-through me. I am coding. Even though the coding paradigm may not apply to
-everyone, we all know that feeling of hyper-attention. When an activity is so
-engrossing that the rest of the world fades away, we are left mano-a-mano,
-tête-à-tête, our ego and the task battling together for mutual gain.</p>
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
 
 </div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2010/03/11/flow-and-education/">more &rarr;</a>
-    </footer>
-  
 
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/02/28/a-moment-in-the-life-of-camus-sisyphus/">A Moment in the Life of Camus&#8217; Sisyphus</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-02-28T22:30:47-08:00" pubdate data-updated="true">Feb 28<span>th</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>I watch my cursed boulder tumble down my mountain. I heave a sigh of relief;
-my aching muscles allowed a brief respite. As I stand on its majestic craggy
-peak, I survey my mountain beneath me. My boulder is now far out of sight, but
-I can feel it down below in the darkness waiting for me. I send my thoughts
-out to it &#8211; my boulder you are my work, my affliction, my friend and my
-enemy. I shall see you soon enough. In these seemingly countless days,
-logically countable but practically indistinguishable, my mind is not always
-so clear. At this instant I am aware &#8211; tomorrow I may not be. I grasp the
-moment, tenderly. Let me slow it down and take joy in my thoughts. Before my
-curse &#8211; I can barely remember &#8211; I took my thoughts for granted. Mortal, I
-had a limited amount of time for thoughts, yet I did not enjoy them. Immortal,
-and now each thought is precious &#8211; I have forever and thus have infinite
-thoughts, yet I take joy in each, insignificant as it is. The absurdity
-continues, the one constant along with my rock and my mountain to keep me
-company. Yet as I stand there, the cold rare mountain air turning my breath
-visible, I am happy.</p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2010/02/28/a-moment-in-the-life-of-camus-sisyphus/">more &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/02/19/assignment-write-about-where-i-see-myself-in-x-number-of-years/">Assignment: Write About Where I See Myself in X Number of Years</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-02-19T21:53:28-08:00" pubdate data-updated="true">Feb 19<span>th</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Instead of writing seriously, I wrote an imaginary interview. BTW:Living in a
-van&#8230; happened in real life; C.com/&#8221;light goop&#8221; &#8230;well it was supposed to be
-about the future!</p>
-
-<p><strong>FRAMBERG MAGAZINE INTERVIEW (Issue: March, 2018)</strong><br/>
-<strong>Today we interview Tim Tregubov,  one of the visionaries behind a small company that might just be changing the way we interact with the world.  C.com is responsible for MultiPhen technology and the company is developing promising new applications that will further integrate adaptive intelligent systems with <em>the human system</em>.  The company is being heralded as a forerunner of a new type of business model which they are calling <em>engaged activism</em>.   We will find out what makes him tick, what C.com is all about and how it originated.</strong></p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2010/02/19/assignment-write-about-where-i-see-myself-in-x-number-of-years/">more &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/01/10/fear-happiness/">Fear, Happiness</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-01-10T22:24:05-08:00" pubdate data-updated="true">Jan 10<span>th</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>What is the mind when it is happy and when it is unhappy? Most likely the
-answer is different for each person, but to understand it for myself I first
-need to discern when it is that I am happy. When I think about happiness the
-first concept that comes to mind is friendship. I have always heard people say
-that in college you make friends for life. The kind of friends that will be
-with you your whole life and will stick by you through everything. I never
-believed them. A lot of my friends are part-time, we sometimes keep in touch,
-mostly through the noncommittal medium of facebook. More recently however, I
-managed to make some friends who I feel I could call lifelong. I have always
-been slightly afraid of people, and social situations are often uncomfortable
-for me, yet I have unfailingly been drawn to take project classes. This seemed
-uncharacteristic for me until I realized that the times I feel most
-comfortable with someone are when there is a common external goal that we
-share. C.S. Lewis thought that true friendship, which he categorized as the
-love called philia, could only exist between people who share a common vision
-or activity. He claimed that because this was the least biologically necessary
-love, when it truly existed, it was the most admirable. He lauds friendship
-and says, &#8220;To the Ancients, Friendship [notice the capitalization] seemed the
-happiest and most fully human of all loves; the crown of life…&#8221;<sup>1</sup> Through
-friends that I made over many shared hours in computer labs I now see more
-clearly what he meant. Lewis&#8217;s various categories become blurry at this point
-yet the importance he places on shared interest remains.</p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2010/01/10/fear-happiness/">more &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
-  <div class="pagination">
-    
-      <a class="prev" href="/blog/page/2/">&larr; Older</a>
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
-</div>
 <aside class="sidebar">
   
     <section>
@@ -799,7 +376,7 @@ yet the importance he places on shared interest remains.</p>
 <section>
   <h1>GitHub Repos</h1>
   <ul id="gh_repos">
-    <li class="loading">Status updating&#8230;</li>
+    <li class="loading">Status updating...</li>
   </ul>
   
   <a href="https://github.com/timofei7">@timofei7</a> on GitHub
@@ -855,7 +432,7 @@ yet the importance he places on shared interest remains.</p>
 <section>
   <h1>Latest Tweets</h1>
   <ul id="tweets">
-    <li class="loading">Status updating&#8230;</li>
+    <li class="loading">Status updating...</li>
   </ul>
   <script type="text/javascript">
     $.domReady(function(){
@@ -872,41 +449,42 @@ yet the importance he places on shared interest remains.</p>
 
 <section class="tag-cloud">
     <h1>Tags</h1>
-    <a style='font-size: 1.30em' href='//modeling'>modeling</a>
-<a style='font-size: 0.80em' href='//van'>van</a>
-<a style='font-size: 1.30em' href='//game'>game</a>
-<a style='font-size: 1.30em' href='//brain'>brain</a>
-<a style='font-size: 1.30em' href='//animation'>animation</a>
-<a style='font-size: 0.80em' href='//iOS'>iOS</a>
-<a style='font-size: 0.80em' href='//carving'>carving</a>
-<a style='font-size: 0.80em' href='//singleton'>singleton</a>
-<a style='font-size: 0.80em' href='//future'>future</a>
-<a style='font-size: 0.80em' href='//kinect'>kinect</a>
-<a style='font-size: 0.80em' href='//fear'>fear</a>
-<a style='font-size: 0.80em' href='//games'>games</a>
-<a style='font-size: 0.80em' href='//openNI'>openNI</a>
+    <a style='font-size: 1.80em' href='//education'>education</a>
 <a style='font-size: 1.80em' href='//3D'>3D</a>
-<a style='font-size: 0.80em' href='//polarbear'>polarbear</a>
-<a style='font-size: 0.80em' href='//geometry'>geometry</a>
-<a style='font-size: 0.80em' href='//openCV'>openCV</a>
-<a style='font-size: 0.80em' href='//drawing'>drawing</a>
-<a style='font-size: 0.80em' href='//chess'>chess</a>
-<a style='font-size: 0.80em' href='//geopolitics'>geopolitics</a>
-<a style='font-size: 0.80em' href='//c-'>c#</a>
-<a style='font-size: 1.80em' href='//education'>education</a>
-<a style='font-size: 1.30em' href='//happiness'>happiness</a>
-<a style='font-size: 0.80em' href='//digital-arts'>digital arts</a>
-<a style='font-size: 0.80em' href='//life'>life</a>
+<a style='font-size: 0.80em' href='//kinect'>kinect</a>
+<a style='font-size: 1.30em' href='//modeling'>modeling</a>
 <a style='font-size: 0.80em' href='//unity3d'>unity3d</a>
 <a style='font-size: 1.30em' href='//engineering'>engineering</a>
-<a style='font-size: 0.80em' href='//grad-school'>grad school</a>
+<a style='font-size: 0.80em' href='//openNI'>openNI</a>
 <a style='font-size: 0.80em' href='//energy'>energy</a>
+<a style='font-size: 0.80em' href='//geopolitics'>geopolitics</a>
+<a style='font-size: 0.80em' href='//iOS'>iOS</a>
+<a style='font-size: 0.80em' href='//digital-arts'>digital arts</a>
+<a style='font-size: 0.80em' href='//c-'>c#</a>
+<a style='font-size: 1.30em' href='//animation'>animation</a>
+<a style='font-size: 0.80em' href='//openCV'>openCV</a>
+<a style='font-size: 0.80em' href='//fear'>fear</a>
+<a style='font-size: 0.80em' href='//van'>van</a>
+<a style='font-size: 0.80em' href='//life'>life</a>
+<a style='font-size: 1.30em' href='//brain'>brain</a>
+<a style='font-size: 0.80em' href='//grad-school'>grad school</a>
+<a style='font-size: 0.80em' href='//carving'>carving</a>
+<a style='font-size: 1.30em' href='//happiness'>happiness</a>
 <a style='font-size: 0.80em' href='//randomness'>randomness</a>
+<a style='font-size: 0.80em' href='//polarbear'>polarbear</a>
+<a style='font-size: 0.80em' href='//singleton'>singleton</a>
+<a style='font-size: 0.80em' href='//drawing'>drawing</a>
+<a style='font-size: 0.80em' href='//chess'>chess</a>
+<a style='font-size: 0.80em' href='//games'>games</a>
+<a style='font-size: 0.80em' href='//future'>future</a>
+<a style='font-size: 1.30em' href='//game'>game</a>
+<a style='font-size: 0.80em' href='//geometry'>geometry</a>
  
 </section>
 
   
 </aside>
+
 
     </div>
   </div>
@@ -922,7 +500,10 @@ yet the importance he places on shared interest remains.</p>
       var disqus_shortname = 'timtregubov';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://timofei7.github.com/blog/2012/04/26/unity-singletons/';
+        var disqus_url = 'http://timofei7.github.com/blog/2012/04/26/unity-singletons/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
