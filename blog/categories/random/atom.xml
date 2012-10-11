@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Random | tim tregubov]]></title>
   <link href="http://timofei7.github.com/blog/categories/random/atom.xml" rel="self"/>
   <link href="http://timofei7.github.com/"/>
-  <updated>2012-07-16T11:53:55-07:00</updated>
+  <updated>2012-10-10T19:35:26-07:00</updated>
   <id>http://timofei7.github.com/</id>
   <author>
     <name><![CDATA[timofei7]]></name>
@@ -116,12 +116,12 @@ So I wrote a parametrized generic pseudo singleton monobehavior class.  I attemp
 </span><span class='line'>
 </span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="c1">/// &lt;summary&gt;</span>
 </span><span class='line'><span class="c1">/// MONOBEHAVIOR PSEUDO SINGLETON ABSTRACT CLASS</span>
-</span><span class='line'><span class="c1">/// usage       : best is to be attached to a gameobject but if not that is ok,</span>
-</span><span class='line'><span class="c1">///             : this will create one on first access</span>
-</span><span class='line'><span class="c1">/// example     : &#39;&#39;&#39;public sealed class MyClass : Singleton&lt;MyClass&gt; {&#39;&#39;&#39;</span>
-</span><span class='line'><span class="c1">/// references      : http://tinyurl.com/d498g8c</span>
-</span><span class='line'><span class="c1">///             : http://tinyurl.com/cc73a9h</span>
-</span><span class='line'><span class="c1">///             : http://unifycommunity.com/wiki/index.php?title=Singleton</span>
+</span><span class='line'><span class="c1">/// usage   : best is to be attached to a gameobject but if not that is ok,</span>
+</span><span class='line'><span class="c1">///         : this will create one on first access</span>
+</span><span class='line'><span class="c1">/// example : &#39;&#39;&#39;public sealed class MyClass : Singleton&lt;MyClass&gt; {&#39;&#39;&#39;</span>
+</span><span class='line'><span class="c1">/// references  : http://tinyurl.com/d498g8c</span>
+</span><span class='line'><span class="c1">///         : http://tinyurl.com/cc73a9h</span>
+</span><span class='line'><span class="c1">///         : http://unifycommunity.com/wiki/index.php?title=Singleton</span>
 </span><span class='line'><span class="c1">/// &lt;/summary&gt;</span>
 </span><span class='line'><span class="n">public</span> <span class="n">abstract</span> <span class="n">class</span> <span class="n">Singleton</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">:</span> <span class="n">MonoBehaviour</span> <span class="n">where</span> <span class="n">T</span> <span class="o">:</span> <span class="n">MonoBehaviour</span>
 </span><span class='line'><span class="p">{</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
