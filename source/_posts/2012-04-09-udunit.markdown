@@ -7,7 +7,7 @@ categories: Log
 tags: [startup, scala, lift]
 ---
 
-Over a few weekends, mostly as an exercise in learning a new language / framework two friends of mine and I came up with: [demo.udunit.com](http://demo.udunit.com). 
+Over a couple of weekends, mostly as an exercise in learning a new language / framework two friends of mine and I came up with: [demo.udunit.com](http://udunnit-frontend-dev.herokuapp.com). 
 
 In a nutshell it is:  
 UdunIt (pronounced you-done-it, as in whodunit): A fun way to share, boast about and track your progress towards major life accomplishments, as well as discover new ones to take on! People love grouping things into lists -- it's a natural human tendency: The Four-thousand Foot Mountains of New Hampshire, California Micro-brews, Best Restaurants in Austin, TX. We want to motivate people to take on these challenges, to get out and do something. Udunit will bring social and gaming aspects to these accomplishment lists, building on people’s desire to share their accomplishments as well as their competitive natures.
@@ -16,5 +16,5 @@ Based on Foursquare's [engineering blog](http://engineering.foursquare.com) (whi
 
 It was fun+frustrating to play with and our next project won't be using Lift/Scala,   but I've been playing with [Opa](http://www.opalang.com) and am excited to try that for a project!
 
-Feel free to check out [UdunIt](http://demo.udunit.com) and use it!  The basic funcionality is there, and I'll leave it up in case it suddenly starts getting popular. :-) 
+Feel free to check out [UdunIt](http://udunnit-frontend-dev.herokuapp.com) and use it!  The basic funcionality is there, and I'll leave it up in case it suddenly starts getting popular. :-) 
 

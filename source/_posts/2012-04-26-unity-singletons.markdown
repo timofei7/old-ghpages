@@ -3,7 +3,7 @@ layout: post
 title: "generic singleton MonoBehavior class"
 date: 2012-04-26 01:40
 comments: true
-categories:  Random
+categories:  Work
 tags: [unity3d, c#, singleton]
 ---
 
@@ -12,10 +12,11 @@ In [Unity3D](http://www.unity3d.com) having a [singleton](http://en.wikipedia.or
 So you code up a C# singleton and then realize that you actually need it to be a [MonoBehavior](http://unity3d.com/support/documentation/ScriptReference/MonoBehaviour.html), not just a [ScriptableObject](http://unity3d.com/support/documentation/ScriptReference/ScriptableObject.html) -- say you want the singleton to run [coroutines](http://unity3d.com/support/documentation/ScriptReference/index.Coroutines_26_Yield.html), or have a transform, or any other MonoBehavior feature.  But monobehaviors [can't](http://unity3d.com/support/documentation/ScriptReference/MonoBehaviour.Awake.html) be initialized with a constructor. 
 
 So what you want is a monobehavior pseudo singleton pattern.  The unity community wiki has some [good info](http://unifycommunity.com/wiki/index.php?title=Singleton)
- about the various options.
+ about the various options but all require boilerplate. 
 
-In my current Unity project I realized that I was using lots of singletons for various state manager classes and wanted to get rid of all the boilerplate singleton stuff.
 So I wrote a parametrized generic pseudo singleton monobehavior class.  I attempted to compile all the best advice out there, so it is threadsafe, has some extra stuff for setting a parent, doesn't implement an Awake, and initializes lazily.
+
+<!--more--> 
 
 The key was the C# [where](http://msdn.microsoft.com/en-us/library/d5x73970.aspx) keyword, used to constrain the parameterizing type. So in this case both the class is a MonoBehavior and its parameterization type is a MonoBehavior.
 
