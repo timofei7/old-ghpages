@@ -1,0 +1,529 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Work | tim tregubov]]></title>
+  <link href="http://timofei7.github.com/blog/categories/work/atom.xml" rel="self"/>
+  <link href="http://timofei7.github.com/"/>
+  <updated>2013-02-11T17:05:14-08:00</updated>
+  <id>http://timofei7.github.com/</id>
+  <author>
+    <name><![CDATA[timofei7]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[generic singleton MonoBehavior part 2: singleton self loading prefab]]></title>
+    <link href="http://timofei7.github.com/blog/2013/01/11/unity-prefab-singleton/"/>
+    <updated>2013-01-11T01:40:00-08:00</updated>
+    <id>http://timofei7.github.com/blog/2013/01/11/unity-prefab-singleton</id>
+    <content type="html"><![CDATA[<p>I had a <a href="blog/2012/04/26/unity-singletons/">previous post</a> about singletons in <a href="http://www.unity3d.com">Unity3D</a> and have since added a useful functionality to that class.  One of the useful features of a singleton is that it is self instantiating.  As a MonoBehaviour in Unity you may have a class that has serializable public variables available within the Unity editor to allow easy tweaking of variables / for artists to modify / to hook up to other Unity compenents easily. Additionally you are probably using <a href="http://docs.unity3d.com/Documentation/Manual/Prefabs.html">prefabs</a> to manage game components in your scenes.</p>
+
+<p>What I wanted to have was a prefab with a singleton on it that I could dump in the Resources folder and have it be self-loading.  Just as singletons allow for really nice static access methods, this would allow me to really easily organize my project as a bunch of prefabs and when a level needed a particular component it would just use it, no need to instantiate and keep a reference within some big main class, nor keep it in the scene heirarchy at all to begin with.</p>
+
+<!--more-->
+
+
+<p></p>
+
+<p>Below is my updated singleton class. What I ended up doing was adding an Attribute so you could just define the Prefab attribute for any singletons that did have associated prefabs and off you go.  I have left in some debug statements commented out for clarity.  The only caveat is that of course you could accidentally have added multiple instances of the prefab in your scene -- what I do now is to just throw an exception if that is the case (an alternative may be to just choose one and self-destruct the others but deciding which is correct is unclear).</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>Singleton.cs # </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+<span class='line-number'>62</span>
+<span class='line-number'>63</span>
+<span class='line-number'>64</span>
+<span class='line-number'>65</span>
+<span class='line-number'>66</span>
+<span class='line-number'>67</span>
+<span class='line-number'>68</span>
+<span class='line-number'>69</span>
+<span class='line-number'>70</span>
+<span class='line-number'>71</span>
+<span class='line-number'>72</span>
+<span class='line-number'>73</span>
+<span class='line-number'>74</span>
+<span class='line-number'>75</span>
+<span class='line-number'>76</span>
+<span class='line-number'>77</span>
+<span class='line-number'>78</span>
+<span class='line-number'>79</span>
+<span class='line-number'>80</span>
+<span class='line-number'>81</span>
+<span class='line-number'>82</span>
+<span class='line-number'>83</span>
+<span class='line-number'>84</span>
+<span class='line-number'>85</span>
+<span class='line-number'>86</span>
+<span class='line-number'>87</span>
+<span class='line-number'>88</span>
+<span class='line-number'>89</span>
+<span class='line-number'>90</span>
+<span class='line-number'>91</span>
+<span class='line-number'>92</span>
+<span class='line-number'>93</span>
+<span class='line-number'>94</span>
+<span class='line-number'>95</span>
+<span class='line-number'>96</span>
+<span class='line-number'>97</span>
+<span class='line-number'>98</span>
+<span class='line-number'>99</span>
+<span class='line-number'>100</span>
+<span class='line-number'>101</span>
+<span class='line-number'>102</span>
+<span class='line-number'>103</span>
+<span class='line-number'>104</span>
+<span class='line-number'>105</span>
+<span class='line-number'>106</span>
+<span class='line-number'>107</span>
+<span class='line-number'>108</span>
+<span class='line-number'>109</span>
+<span class='line-number'>110</span>
+<span class='line-number'>111</span>
+<span class='line-number'>112</span>
+<span class='line-number'>113</span>
+<span class='line-number'>114</span>
+<span class='line-number'>115</span>
+<span class='line-number'>116</span>
+<span class='line-number'>117</span>
+<span class='line-number'>118</span>
+<span class='line-number'>119</span>
+<span class='line-number'>120</span>
+<span class='line-number'>121</span>
+<span class='line-number'>122</span>
+<span class='line-number'>123</span>
+<span class='line-number'>124</span>
+<span class='line-number'>125</span>
+<span class='line-number'>126</span>
+<span class='line-number'>127</span>
+<span class='line-number'>128</span>
+<span class='line-number'>129</span>
+<span class='line-number'>130</span>
+<span class='line-number'>131</span>
+<span class='line-number'>132</span>
+<span class='line-number'>133</span>
+<span class='line-number'>134</span>
+<span class='line-number'>135</span>
+<span class='line-number'>136</span>
+<span class='line-number'>137</span>
+<span class='line-number'>138</span>
+<span class='line-number'>139</span>
+<span class='line-number'>140</span>
+<span class='line-number'>141</span>
+<span class='line-number'>142</span>
+<span class='line-number'>143</span>
+<span class='line-number'>144</span>
+<span class='line-number'>145</span>
+<span class='line-number'>146</span>
+<span class='line-number'>147</span>
+<span class='line-number'>148</span>
+<span class='line-number'>149</span>
+<span class='line-number'>150</span>
+<span class='line-number'>151</span>
+<span class='line-number'>152</span>
+<span class='line-number'>153</span>
+</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="n">using</span> <span class="n">UnityEngine</span><span class="p">;</span>
+</span><span class='line'><span class="n">using</span> <span class="n">System</span><span class="p">.</span><span class="n">Collections</span><span class="p">;</span>
+</span><span class='line'><span class="n">using</span> <span class="n">System</span><span class="p">;</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="c1">/// &lt;summary&gt;</span>
+</span><span class='line'><span class="c1">/// Prefab attribute. Use this on child classes</span>
+</span><span class='line'><span class="c1">/// to define if they have a prefab associated or not</span>
+</span><span class='line'><span class="c1">/// By default will attempt to load a prefab</span>
+</span><span class='line'><span class="c1">/// that has the same name as the class,</span>
+</span><span class='line'><span class="c1">/// otherwise [Prefab(&quot;path/to/prefab&quot;)] to define it specifically.</span>
+</span><span class='line'><span class="c1">/// &lt;/summary&gt;</span>
+</span><span class='line'><span class="p">[</span><span class="n">AttributeUsage</span><span class="p">(</span><span class="n">AttributeTargets</span><span class="p">.</span><span class="n">Class</span><span class="p">,</span><span class="n">Inherited</span> <span class="o">=</span> <span class="nb">true</span><span class="p">)]</span>
+</span><span class='line'><span class="n">public</span> <span class="n">class</span> <span class="n">PrefabAttribute</span> <span class="o">:</span> <span class="n">Attribute</span>
+</span><span class='line'><span class="p">{</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="n">string</span> <span class="n">_name</span><span class="p">;</span>
+</span><span class='line'><span class="n">public</span> <span class="n">string</span> <span class="n">Name</span> <span class="p">{</span> <span class="n">get</span> <span class="p">{</span> <span class="k">return</span> <span class="n">this</span><span class="p">.</span><span class="n">_name</span><span class="p">;</span> <span class="p">}</span> <span class="p">}</span>
+</span><span class='line'><span class="n">public</span> <span class="n">PrefabAttribute</span><span class="p">()</span> <span class="p">{</span> <span class="n">this</span><span class="p">.</span><span class="n">_name</span> <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">;</span> <span class="p">}</span>
+</span><span class='line'><span class="n">public</span> <span class="n">PrefabAttribute</span><span class="p">(</span><span class="n">string</span> <span class="n">name</span><span class="p">)</span> <span class="p">{</span> <span class="n">this</span><span class="p">.</span><span class="n">_name</span> <span class="o">=</span> <span class="n">name</span><span class="p">;</span> <span class="p">}</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="p">}</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="c1">/// &lt;summary&gt;</span>
+</span><span class='line'><span class="c1">/// MONOBEHAVIOR PSEUDO SINGLETON ABSTRACT CLASS</span>
+</span><span class='line'><span class="c1">/// usage       : can be attached to a gameobject and if not</span>
+</span><span class='line'><span class="c1">///             : this will create one on first access</span>
+</span><span class='line'><span class="c1">/// example     : &#39;&#39;&#39;public sealed class MyClass : Singleton&lt;MyClass&gt; {&#39;&#39;&#39;</span>
+</span><span class='line'><span class="c1">/// references  : http://tinyurl.com/d498g8c</span>
+</span><span class='line'><span class="c1">///             : http://tinyurl.com/cc73a9h</span>
+</span><span class='line'><span class="c1">///             : http://unifycommunity.com/wiki/index.php?title=Singleton</span>
+</span><span class='line'><span class="c1">/// &lt;/summary&gt;</span>
+</span><span class='line'><span class="n">public</span> <span class="n">abstract</span> <span class="n">class</span> <span class="n">Singleton</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">:</span> <span class="n">MonoBehaviour</span> <span class="n">where</span> <span class="n">T</span> <span class="o">:</span> <span class="n">MonoBehaviour</span>
+</span><span class='line'><span class="p">{</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="n">private</span> <span class="k">static</span> <span class="n">T</span> <span class="n">_instance</span> <span class="o">=</span> <span class="n">null</span><span class="p">;</span>
+</span><span class='line'><span class="n">public</span> <span class="k">static</span> <span class="n">bool</span> <span class="n">IsAwake</span> <span class="p">{</span> <span class="n">get</span> <span class="p">{</span> <span class="k">return</span> <span class="p">(</span><span class="n">_instance</span> <span class="o">!=</span> <span class="n">null</span><span class="p">);</span> <span class="p">}</span> <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">/// &amp;lt;summary&amp;gt;</span>
+</span><span class='line'><span class="c1">/// gets the instance of this Singleton</span>
+</span><span class='line'><span class="c1">/// use this for all instance calls:</span>
+</span><span class='line'><span class="c1">/// MyClass.Instance.MyMethod();</span>
+</span><span class='line'><span class="c1">/// or make your public methods static</span>
+</span><span class='line'><span class="c1">/// and have them use Instance internally</span>
+</span><span class='line'><span class="c1">/// for a nice clean interface</span>
+</span><span class='line'><span class="c1">/// &amp;lt;/summary&amp;gt;</span>
+</span><span class='line'><span class="n">public</span> <span class="k">static</span> <span class="n">T</span> <span class="n">Instance</span> <span class="p">{</span>
+</span><span class='line'>    <span class="n">get</span> <span class="p">{</span>
+</span><span class='line'>        <span class="n">Type</span> <span class="n">mytype</span> <span class="o">=</span> <span class="n">typeof</span><span class="p">(</span><span class="n">T</span><span class="p">);</span>
+</span><span class='line'>        <span class="k">if</span> <span class="p">(</span><span class="n">_instance</span> <span class="o">==</span> <span class="n">null</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>            <span class="n">_instance</span> <span class="o">=</span> <span class="p">(</span><span class="n">T</span><span class="p">)</span><span class="n">FindObjectOfType</span> <span class="p">(</span><span class="n">mytype</span><span class="p">);</span>
+</span><span class='line'>            <span class="k">if</span> <span class="p">(</span><span class="n">_instance</span> <span class="o">==</span> <span class="n">null</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>                <span class="c1">//Debug.Log(&quot;initializing instance of: &quot; + mytype.Name);</span>
+</span><span class='line'>                <span class="n">string</span> <span class="n">goName</span> <span class="o">=</span> <span class="n">mytype</span><span class="p">.</span><span class="n">ToString</span> <span class="p">();</span>
+</span><span class='line'>                <span class="n">GameObject</span> <span class="n">go</span> <span class="o">=</span> <span class="n">GameObject</span><span class="p">.</span><span class="n">Find</span> <span class="p">(</span><span class="n">goName</span><span class="p">);</span>
+</span><span class='line'>                <span class="k">if</span> <span class="p">(</span><span class="n">go</span> <span class="o">==</span> <span class="n">null</span><span class="p">)</span> <span class="c1">// try again searching for a cloned object</span>
+</span><span class='line'>                <span class="p">{</span>
+</span><span class='line'>                    <span class="n">go</span> <span class="o">=</span> <span class="n">GameObject</span><span class="p">.</span><span class="n">Find</span> <span class="p">(</span><span class="n">goName</span><span class="o">+</span><span class="s">&quot;(Clone)&quot;</span><span class="p">);</span>
+</span><span class='line'>                    <span class="k">if</span> <span class="p">(</span><span class="n">go</span> <span class="o">!=</span> <span class="n">null</span><span class="p">)</span>
+</span><span class='line'>                    <span class="p">{</span>
+</span><span class='line'>                        <span class="c1">//Debug.Log(&quot;found clone of object using it!&quot;); </span>
+</span><span class='line'>                    <span class="p">}</span>
+</span><span class='line'>                <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>                <span class="k">if</span> <span class="p">(</span><span class="n">go</span> <span class="o">==</span> <span class="n">null</span><span class="p">)</span> <span class="c1">//if still not found try prefab or create</span>
+</span><span class='line'>                <span class="p">{</span>
+</span><span class='line'>                    <span class="n">bool</span> <span class="n">hasPrefab</span> <span class="o">=</span> <span class="n">Attribute</span><span class="p">.</span><span class="n">IsDefined</span><span class="p">(</span><span class="n">mytype</span><span class="p">,</span> <span class="n">typeof</span><span class="p">(</span><span class="n">PrefabAttribute</span><span class="p">));</span>
+</span><span class='line'>                    <span class="c1">// checks if the [Prefab] attribute is set and pulls that if it can</span>
+</span><span class='line'>                    <span class="k">if</span> <span class="p">(</span><span class="n">hasPrefab</span><span class="p">)</span>
+</span><span class='line'>                    <span class="p">{</span>
+</span><span class='line'>                        <span class="n">PrefabAttribute</span> <span class="n">attr</span> <span class="o">=</span> <span class="p">(</span><span class="n">PrefabAttribute</span><span class="p">)</span><span class="n">Attribute</span><span class="p">.</span><span class="n">GetCustomAttribute</span><span class="p">(</span><span class="n">mytype</span><span class="p">,</span><span class="n">typeof</span><span class="p">(</span><span class="n">PrefabAttribute</span><span class="p">));</span>
+</span><span class='line'>                        <span class="n">string</span> <span class="n">prefabname</span> <span class="o">=</span> <span class="n">attr</span><span class="p">.</span><span class="n">Name</span><span class="p">;</span>
+</span><span class='line'>                        <span class="c1">//Debug.LogWarning(goName + &quot; not found attempting to instantiate prefab... either: &quot; + goName + &quot; or: &quot; + prefabname);</span>
+</span><span class='line'>                        <span class="n">try</span>
+</span><span class='line'>                        <span class="p">{</span>
+</span><span class='line'>                            <span class="k">if</span> <span class="p">(</span><span class="n">prefabname</span> <span class="o">!=</span> <span class="s">&quot;&quot;</span><span class="p">)</span>
+</span><span class='line'>                            <span class="p">{</span>
+</span><span class='line'>                                <span class="n">go</span> <span class="o">=</span> <span class="p">(</span><span class="n">GameObject</span><span class="p">)</span><span class="n">Instantiate</span><span class="p">(</span><span class="n">Resources</span><span class="p">.</span><span class="n">Load</span><span class="p">(</span><span class="n">prefabname</span><span class="p">,</span> <span class="n">typeof</span><span class="p">(</span><span class="n">GameObject</span><span class="p">)));</span>
+</span><span class='line'>                            <span class="p">}</span>
+</span><span class='line'>                            <span class="k">else</span>
+</span><span class='line'>                            <span class="p">{</span>
+</span><span class='line'>                                <span class="n">go</span> <span class="o">=</span> <span class="p">(</span><span class="n">GameObject</span><span class="p">)</span><span class="n">Instantiate</span><span class="p">(</span><span class="n">Resources</span><span class="p">.</span><span class="n">Load</span><span class="p">(</span><span class="n">goName</span><span class="p">,</span> <span class="n">typeof</span><span class="p">(</span><span class="n">GameObject</span><span class="p">)));</span>
+</span><span class='line'>                            <span class="p">}</span>
+</span><span class='line'>                        <span class="p">}</span> <span class="n">catch</span> <span class="p">(</span><span class="n">Exception</span> <span class="n">e</span><span class="p">)</span>
+</span><span class='line'>                        <span class="p">{</span>
+</span><span class='line'>                            <span class="n">Debug</span><span class="p">.</span><span class="n">LogError</span><span class="p">(</span><span class="s">&quot;could not instantiate prefab even though prefab attribute was set: &quot;</span> <span class="o">+</span> <span class="n">e</span><span class="p">.</span><span class="n">Message</span> <span class="o">+</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span> <span class="o">+</span> <span class="n">e</span><span class="p">.</span><span class="n">StackTrace</span><span class="p">);</span>
+</span><span class='line'>                        <span class="p">}</span>
+</span><span class='line'>                    <span class="p">}</span>
+</span><span class='line'>                    <span class="k">if</span> <span class="p">(</span><span class="n">go</span> <span class="o">==</span> <span class="n">null</span><span class="p">)</span>
+</span><span class='line'>                    <span class="p">{</span>
+</span><span class='line'>                        <span class="c1">//Debug.LogWarning(goName + &quot; not found creating...&quot;);</span>
+</span><span class='line'>                        <span class="n">go</span> <span class="o">=</span> <span class="n">new</span> <span class="n">GameObject</span> <span class="p">();</span>
+</span><span class='line'>                        <span class="n">go</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">goName</span><span class="p">;</span>
+</span><span class='line'>                    <span class="p">}</span>
+</span><span class='line'>                <span class="p">}</span>
+</span><span class='line'>                <span class="n">_instance</span> <span class="o">=</span> <span class="n">go</span><span class="p">.</span><span class="n">GetComponent</span><span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="n">T</span><span class="o">&amp;</span><span class="n">gt</span><span class="p">;();</span>
+</span><span class='line'>                <span class="k">if</span> <span class="p">(</span><span class="n">_instance</span> <span class="o">==</span> <span class="n">null</span><span class="p">)</span>
+</span><span class='line'>                <span class="p">{</span>
+</span><span class='line'>                    <span class="n">_instance</span> <span class="o">=</span> <span class="n">go</span><span class="p">.</span><span class="n">AddComponent</span><span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="n">T</span><span class="o">&amp;</span><span class="n">gt</span><span class="p">;();</span>
+</span><span class='line'>                <span class="p">}</span>
+</span><span class='line'>            <span class="p">}</span>
+</span><span class='line'>            <span class="k">else</span>
+</span><span class='line'>            <span class="p">{</span>
+</span><span class='line'>                <span class="c1">//Debug.Log(mytype.Name + &quot; had to be searched for but was found&quot;); </span>
+</span><span class='line'>                <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="n">FindObjectsOfType</span><span class="p">(</span><span class="n">mytype</span><span class="p">).</span><span class="n">Length</span><span class="p">;</span>
+</span><span class='line'>                <span class="k">if</span> <span class="p">(</span><span class="n">count</span> <span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="mi">1</span><span class="p">)</span>
+</span><span class='line'>                <span class="p">{</span>
+</span><span class='line'>                    <span class="n">Debug</span><span class="p">.</span><span class="n">LogError</span><span class="p">(</span><span class="s">&quot;Singleton: there are &quot;</span> <span class="o">+</span> <span class="n">count</span><span class="p">.</span><span class="n">ToString</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot; of &quot;</span> <span class="o">+</span> <span class="n">mytype</span><span class="p">.</span><span class="n">Name</span><span class="p">);</span>
+</span><span class='line'>                    <span class="n">throw</span> <span class="n">new</span> <span class="n">Exception</span><span class="p">(</span><span class="s">&quot;Too many (&quot;</span> <span class="o">+</span> <span class="n">count</span><span class="p">.</span><span class="n">ToString</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot;) prefab singletons of type: &quot;</span> <span class="o">+</span> <span class="n">mytype</span><span class="p">.</span><span class="n">Name</span><span class="p">);</span>
+</span><span class='line'>                <span class="p">}</span>
+</span><span class='line'>            <span class="p">}</span>
+</span><span class='line'>        <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="k">return</span> <span class="n">_instance</span><span class="p">;</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">/// &amp;lt;summary&amp;gt;</span>
+</span><span class='line'><span class="c1">/// for garbage collection</span>
+</span><span class='line'><span class="c1">/// &amp;lt;/summary&amp;gt;</span>
+</span><span class='line'><span class="n">public</span> <span class="k">virtual</span> <span class="kt">void</span> <span class="n">OnApplicationQuit</span> <span class="p">()</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>    <span class="c1">// release reference on exit</span>
+</span><span class='line'>    <span class="n">_instance</span> <span class="o">=</span> <span class="n">null</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// in your child class you can implement Awake()</span>
+</span><span class='line'><span class="c1">//  and add any initialization code you want such as</span>
+</span><span class='line'><span class="c1">//  DontDestroyOnLoad(this.gameObject);</span>
+</span><span class='line'><span class="c1">//  if you want this to persist across loads</span>
+</span><span class='line'><span class="c1">//  or if you want to set a parent object with SetParent()</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">/// &amp;lt;summary&amp;gt;</span>
+</span><span class='line'><span class="c1">/// parent this to another gameobject by string</span>
+</span><span class='line'><span class="c1">/// call from Awake if you so desire</span>
+</span><span class='line'><span class="c1">/// &amp;lt;/summary&amp;gt;</span>
+</span><span class='line'><span class="n">protected</span> <span class="kt">void</span> <span class="n">SetParent</span> <span class="p">(</span><span class="n">string</span> <span class="n">parentGOName</span><span class="p">)</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>    <span class="k">if</span> <span class="p">(</span><span class="n">parentGOName</span> <span class="o">!=</span> <span class="n">null</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>        <span class="n">GameObject</span> <span class="n">parentGO</span> <span class="o">=</span> <span class="n">GameObject</span><span class="p">.</span><span class="n">Find</span> <span class="p">(</span><span class="n">parentGOName</span><span class="p">);</span>
+</span><span class='line'>        <span class="k">if</span> <span class="p">(</span><span class="n">parentGO</span> <span class="o">==</span> <span class="n">null</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>            <span class="n">parentGO</span> <span class="o">=</span> <span class="n">new</span> <span class="n">GameObject</span> <span class="p">();</span>
+</span><span class='line'>            <span class="n">parentGO</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">parentGOName</span><span class="p">;</span>
+</span><span class='line'>            <span class="n">parentGO</span><span class="p">.</span><span class="n">transform</span><span class="p">.</span><span class="n">parent</span> <span class="o">=</span> <span class="n">null</span><span class="p">;</span>
+</span><span class='line'>        <span class="p">}</span>
+</span><span class='line'>        <span class="n">this</span><span class="p">.</span><span class="n">transform</span><span class="p">.</span><span class="n">parent</span> <span class="o">=</span> <span class="n">parentGO</span><span class="p">.</span><span class="n">transform</span><span class="p">;</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="p">}</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>What do you think?  Only other caveats are those associated with using the <a href="http://docs.unity3d.com/Documentation/ScriptReference/Resources.html">Resources folder</a> in general such as not being able to strip out components that aren't used.  Since my games so far have been small this hasn't been an issue and I know that I should clean out any resources that I'm definitely not using.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[generic singleton MonoBehavior class]]></title>
+    <link href="http://timofei7.github.com/blog/2012/04/26/unity-singletons/"/>
+    <updated>2012-04-26T01:40:00-07:00</updated>
+    <id>http://timofei7.github.com/blog/2012/04/26/unity-singletons</id>
+    <content type="html"><![CDATA[<p>In <a href="http://www.unity3d.com">Unity3D</a> having a <a href="http://en.wikipedia.org/wiki/Singleton_pattern">singleton</a> class is very useful, whether for "global" state or simply for the convenience of having a static accessor so you don't have to have lots of: <code>FindObjectOfType(typeof(Builder)) as Builder;</code></p>
+
+<p>So you code up a C# singleton and then realize that you actually need it to be a <a href="http://unity3d.com/support/documentation/ScriptReference/MonoBehaviour.html">MonoBehavior</a>, not just a <a href="http://unity3d.com/support/documentation/ScriptReference/ScriptableObject.html">ScriptableObject</a> -- say you want the singleton to run <a href="http://unity3d.com/support/documentation/ScriptReference/index.Coroutines_26_Yield.html">coroutines</a>, or have a transform, or any other MonoBehavior feature.  But monobehaviors <a href="http://unity3d.com/support/documentation/ScriptReference/MonoBehaviour.Awake.html">can't</a> be initialized with a constructor.</p>
+
+<p>So what you want is a monobehavior pseudo singleton pattern.  The unity community wiki has some <a href="http://unifycommunity.com/wiki/index.php?title=Singleton">good info</a>
+ about the various options but all require boilerplate.</p>
+
+<p>So I wrote a parametrized generic pseudo singleton monobehavior class.  I attempted to compile all the best advice out there, so it is threadsafe, has some extra stuff for setting a parent, doesn't implement an Awake, and initializes lazily.</p>
+
+<!--more-->
+
+
+<p></p>
+
+<p>The key was the C# <a href="http://msdn.microsoft.com/en-us/library/d5x73970.aspx">where</a> keyword, used to constrain the parameterizing type. So in this case both the class is a MonoBehavior and its parameterization type is a MonoBehavior.</p>
+
+<p>So now this blog has its first code section:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>Singleton.cs # </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+<span class='line-number'>62</span>
+<span class='line-number'>63</span>
+<span class='line-number'>64</span>
+<span class='line-number'>65</span>
+<span class='line-number'>66</span>
+<span class='line-number'>67</span>
+<span class='line-number'>68</span>
+<span class='line-number'>69</span>
+<span class='line-number'>70</span>
+<span class='line-number'>71</span>
+<span class='line-number'>72</span>
+<span class='line-number'>73</span>
+<span class='line-number'>74</span>
+<span class='line-number'>75</span>
+<span class='line-number'>76</span>
+<span class='line-number'>77</span>
+<span class='line-number'>78</span>
+</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="n">using</span> <span class="n">UnityEngine</span><span class="p">;</span>
+</span><span class='line'><span class="n">using</span> <span class="n">System</span><span class="p">.</span><span class="n">Collections</span><span class="p">;</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="c1">/// &lt;summary&gt;</span>
+</span><span class='line'><span class="c1">/// MONOBEHAVIOR PSEUDO SINGLETON ABSTRACT CLASS</span>
+</span><span class='line'><span class="c1">/// usage   : best is to be attached to a gameobject but if not that is ok,</span>
+</span><span class='line'><span class="c1">///         : this will create one on first access</span>
+</span><span class='line'><span class="c1">/// example : &#39;&#39;&#39;public sealed class MyClass : Singleton&lt;MyClass&gt; {&#39;&#39;&#39;</span>
+</span><span class='line'><span class="c1">/// references  : http://tinyurl.com/d498g8c</span>
+</span><span class='line'><span class="c1">///         : http://tinyurl.com/cc73a9h</span>
+</span><span class='line'><span class="c1">///         : http://unifycommunity.com/wiki/index.php?title=Singleton</span>
+</span><span class='line'><span class="c1">/// &lt;/summary&gt;</span>
+</span><span class='line'><span class="n">public</span> <span class="n">abstract</span> <span class="n">class</span> <span class="n">Singleton</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">:</span> <span class="n">MonoBehaviour</span> <span class="n">where</span> <span class="n">T</span> <span class="o">:</span> <span class="n">MonoBehaviour</span>
+</span><span class='line'><span class="p">{</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="n">private</span> <span class="k">static</span> <span class="n">T</span> <span class="n">_instance</span> <span class="o">=</span> <span class="n">null</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">/// &amp;lt;summary&amp;gt;</span>
+</span><span class='line'><span class="c1">/// gets the instance of this Singleton</span>
+</span><span class='line'><span class="c1">/// use this for all instance calls:</span>
+</span><span class='line'><span class="c1">/// MyClass.Instance.MyMethod();</span>
+</span><span class='line'><span class="c1">/// or make your public methods static</span>
+</span><span class='line'><span class="c1">/// and have them use Instance</span>
+</span><span class='line'><span class="c1">/// &amp;lt;/summary&amp;gt;</span>
+</span><span class='line'><span class="n">public</span> <span class="k">static</span> <span class="n">T</span> <span class="n">Instance</span> <span class="p">{</span>
+</span><span class='line'>    <span class="n">get</span> <span class="p">{</span>
+</span><span class='line'>        <span class="k">if</span> <span class="p">(</span><span class="n">_instance</span> <span class="o">==</span> <span class="n">null</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>            <span class="n">_instance</span> <span class="o">=</span> <span class="p">(</span><span class="n">T</span><span class="p">)</span><span class="n">FindObjectOfType</span> <span class="p">(</span><span class="n">typeof</span><span class="p">(</span><span class="n">T</span><span class="p">));</span>
+</span><span class='line'>            <span class="k">if</span> <span class="p">(</span><span class="n">_instance</span> <span class="o">==</span> <span class="n">null</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>
+</span><span class='line'>                <span class="n">string</span> <span class="n">goName</span> <span class="o">=</span> <span class="n">typeof</span><span class="p">(</span><span class="n">T</span><span class="p">).</span><span class="n">ToString</span> <span class="p">();</span>
+</span><span class='line'>
+</span><span class='line'>                <span class="n">GameObject</span> <span class="n">go</span> <span class="o">=</span> <span class="n">GameObject</span><span class="p">.</span><span class="n">Find</span> <span class="p">(</span><span class="n">goName</span><span class="p">);</span>
+</span><span class='line'>                <span class="k">if</span> <span class="p">(</span><span class="n">go</span> <span class="o">==</span> <span class="n">null</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>                    <span class="n">go</span> <span class="o">=</span> <span class="n">new</span> <span class="n">GameObject</span> <span class="p">();</span>
+</span><span class='line'>                    <span class="n">go</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">goName</span><span class="p">;</span>
+</span><span class='line'>                <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>                <span class="n">_instance</span> <span class="o">=</span> <span class="n">go</span><span class="p">.</span><span class="n">AddComponent</span><span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="n">T</span><span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="p">();</span>
+</span><span class='line'>            <span class="p">}</span>
+</span><span class='line'>        <span class="p">}</span>
+</span><span class='line'>        <span class="k">return</span> <span class="n">_instance</span><span class="p">;</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">/// &amp;lt;summary&amp;gt;</span>
+</span><span class='line'><span class="c1">/// for garbage collection</span>
+</span><span class='line'><span class="c1">/// &amp;lt;/summary&amp;gt;</span>
+</span><span class='line'><span class="n">public</span> <span class="k">virtual</span> <span class="kt">void</span> <span class="n">OnApplicationQuit</span> <span class="p">()</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>    <span class="c1">// release reference on exit</span>
+</span><span class='line'>    <span class="n">_instance</span> <span class="o">=</span> <span class="n">null</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">// in your child class you can implement Awake()</span>
+</span><span class='line'><span class="c1">// and add any initialization code you want such as</span>
+</span><span class='line'><span class="c1">// DontDestroyOnLoad(go);</span>
+</span><span class='line'><span class="c1">// if you want this to persist across loads</span>
+</span><span class='line'><span class="c1">// or if you want to set a parent object with SetParent()</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">/// &amp;lt;summary&amp;gt;</span>
+</span><span class='line'><span class="c1">/// parent this to another gameobject by string</span>
+</span><span class='line'><span class="c1">/// call from Awake if you so desire</span>
+</span><span class='line'><span class="c1">/// &amp;lt;/summary&amp;gt;</span>
+</span><span class='line'><span class="n">protected</span> <span class="kt">void</span> <span class="n">SetParent</span> <span class="p">(</span><span class="n">string</span> <span class="n">parentGOName</span><span class="p">)</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>    <span class="k">if</span> <span class="p">(</span><span class="n">parentGOName</span> <span class="o">!=</span> <span class="n">null</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>        <span class="n">GameObject</span> <span class="n">parentGO</span> <span class="o">=</span> <span class="n">GameObject</span><span class="p">.</span><span class="n">Find</span> <span class="p">(</span><span class="n">parentGOName</span><span class="p">);</span>
+</span><span class='line'>        <span class="k">if</span> <span class="p">(</span><span class="n">parentGO</span> <span class="o">==</span> <span class="n">null</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>            <span class="n">parentGO</span> <span class="o">=</span> <span class="n">new</span> <span class="n">GameObject</span> <span class="p">();</span>
+</span><span class='line'>            <span class="n">parentGO</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">parentGOName</span><span class="p">;</span>
+</span><span class='line'>        <span class="p">}</span>
+</span><span class='line'>        <span class="n">this</span><span class="p">.</span><span class="n">transform</span><span class="p">.</span><span class="n">parent</span> <span class="o">=</span> <span class="n">parentGO</span><span class="p">.</span><span class="n">transform</span><span class="p">;</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+]]></content>
+  </entry>
+  
+</feed>
