@@ -9,7 +9,7 @@ footer: true
 ---
 
 
-![image](chessinvaders/chessinvadersquare.jpg)
+![image](chessinvadersquare.jpg)
 
 ChessInvaders is a game of wits and speed. Alien forces are invading the galaxy and it up to you to defend it. 
 
