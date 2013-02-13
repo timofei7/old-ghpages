@@ -84,7 +84,7 @@
     </url>
     <url>
         <loc>http://timofei7.github.com/blog/2012/04/26/unity-singletons/</loc>
-        <lastmod>2013-02-11T11:08:26-08:00</lastmod>
+        <lastmod>2013-02-11T22:41:55-08:00</lastmod>
     </url>
     <url>
         <loc>http://timofei7.github.com/blog/2012/11/25/chessinvaders-update/</loc>
@@ -92,7 +92,11 @@
     </url>
     <url>
         <loc>http://timofei7.github.com/blog/2013/01/11/unity-prefab-singleton/</loc>
-        <lastmod>2013-02-11T16:21:10-08:00</lastmod>
+        <lastmod>2013-02-12T10:27:54-08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://timofei7.github.com/blog/2013/02/05/unity-coroutine-wrapper/</loc>
+        <lastmod>2013-02-13T15:48:55-08:00</lastmod>
     </url>
     <url>
         <loc>http://timofei7.github.com/about/</loc>
@@ -100,7 +104,7 @@
     </url>
     <url>
         <loc>http://timofei7.github.com/blog/archives/</loc>
-        <lastmod>2013-02-11T16:21:10-08:00</lastmod>
+        <lastmod>2013-02-13T15:48:55-08:00</lastmod>
     </url>
     <url>
         <loc>http://timofei7.github.com/chessinvaders/</loc>
@@ -108,7 +112,7 @@
     </url>
     <url>
         <loc>http://timofei7.github.com/</loc>
-        <lastmod>2013-02-11T16:21:10-08:00</lastmod>
+        <lastmod>2013-02-13T15:48:55-08:00</lastmod>
     </url>
     <url>
         <loc>http://timofei7.github.com/research-statement/</loc>

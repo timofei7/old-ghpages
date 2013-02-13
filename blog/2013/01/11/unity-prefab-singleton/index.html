@@ -83,7 +83,7 @@
   <li><a href="/about/">About</a></li>
   <li><a href="/blog/categories/portfolio">Portfolio</a></li>
   <li><a href="/blog/categories/writing">Writing</a></li>
-  <li><a href="/blog/categories/work">Work</a></li>
+  <li><a href="/blog/categories/codes">Codes</a></li>
   <li><a href="/blog/categories/log">Log</a></li>
   <li><a href="/resume/">Resume</a></li>
 </ul>
@@ -119,9 +119,9 @@
   </header>
 
 
-<div class="entry-content"><p>I had a <a href="blog/2012/04/26/unity-singletons/">previous post</a> about singletons in <a href="http://www.unity3d.com">Unity3D</a> and have since added a useful functionality to that class.  One of the useful features of a singleton is that it is self instantiating.  As a MonoBehaviour in Unity you may have a class that has serializable public variables available within the Unity editor to allow easy tweaking of variables / for artists to modify / to hook up to other Unity compenents easily. Additionally you are probably using <a href="http://docs.unity3d.com/Documentation/Manual/Prefabs.html">prefabs</a> to manage game components in your scenes.</p>
+<div class="entry-content"><p>I had a <a href="blog/2012/04/26/unity-singletons/">previous post</a> about singletons in <a href="http://www.unity3d.com">Unity3D</a> and have since added a useful functionality to that class.  One of the useful features of a singleton is that it is self instantiating.  But what if you want to use the Unity editor to expose some public variables and have some other assets hooked into your singleton?  So since you are probably using <a href="http://docs.unity3d.com/Documentation/Manual/Prefabs.html">prefabs</a> to manage game components in your scenes anyway, seems like it might be useful to have a self-loading prefab for components such as the player or a gui controller.</p>
 
-<p>What I wanted to have was a prefab with a singleton on it that I could dump in the Resources folder and have it be self-loading.  Just as singletons allow for really nice static access methods, this would allow me to really easily organize my project as a bunch of prefabs and when a level needed a particular component it would just use it, no need to instantiate and keep a reference within some big main class, nor keep it in the scene heirarchy at all to begin with.</p>
+<p>Just as singletons allow for really nice static access methods, this would allow me to really easily organize my project as a bunch of prefabs dumped into the Resources directory and when a level needed a particular component it would just use it, no need to instantiate and keep a reference within some big main class, nor keep it in the scene heirarchy at all to begin with.</p>
 
 <!--more-->
 
@@ -456,7 +456,7 @@
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/work/'>Work</a>
+    <a class='category' href='/blog/categories/codes/'>Codes</a>
   
 </span>
 
@@ -476,6 +476,8 @@
       
         <a class="basic-alignment left" href="/blog/2012/11/25/chessinvaders-update/" title="Previous Post: chessInvaders update">&laquo; chessInvaders update</a>
       
+      
+        <a class="basic-alignment right" href="/blog/2013/02/05/unity-coroutine-wrapper/" title="Next Post: wrapping Unity C# coroutines for exception handling, value retrieval, and locking">wrapping Unity C# coroutines for exception handling, value retrieval, and locking &raquo;</a>
       
     </p>
   </footer>
@@ -561,6 +563,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/02/05/unity-coroutine-wrapper/">wrapping Unity C# coroutines for exception handling, value retrieval, and locking</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/01/11/unity-prefab-singleton/">generic singleton MonoBehavior part 2: singleton self loading prefab</a>
       </li>
     
@@ -576,49 +582,45 @@
         <a href="/blog/2012/04/09/udunit/">udunit</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2011/12/15/chessinvaders/">chessInvaders</a>
-      </li>
-    
   </ul>
 </section>
 
 
 <section class="tag-cloud">
     <h1>Tags</h1>
-    <a style='font-size: 0.80em' href='//digital-arts'>digital arts</a>
-<a style='font-size: 1.23em' href='//animation'>animation</a>
-<a style='font-size: 1.23em' href='//singleton'>singleton</a>
-<a style='font-size: 0.80em' href='//startup'>startup</a>
-<a style='font-size: 0.80em' href='//future'>future</a>
-<a style='font-size: 1.23em' href='//brain'>brain</a>
-<a style='font-size: 1.23em' href='//c-'>c#</a>
-<a style='font-size: 0.80em' href='//van'>van</a>
-<a style='font-size: 0.80em' href='//kinect'>kinect</a>
-<a style='font-size: 1.66em' href='//3D'>3D</a>
-<a style='font-size: 0.80em' href='//randomness'>randomness</a>
-<a style='font-size: 1.23em' href='//iOS'>iOS</a>
-<a style='font-size: 0.80em' href='//fear'>fear</a>
-<a style='font-size: 0.80em' href='//energy'>energy</a>
+    <a style='font-size: 0.80em' href='//geopolitics'>geopolitics</a>
+<a style='font-size: 1.48em' href='//unity3d'>unity3d</a>
 <a style='font-size: 0.80em' href='//geometry'>geometry</a>
-<a style='font-size: 0.80em' href='//games'>games</a>
-<a style='font-size: 0.80em' href='//carving'>carving</a>
-<a style='font-size: 1.23em' href='//unity3d'>unity3d</a>
 <a style='font-size: 1.23em' href='//modeling'>modeling</a>
-<a style='font-size: 0.80em' href='//openNI'>openNI</a>
-<a style='font-size: 0.80em' href='//drawing'>drawing</a>
-<a style='font-size: 0.80em' href='//scala'>scala</a>
-<a style='font-size: 0.80em' href='//lift'>lift</a>
 <a style='font-size: 0.80em' href='//life'>life</a>
-<a style='font-size: 0.80em' href='//openCV'>openCV</a>
-<a style='font-size: 0.80em' href='//grad-school'>grad school</a>
+<a style='font-size: 0.80em' href='//carving'>carving</a>
+<a style='font-size: 1.23em' href='//animation'>animation</a>
+<a style='font-size: 0.80em' href='//fear'>fear</a>
 <a style='font-size: 0.80em' href='//polarbear'>polarbear</a>
+<a style='font-size: 0.80em' href='//grad-school'>grad school</a>
 <a style='font-size: 1.48em' href='//game'>game</a>
-<a style='font-size: 1.23em' href='//chess'>chess</a>
-<a style='font-size: 0.80em' href='//geopolitics'>geopolitics</a>
-<a style='font-size: 1.23em' href='//engineering'>engineering</a>
-<a style='font-size: 1.23em' href='//happiness'>happiness</a>
+<a style='font-size: 1.23em' href='//iOS'>iOS</a>
+<a style='font-size: 0.80em' href='//kinect'>kinect</a>
 <a style='font-size: 1.80em' href='//education'>education</a>
+<a style='font-size: 0.80em' href='//startup'>startup</a>
+<a style='font-size: 1.23em' href='//chess'>chess</a>
+<a style='font-size: 0.80em' href='//van'>van</a>
+<a style='font-size: 1.23em' href='//happiness'>happiness</a>
+<a style='font-size: 0.80em' href='//games'>games</a>
+<a style='font-size: 0.80em' href='//openCV'>openCV</a>
+<a style='font-size: 1.23em' href='//brain'>brain</a>
+<a style='font-size: 0.80em' href='//digital-arts'>digital arts</a>
+<a style='font-size: 0.80em' href='//scala'>scala</a>
+<a style='font-size: 1.23em' href='//engineering'>engineering</a>
+<a style='font-size: 0.80em' href='//energy'>energy</a>
+<a style='font-size: 1.48em' href='//c-'>c#</a>
+<a style='font-size: 1.66em' href='//3D'>3D</a>
+<a style='font-size: 0.80em' href='//future'>future</a>
+<a style='font-size: 0.80em' href='//lift'>lift</a>
+<a style='font-size: 0.80em' href='//openNI'>openNI</a>
+<a style='font-size: 0.80em' href='//randomness'>randomness</a>
+<a style='font-size: 0.80em' href='//drawing'>drawing</a>
+<a style='font-size: 1.48em' href='//singleton'>singleton</a>
  
 </section>
 

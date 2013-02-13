@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Category: Work - tim tregubov</title>
+  <title>Category: Codes - tim tregubov</title>
   <meta name="author" content="timofei7">
 
   
-  <meta name="description" content="Category: Work">
+  <meta name="description" content="Category: Codes">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://timofei7.github.comblog/categories/work/">
+  <link rel="canonical" href="http://timofei7.github.comblog/categories/codes/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -83,7 +83,7 @@
   <li><a href="/about/">About</a></li>
   <li><a href="/blog/categories/portfolio">Portfolio</a></li>
   <li><a href="/blog/categories/writing">Writing</a></li>
-  <li><a href="/blog/categories/work">Work</a></li>
+  <li><a href="/blog/categories/codes">Codes</a></li>
   <li><a href="/blog/categories/log">Log</a></li>
   <li><a href="/resume/">Resume</a></li>
 </ul>
@@ -95,7 +95,7 @@
 <article role="article">
   
   <header>
-    <h1 class="entry-title">Category: Work</h1>
+    <h1 class="entry-title">Category: Codes</h1>
     
   </header>
   
@@ -111,12 +111,45 @@
 
 <article>
   
+<h1><a href="/blog/2013/02/05/unity-coroutine-wrapper/">wrapping Unity C# coroutines for exception handling, value retrieval, and locking</a></h1>
+
+<!-- figure out how to include excerpt here-->
+<div class="entry-content"><p>Firstly, coroutines are awesome.  If you aren't familiar with them (particularly in the contenxt of Unity3d) then you should be.  In short, <a href="http://en.wikipedia.org/wiki/Coroutine">coroutines</a> are methods that can suspend and resume execution.  In the context of Unity what this means is that you can have methods that appear to run concurrently. The Unity documentation has some <a href="http://docs.unity3d.com/Documentation/ScriptReference/index.Coroutines_26_Yield.html">examples</a>.</p>
+
+<p>Coroutines are <strong>the</strong> way to script a lot of things in Unity, however there are a few problems that you may run into if you use them heavily: exception handling, return values, and locking. Especially if you use nested coroutines!</p>
+</div>
+    
+    
+       <footer>
+       <a rel="full-article" href="/blog/2013/02/05/unity-coroutine-wrapper/">more &rarr;</a>
+       </footer>
+    
+
+<time datetime="2013-02-05T01:40:00-08:00" pubdate><span class='month'>Feb</span> <span class='day'>05</span> <span class='year'>2013</span></time>
+<!--
+
+<footer>
+  <span class="categories">posted in <a class='category' href='/blog/categories/codes/'>Codes</a></span>
+</footer>
+
+-->
+
+
+</article>
+
+
+
+ <!--do need this-->
+
+
+<article>
+  
 <h1><a href="/blog/2013/01/11/unity-prefab-singleton/">generic singleton MonoBehavior part 2: singleton self loading prefab</a></h1>
 
 <!-- figure out how to include excerpt here-->
-<div class="entry-content"><p>I had a <a href="blog/2012/04/26/unity-singletons/">previous post</a> about singletons in <a href="http://www.unity3d.com">Unity3D</a> and have since added a useful functionality to that class.  One of the useful features of a singleton is that it is self instantiating.  As a MonoBehaviour in Unity you may have a class that has serializable public variables available within the Unity editor to allow easy tweaking of variables / for artists to modify / to hook up to other Unity compenents easily. Additionally you are probably using <a href="http://docs.unity3d.com/Documentation/Manual/Prefabs.html">prefabs</a> to manage game components in your scenes.</p>
+<div class="entry-content"><p>I had a <a href="blog/2012/04/26/unity-singletons/">previous post</a> about singletons in <a href="http://www.unity3d.com">Unity3D</a> and have since added a useful functionality to that class.  One of the useful features of a singleton is that it is self instantiating.  But what if you want to use the Unity editor to expose some public variables and have some other assets hooked into your singleton?  So since you are probably using <a href="http://docs.unity3d.com/Documentation/Manual/Prefabs.html">prefabs</a> to manage game components in your scenes anyway, seems like it might be useful to have a self-loading prefab for components such as the player or a gui controller.</p>
 
-<p>What I wanted to have was a prefab with a singleton on it that I could dump in the Resources folder and have it be self-loading.  Just as singletons allow for really nice static access methods, this would allow me to really easily organize my project as a bunch of prefabs and when a level needed a particular component it would just use it, no need to instantiate and keep a reference within some big main class, nor keep it in the scene heirarchy at all to begin with.</p>
+<p>Just as singletons allow for really nice static access methods, this would allow me to really easily organize my project as a bunch of prefabs dumped into the Resources directory and when a level needed a particular component it would just use it, no need to instantiate and keep a reference within some big main class, nor keep it in the scene heirarchy at all to begin with.</p>
 </div>
     
     
@@ -129,7 +162,7 @@
 <!--
 
 <footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/work/'>Work</a></span>
+  <span class="categories">posted in <a class='category' href='/blog/categories/codes/'>Codes</a></span>
 </footer>
 
 -->
@@ -170,7 +203,7 @@
 <!--
 
 <footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/work/'>Work</a></span>
+  <span class="categories">posted in <a class='category' href='/blog/categories/codes/'>Codes</a></span>
 </footer>
 
 -->
@@ -257,6 +290,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/02/05/unity-coroutine-wrapper/">wrapping Unity C# coroutines for exception handling, value retrieval, and locking</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/01/11/unity-prefab-singleton/">generic singleton MonoBehavior part 2: singleton self loading prefab</a>
       </li>
     
@@ -272,49 +309,45 @@
         <a href="/blog/2012/04/09/udunit/">udunit</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2011/12/15/chessinvaders/">chessInvaders</a>
-      </li>
-    
   </ul>
 </section>
 
 
 <section class="tag-cloud">
     <h1>Tags</h1>
-    <a style='font-size: 1.23em' href='//engineering'>engineering</a>
-<a style='font-size: 0.80em' href='//geometry'>geometry</a>
-<a style='font-size: 0.80em' href='//carving'>carving</a>
-<a style='font-size: 1.48em' href='//game'>game</a>
-<a style='font-size: 1.23em' href='//happiness'>happiness</a>
-<a style='font-size: 0.80em' href='//geopolitics'>geopolitics</a>
-<a style='font-size: 1.23em' href='//animation'>animation</a>
-<a style='font-size: 0.80em' href='//randomness'>randomness</a>
-<a style='font-size: 0.80em' href='//energy'>energy</a>
-<a style='font-size: 0.80em' href='//grad-school'>grad school</a>
-<a style='font-size: 0.80em' href='//polarbear'>polarbear</a>
-<a style='font-size: 0.80em' href='//fear'>fear</a>
+    <a style='font-size: 0.80em' href='//carving'>carving</a>
 <a style='font-size: 0.80em' href='//kinect'>kinect</a>
-<a style='font-size: 0.80em' href='//openCV'>openCV</a>
-<a style='font-size: 0.80em' href='//life'>life</a>
-<a style='font-size: 0.80em' href='//startup'>startup</a>
-<a style='font-size: 0.80em' href='//van'>van</a>
-<a style='font-size: 0.80em' href='//future'>future</a>
-<a style='font-size: 1.23em' href='//singleton'>singleton</a>
-<a style='font-size: 1.66em' href='//3D'>3D</a>
-<a style='font-size: 1.23em' href='//brain'>brain</a>
-<a style='font-size: 1.23em' href='//iOS'>iOS</a>
-<a style='font-size: 0.80em' href='//lift'>lift</a>
-<a style='font-size: 0.80em' href='//openNI'>openNI</a>
-<a style='font-size: 0.80em' href='//scala'>scala</a>
-<a style='font-size: 1.23em' href='//modeling'>modeling</a>
-<a style='font-size: 0.80em' href='//drawing'>drawing</a>
 <a style='font-size: 0.80em' href='//games'>games</a>
-<a style='font-size: 0.80em' href='//digital-arts'>digital arts</a>
-<a style='font-size: 1.23em' href='//unity3d'>unity3d</a>
-<a style='font-size: 1.80em' href='//education'>education</a>
-<a style='font-size: 1.23em' href='//c-'>c#</a>
+<a style='font-size: 0.80em' href='//van'>van</a>
+<a style='font-size: 1.48em' href='//c-'>c#</a>
 <a style='font-size: 1.23em' href='//chess'>chess</a>
+<a style='font-size: 0.80em' href='//openNI'>openNI</a>
+<a style='font-size: 0.80em' href='//geometry'>geometry</a>
+<a style='font-size: 0.80em' href='//openCV'>openCV</a>
+<a style='font-size: 0.80em' href='//future'>future</a>
+<a style='font-size: 0.80em' href='//energy'>energy</a>
+<a style='font-size: 1.23em' href='//engineering'>engineering</a>
+<a style='font-size: 1.23em' href='//modeling'>modeling</a>
+<a style='font-size: 1.23em' href='//animation'>animation</a>
+<a style='font-size: 0.80em' href='//drawing'>drawing</a>
+<a style='font-size: 1.80em' href='//education'>education</a>
+<a style='font-size: 1.48em' href='//game'>game</a>
+<a style='font-size: 0.80em' href='//startup'>startup</a>
+<a style='font-size: 0.80em' href='//lift'>lift</a>
+<a style='font-size: 1.23em' href='//happiness'>happiness</a>
+<a style='font-size: 0.80em' href='//polarbear'>polarbear</a>
+<a style='font-size: 1.23em' href='//brain'>brain</a>
+<a style='font-size: 0.80em' href='//life'>life</a>
+<a style='font-size: 1.48em' href='//unity3d'>unity3d</a>
+<a style='font-size: 0.80em' href='//digital-arts'>digital arts</a>
+<a style='font-size: 1.23em' href='//iOS'>iOS</a>
+<a style='font-size: 0.80em' href='//geopolitics'>geopolitics</a>
+<a style='font-size: 1.66em' href='//3D'>3D</a>
+<a style='font-size: 1.48em' href='//singleton'>singleton</a>
+<a style='font-size: 0.80em' href='//fear'>fear</a>
+<a style='font-size: 0.80em' href='//grad-school'>grad school</a>
+<a style='font-size: 0.80em' href='//scala'>scala</a>
+<a style='font-size: 0.80em' href='//randomness'>randomness</a>
  
 </section>
 
