@@ -3,13 +3,13 @@ layout: post
 title: "generic singleton MonoBehavior part 2: singleton self loading prefab"
 date: 2013-01-11 01:40
 comments: true
-categories:  Work
+categories: Codes 
 tags: [unity3d, c#, singleton]
 ---
 
-I had a [previous post](blog/2012/04/26/unity-singletons/) about singletons in [Unity3D](http://www.unity3d.com) and have since added a useful functionality to that class.  One of the useful features of a singleton is that it is self instantiating.  As a MonoBehaviour in Unity you may have a class that has serializable public variables available within the Unity editor to allow easy tweaking of variables / for artists to modify / to hook up to other Unity compenents easily. Additionally you are probably using [prefabs](http://docs.unity3d.com/Documentation/Manual/Prefabs.html) to manage game components in your scenes.
+I had a [previous post](blog/2012/04/26/unity-singletons/) about singletons in [Unity3D](http://www.unity3d.com) and have since added a useful functionality to that class.  One of the useful features of a singleton is that it is self instantiating.  But what if you want to use the Unity editor to expose some public variables and have some other assets hooked into your singleton?  So since you are probably using [prefabs](http://docs.unity3d.com/Documentation/Manual/Prefabs.html) to manage game components in your scenes anyway, seems like it might be useful to have a self-loading prefab for components such as the player or a gui controller. 
 
-What I wanted to have was a prefab with a singleton on it that I could dump in the Resources folder and have it be self-loading.  Just as singletons allow for really nice static access methods, this would allow me to really easily organize my project as a bunch of prefabs and when a level needed a particular component it would just use it, no need to instantiate and keep a reference within some big main class, nor keep it in the scene heirarchy at all to begin with. 
+Just as singletons allow for really nice static access methods, this would allow me to really easily organize my project as a bunch of prefabs dumped into the Resources directory and when a level needed a particular component it would just use it, no need to instantiate and keep a reference within some big main class, nor keep it in the scene heirarchy at all to begin with. 
 
 <!--more--> 
 

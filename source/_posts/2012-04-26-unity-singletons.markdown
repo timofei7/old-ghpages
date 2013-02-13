@@ -3,7 +3,7 @@ layout: post
 title: "generic singleton MonoBehavior class"
 date: 2012-04-26 01:40
 comments: true
-categories:  Work
+categories: Codes 
 tags: [unity3d, c#, singleton]
 ---
 
