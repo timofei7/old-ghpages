@@ -4,7 +4,7 @@ title: "wrapping Unity C# coroutines for exception handling, value retrieval, an
 date: 2013-02-05 01:40
 comments: true
 categories: Codes 
-tags: [unity3d, c#, singleton]
+tags: [unity3d, c#, coroutine]
 ---
 
 Firstly, coroutines are awesome.  If you aren't familiar with them (particularly in the contenxt of Unity3d) then you should be.  In short, [coroutines](http://en.wikipedia.org/wiki/Coroutine) are methods that can suspend and resume execution.  In the context of Unity what this means is that you can have methods that appear to run concurrently. The Unity documentation has some [examples](http://docs.unity3d.com/Documentation/ScriptReference/index.Coroutines_26_Yield.html).
