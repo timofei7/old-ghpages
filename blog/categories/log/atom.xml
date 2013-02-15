@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Log | tim tregubov]]></title>
   <link href="http://timofei7.github.com/blog/categories/log/atom.xml" rel="self"/>
   <link href="http://timofei7.github.com/"/>
-  <updated>2013-02-13T15:50:54-08:00</updated>
+  <updated>2013-02-14T17:10:18-08:00</updated>
   <id>http://timofei7.github.com/</id>
   <author>
     <name><![CDATA[timofei7]]></name>
@@ -12,6 +12,19 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[chessInvaders update]]></title>
+    <link href="http://timofei7.github.com/blog/2013/02/14/chessinvaders-update/"/>
+    <updated>2013-02-14T01:40:00-08:00</updated>
+    <id>http://timofei7.github.com/blog/2013/02/14/chessinvaders-update</id>
+    <content type="html"><![CDATA[<p>ChessInvaders is submitted to the Apple App store and is pending review!  I have a <a href="/chessinvaders/webplayer/">limited functionality web port up</a>. Some stuff doesn't work due to it being on the web rather than on iOS.  To pinch the screen hold down the option key.</p>
+
+<p>Turns out that porting to the web wasn't straightforward at all. The Unity web player runs in a partial trust environment which ends up affecting Coroutines in a weird way.  If you have some classes where you are overriding virtual IEnumerator or Coroutine methods but still want to call the base class versions then those trigger a ValidationException.  All my GUI code is built out of smaller components which all have virtual Coroutine TurnOn/TurnOff methods, blam, that won't work on the web.  I hacked it up to work for now, but some functionality isn't there (highscores) and its not worth it to try to redesign my GUI code right now.</p>
+
+<p>Regardless, hopefully soon it'll be coming to the app store on an iOS device near you!  Also it'll be free.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[chessInvaders update]]></title>

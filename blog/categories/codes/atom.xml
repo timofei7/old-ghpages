@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Codes | tim tregubov]]></title>
   <link href="http://timofei7.github.com/blog/categories/codes/atom.xml" rel="self"/>
   <link href="http://timofei7.github.com/"/>
-  <updated>2013-02-13T15:50:54-08:00</updated>
+  <updated>2013-02-14T17:10:18-08:00</updated>
   <id>http://timofei7.github.com/</id>
   <author>
     <name><![CDATA[timofei7]]></name>
@@ -18,7 +18,7 @@
     <link href="http://timofei7.github.com/blog/2013/02/05/unity-coroutine-wrapper/"/>
     <updated>2013-02-05T01:40:00-08:00</updated>
     <id>http://timofei7.github.com/blog/2013/02/05/unity-coroutine-wrapper</id>
-    <content type="html"><![CDATA[<p>Firstly, coroutines are awesome.  If you aren't familiar with them (particularly in the contenxt of Unity3d) then you should be.  In short, <a href="http://en.wikipedia.org/wiki/Coroutine">coroutines</a> are methods that can suspend and resume execution.  In the context of Unity what this means is that you can have methods that appear to run concurrently. The Unity documentation has some <a href="http://docs.unity3d.com/Documentation/ScriptReference/index.Coroutines_26_Yield.html">examples</a>.</p>
+    <content type="html"><![CDATA[<p>Firstly, coroutines are awesome.  If you aren't familiar with them (particularly in the context of Unity3d) then you should be.  In short, <a href="http://en.wikipedia.org/wiki/Coroutine">coroutines</a> are methods that can suspend and resume execution.  In the context of Unity what this means is that you can have methods that appear to run concurrently. The Unity documentation has some <a href="http://docs.unity3d.com/Documentation/ScriptReference/index.Coroutines_26_Yield.html">examples</a>.</p>
 
 <p>Coroutines are <strong>the</strong> way to script a lot of things in Unity, however there are a few problems that you may run into if you use them heavily: exception handling, return values, and locking. Especially if you use nested coroutines!</p>
 

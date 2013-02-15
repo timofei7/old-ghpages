@@ -4,7 +4,7 @@
   <title><![CDATA[tim tregubov]]></title>
   <link href="http://timofei7.github.com/atom.xml" rel="self"/>
   <link href="http://timofei7.github.com/"/>
-  <updated>2013-02-13T15:50:54-08:00</updated>
+  <updated>2013-02-14T17:10:18-08:00</updated>
   <id>http://timofei7.github.com/</id>
   <author>
     <name><![CDATA[timofei7]]></name>
@@ -14,11 +14,24 @@
 
   
   <entry>
+    <title type="html"><![CDATA[chessInvaders update]]></title>
+    <link href="http://timofei7.github.com/blog/2013/02/14/chessinvaders-update/"/>
+    <updated>2013-02-14T01:40:00-08:00</updated>
+    <id>http://timofei7.github.com/blog/2013/02/14/chessinvaders-update</id>
+    <content type="html"><![CDATA[<p>ChessInvaders is submitted to the Apple App store and is pending review!  I have a <a href="http://timofei7.github.com/chessinvaders/webplayer/">limited functionality web port up</a>. Some stuff doesn&#8217;t work due to it being on the web rather than on iOS.  To pinch the screen hold down the option key.</p>
+
+<p>Turns out that porting to the web wasn&#8217;t straightforward at all. The Unity web player runs in a partial trust environment which ends up affecting Coroutines in a weird way.  If you have some classes where you are overriding virtual IEnumerator or Coroutine methods but still want to call the base class versions then those trigger a ValidationException.  All my GUI code is built out of smaller components which all have virtual Coroutine TurnOn/TurnOff methods, blam, that won&#8217;t work on the web.  I hacked it up to work for now, but some functionality isn&#8217;t there (highscores) and its not worth it to try to redesign my GUI code right now.</p>
+
+<p>Regardless, hopefully soon it&#8217;ll be coming to the app store on an iOS device near you!  Also it&#8217;ll be free.</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[wrapping Unity C# coroutines for exception handling, value retrieval, and locking]]></title>
     <link href="http://timofei7.github.com/blog/2013/02/05/unity-coroutine-wrapper/"/>
     <updated>2013-02-05T01:40:00-08:00</updated>
     <id>http://timofei7.github.com/blog/2013/02/05/unity-coroutine-wrapper</id>
-    <content type="html"><![CDATA[<p>Firstly, coroutines are awesome.  If you aren&#8217;t familiar with them (particularly in the contenxt of Unity3d) then you should be.  In short, <a href="http://en.wikipedia.org/wiki/Coroutine">coroutines</a> are methods that can suspend and resume execution.  In the context of Unity what this means is that you can have methods that appear to run concurrently. The Unity documentation has some <a href="http://docs.unity3d.com/Documentation/ScriptReference/index.Coroutines_26_Yield.html">examples</a>.</p>
+    <content type="html"><![CDATA[<p>Firstly, coroutines are awesome.  If you aren&#8217;t familiar with them (particularly in the context of Unity3d) then you should be.  In short, <a href="http://en.wikipedia.org/wiki/Coroutine">coroutines</a> are methods that can suspend and resume execution.  In the context of Unity what this means is that you can have methods that appear to run concurrently. The Unity documentation has some <a href="http://docs.unity3d.com/Documentation/ScriptReference/index.Coroutines_26_Yield.html">examples</a>.</p>
 
 <p>Coroutines are <strong>the</strong> way to script a lot of things in Unity, however there are a few problems that you may run into if you use them heavily: exception handling, return values, and locking. Especially if you use nested coroutines!</p>
 
@@ -3416,79 +3429,6 @@ picasaOptions: {
 
 
 <p>When I was a kid I used to love drawing, but by puberty I had exchanged it for computer games and model airplanes.  When I took drawing in college it was like I was a kid again.  This was another one of those fulfilling classes by the end of which I was confident that given some charcoal and paper and time I could create an aesthetically unoffensive and even possibly recognizable likeness of anything.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Spooked and Confused]]></title>
-    <link href="http://timofei7.github.com/blog/2008/05/06/spooked-and-confused/"/>
-    <updated>2008-05-06T23:54:31-07:00</updated>
-    <id>http://timofei7.github.com/blog/2008/05/06/spooked-and-confused</id>
-    <content type="html"><![CDATA[<iframe id="spookedandconfused" width="853" height="480" src="http://www.youtube.com/embed/MrN5V19rvAk?rel=0&amp;hd=1" frameborder="0" allowfullscreen></iframe>
-
-
-<p><strong>Spooked and Confused</strong><br/>
-Final 3D animation project from CS42 at Dartmouth. I worked on this with:
-Graham Baecher, Jen Huang, and Justin Slick. Some good times spent in the lab!</p>
-
-<!--more-->
-
-
-<p></p>
-
-<p><em>Spoiler Alert</em></p>
-
-<p>What I worked on:</p>
-
-<ul>
-<li>Animation:
-
-<ul>
-<li>Intro Lamp</li>
-<li>UFO flying/landing</li>
-<li>Angry and Biting</li>
-<li>&#8220;Mine Mine&#8221;</li>
-</ul>
-</li>
-<li>Modeling:
-
-<ul>
-<li>Glamber&#8217;s head and face</li>
-<li>Glamber&#8217;s eyes</li>
-<li>Parts of the environment</li>
-<li>Parts of ship</li>
-<li>One pumpkin</li>
-</ul>
-</li>
-<li>Skinning/Rigging:
-
-<ul>
-<li>Glamber Skin</li>
-<li>SpaceShip Rig</li>
-<li>Pumpkin blend shapes</li>
-</ul>
-</li>
-<li>Texturing/Visual Effects/Rendering:
-
-<ul>
-<li>Glamber Texture</li>
-<li>Glamber&#8217;s Eyes texturing/lighting</li>
-<li>SpaceShip Glow Effect</li>
-<li>Environmental Fog and Lighting</li>
-<li>House texture</li>
-<li>Hills texturing</li>
-<li>Pumpkin Zapping effect</li>
-<li>Pumpkin smoke</li>
-</ul>
-</li>
-<li>Sound:
-
-<ul>
-<li>1/2 sound effects/music</li>
-</ul>
-</li>
-</ul>
-
 ]]></content>
   </entry>
   

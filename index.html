@@ -9,7 +9,7 @@
   <meta name="author" content="timofei7">
 
   
-  <meta name="description" content="Firstly, coroutines are awesome. If you aren&#8217;t familiar with them (particularly in the contenxt of Unity3d) then you should be. In short, &hellip;">
+  <meta name="description" content="ChessInvaders is submitted to the Apple App store and is pending review! I have a limited functionality web port up. Some stuff doesn&#8217;t work &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -99,6 +99,46 @@
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2013/02/14/chessinvaders-update/">chessInvaders Update</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-02-14T01:40:00-08:00" pubdate data-updated="true">Feb 14<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>ChessInvaders is submitted to the Apple App store and is pending review!  I have a <a href="/chessinvaders/webplayer/">limited functionality web port up</a>. Some stuff doesn&#8217;t work due to it being on the web rather than on iOS.  To pinch the screen hold down the option key.</p>
+
+<p>Turns out that porting to the web wasn&#8217;t straightforward at all. The Unity web player runs in a partial trust environment which ends up affecting Coroutines in a weird way.  If you have some classes where you are overriding virtual IEnumerator or Coroutine methods but still want to call the base class versions then those trigger a ValidationException.  All my GUI code is built out of smaller components which all have virtual Coroutine TurnOn/TurnOff methods, blam, that won&#8217;t work on the web.  I hacked it up to work for now, but some functionality isn&#8217;t there (highscores) and its not worth it to try to redesign my GUI code right now.</p>
+
+<p>Regardless, hopefully soon it&#8217;ll be coming to the app store on an iOS device near you!  Also it&#8217;ll be free.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2013/02/05/unity-coroutine-wrapper/">Wrapping Unity C# Coroutines for Exception Handling, Value Retrieval, and Locking</a></h1>
     
     
@@ -122,7 +162,7 @@
   </header>
 
 
-  <div class="entry-content"><p>Firstly, coroutines are awesome.  If you aren&#8217;t familiar with them (particularly in the contenxt of Unity3d) then you should be.  In short, <a href="http://en.wikipedia.org/wiki/Coroutine">coroutines</a> are methods that can suspend and resume execution.  In the context of Unity what this means is that you can have methods that appear to run concurrently. The Unity documentation has some <a href="http://docs.unity3d.com/Documentation/ScriptReference/index.Coroutines_26_Yield.html">examples</a>.</p>
+  <div class="entry-content"><p>Firstly, coroutines are awesome.  If you aren&#8217;t familiar with them (particularly in the context of Unity3d) then you should be.  In short, <a href="http://en.wikipedia.org/wiki/Coroutine">coroutines</a> are methods that can suspend and resume execution.  In the context of Unity what this means is that you can have methods that appear to run concurrently. The Unity documentation has some <a href="http://docs.unity3d.com/Documentation/ScriptReference/index.Coroutines_26_Yield.html">examples</a>.</p>
 
 <p>Coroutines are <strong>the</strong> way to script a lot of things in Unity, however there are a few problems that you may run into if you use them heavily: exception handling, return values, and locking. Especially if you use nested coroutines!</p>
 
@@ -526,48 +566,6 @@ brain is sooo cool.</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/04/30/why-the-dlpfc-is-the-coolest-part-of-the-brain/">Why the DLPFC Is the Coolest Part of the Brain</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-04-30T01:33:47-07:00" pubdate data-updated="true">Apr 30<span>th</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>want to learn about why the dorsolateral prefrontal cortex is the coolest part
-of the brain?</p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2010/04/30/why-the-dlpfc-is-the-coolest-part-of-the-brain/">more &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -648,6 +646,10 @@ of the brain?</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/02/14/chessinvaders-update/">chessInvaders update</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/02/05/unity-coroutine-wrapper/">wrapping Unity C# coroutines for exception handling, value retrieval, and locking</a>
       </li>
     
@@ -663,49 +665,46 @@ of the brain?</p>
         <a href="/blog/2012/04/26/unity-singletons/">generic singleton MonoBehavior class</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2012/04/09/udunit/">udunit</a>
-      </li>
-    
   </ul>
 </section>
 
 
 <section class="tag-cloud">
     <h1>Tags</h1>
-    <a style='font-size: 0.80em' href='//energy'>energy</a>
-<a style='font-size: 0.80em' href='//fear'>fear</a>
-<a style='font-size: 1.23em' href='//animation'>animation</a>
-<a style='font-size: 1.23em' href='//iOS'>iOS</a>
-<a style='font-size: 0.80em' href='//carving'>carving</a>
-<a style='font-size: 0.80em' href='//openNI'>openNI</a>
-<a style='font-size: 1.48em' href='//c-'>c#</a>
-<a style='font-size: 0.80em' href='//digital-arts'>digital arts</a>
-<a style='font-size: 0.80em' href='//geopolitics'>geopolitics</a>
-<a style='font-size: 1.48em' href='//unity3d'>unity3d</a>
-<a style='font-size: 0.80em' href='//randomness'>randomness</a>
-<a style='font-size: 1.23em' href='//brain'>brain</a>
-<a style='font-size: 0.80em' href='//polarbear'>polarbear</a>
+    <a style='font-size: 1.19em' href='//modeling'>modeling</a>
+<a style='font-size: 1.41em' href='//unity3d'>unity3d</a>
 <a style='font-size: 0.80em' href='//kinect'>kinect</a>
-<a style='font-size: 1.23em' href='//chess'>chess</a>
-<a style='font-size: 0.80em' href='//games'>games</a>
-<a style='font-size: 0.80em' href='//van'>van</a>
-<a style='font-size: 1.23em' href='//happiness'>happiness</a>
-<a style='font-size: 1.66em' href='//3D'>3D</a>
-<a style='font-size: 1.48em' href='//game'>game</a>
 <a style='font-size: 0.80em' href='//grad-school'>grad school</a>
+<a style='font-size: 1.57em' href='//game'>game</a>
+<a style='font-size: 1.57em' href='//3D'>3D</a>
+<a style='font-size: 0.80em' href='//fear'>fear</a>
+<a style='font-size: 0.80em' href='//energy'>energy</a>
+<a style='font-size: 0.80em' href='//digital-arts'>digital arts</a>
+<a style='font-size: 0.80em' href='//lift'>lift</a>
+<a style='font-size: 0.80em' href='//polarbear'>polarbear</a>
 <a style='font-size: 0.80em' href='//future'>future</a>
+<a style='font-size: 1.19em' href='//engineering'>engineering</a>
+<a style='font-size: 1.19em' href='//animation'>animation</a>
+<a style='font-size: 0.80em' href='//geopolitics'>geopolitics</a>
+<a style='font-size: 1.41em' href='//chess'>chess</a>
+<a style='font-size: 0.80em' href='//geometry'>geometry</a>
+<a style='font-size: 1.19em' href='//brain'>brain</a>
+<a style='font-size: 1.19em' href='//happiness'>happiness</a>
+<a style='font-size: 1.41em' href='//c-'>c#</a>
+<a style='font-size: 0.80em' href='//scala'>scala</a>
+<a style='font-size: 0.80em' href='//openNI'>openNI</a>
+<a style='font-size: 1.19em' href='//singleton'>singleton</a>
+<a style='font-size: 0.80em' href='//life'>life</a>
+<a style='font-size: 1.80em' href='//education'>education</a>
+<a style='font-size: 0.80em' href='//van'>van</a>
+<a style='font-size: 1.41em' href='//iOS'>iOS</a>
+<a style='font-size: 0.80em' href='//coroutine'>coroutine</a>
+<a style='font-size: 0.80em' href='//games'>games</a>
+<a style='font-size: 0.80em' href='//carving'>carving</a>
 <a style='font-size: 0.80em' href='//drawing'>drawing</a>
 <a style='font-size: 0.80em' href='//openCV'>openCV</a>
-<a style='font-size: 1.48em' href='//singleton'>singleton</a>
-<a style='font-size: 0.80em' href='//life'>life</a>
-<a style='font-size: 0.80em' href='//scala'>scala</a>
-<a style='font-size: 0.80em' href='//geometry'>geometry</a>
-<a style='font-size: 1.23em' href='//modeling'>modeling</a>
-<a style='font-size: 0.80em' href='//lift'>lift</a>
+<a style='font-size: 0.80em' href='//randomness'>randomness</a>
 <a style='font-size: 0.80em' href='//startup'>startup</a>
-<a style='font-size: 1.23em' href='//engineering'>engineering</a>
-<a style='font-size: 1.80em' href='//education'>education</a>
  
 </section>
 
