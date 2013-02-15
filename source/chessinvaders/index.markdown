@@ -22,4 +22,3 @@ Can you save the universe from the attacking hordes of Pawns? Are you a master o
 * By having to quickly move pieces according to their movement rules, you will  learn those rules and be able to practice them while saving the universe.
 * Keep your moves precise and efficient and get powerups!
 
-
