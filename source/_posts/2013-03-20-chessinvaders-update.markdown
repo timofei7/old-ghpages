@@ -27,6 +27,8 @@ Schach ist öde und nur was für Langweiler und Nerds?? Chess Invaders definitiv
 {% endblockquote %}
 {% endpullquote %}
 
+<!--more-->
+
 {% blockquote AnkaLeoNika https://itunes.apple.com/app/chess-invaders/id575380345 %}
 Anyone can play this colorful flashy game, but not everyone can beat it!
 {% endblockquote %}
