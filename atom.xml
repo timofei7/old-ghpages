@@ -4,7 +4,7 @@
   <title><![CDATA[tim tregubov]]></title>
   <link href="http://timofei7.github.com/atom.xml" rel="self"/>
   <link href="http://timofei7.github.com/"/>
-  <updated>2013-02-14T17:10:18-08:00</updated>
+  <updated>2013-03-27T18:19:51-04:00</updated>
   <id>http://timofei7.github.com/</id>
   <author>
     <name><![CDATA[timofei7]]></name>
@@ -15,8 +15,53 @@
   
   <entry>
     <title type="html"><![CDATA[chessInvaders update]]></title>
+    <link href="http://timofei7.github.com/blog/2013/03/20/chessinvaders-update/"/>
+    <updated>2013-03-20T05:18:00-04:00</updated>
+    <id>http://timofei7.github.com/blog/2013/03/20/chessinvaders-update</id>
+    <content type="html"><![CDATA[<p>It has been a month since <a href="https://itunes.apple.com/app/chess-invaders/id575380345">ChessInvaders</a> was published in the App Store!  It has &#8220;sold&#8221; (for free) more than 6k copies, and has been engaged with (played through at least one level) almost 15k times.  The download rate has slowed to about 10 a day, but about double that are playing every day!  I&#8217;m pretty happy with that given that it&#8217;s a pretty hard and definitely beta quality game experience.</p>
+
+<p>There have even been some reviews!</p>
+
+<p><span class='pullquote-right' data-pullquote='vibrant colored retro-style 3-D graphics'></p>
+
+<blockquote><p>In this unique tower defense game, the battlefield is a Chess board and the warriors Chess pieces. You will control the courageous knight and fend off the waves of evil pawns. The game features three unlockable worlds, vibrant colored retro-style 3-D graphics, an electrifying soundtrack, and Game Center integration.</p><footer><strong>appadvice.com</strong> <cite><a href='http://appadvice.com/appnn/2013/02/todays-best-apps-word-dig-chess-invaders-and-sequences'>appadvice.com/appnn/2013/02/&hellip;</a></cite></footer></blockquote>
+
+
+<p></span></p>
+
+<blockquote><p>&#8220;Some people might be interested in chess but just find the typical game a bit too boring. […] Chess Invaders is poised to change all that for you. &#8221;</p><footer><strong>touchmyapps.com</strong> <cite><a href='http://www.touchmyapps.com/2013/02/20/10-new-app-store-games-in-review-february-11-17/'>www.touchmyapps.com/2013/02/20/&hellip;</a></cite></footer></blockquote>
+
+
+<p><span class='pullquote-right' data-pullquote='sensationelle 3D-Grafiken'></p>
+
+<blockquote><p>Schach ist öde und nur was für Langweiler und Nerds?? Chess Invaders definitiv nicht! Bereits beim Start überzeugt das Spiel von Entwickler Tim Tregubov durch sensationelle 3D-Grafiken. Ein besonders cooles Feature ist auch, dass es sich zwar eindeutig um Schach handelt, das Spiel aber eigentlich an etwas ganz anderes erinnert.</p><footer><strong>appgamers.de</strong> <cite><a href='http://www.appgamers.de/chess-invaders-abgespacetes-schach/'>www.appgamers.de/&hellip;</a></cite></footer></blockquote>
+
+
+<p></span></p>
+
+<blockquote><p>Anyone can play this colorful flashy game, but not everyone can beat it!</p><footer><strong>AnkaLeoNika</strong> <cite><a href='https://itunes.apple.com/app/chess-invaders/id575380345'>itunes.apple.com/app/&hellip;</a></cite></footer></blockquote>
+
+
+
+
+<blockquote><p>&#8220;Love the concept and the art!&#8221;</p><footer><strong>jenhuang87</strong> <cite><a href='https://itunes.apple.com/app/chess-invaders/id575380345'>itunes.apple.com/app/&hellip;</a></cite></footer></blockquote>
+
+
+<p></p>
+
+<p>Download it here:
+<a href="https://itunes.apple.com/app/chess-invaders/id575380345">https://itunes.apple.com/app/chess-invaders/id575380345</a></p>
+
+<p>People have been discovering some pretty cool bugs along the way: including floating pawns and exploding gui elements!  The game turns out to be pretty hard, and especially hard on smaller screens.  At the last minute, I added an option to slow the game down (under Settings), and made some tweaks to the spawn rate, but don&#8217;t be disheartened if you can&#8217;t beat it &#8211; only 32 people have so far.</p>
+
+<p>All in all, I have had some great feedback and have learned a lot!  I&#8217;ve started working on the next game, a color mixing puzzle game, which is coming along much faster, after which I hope to revisit ChessInvaders and give it a good reworking to make it more fun!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[chessInvaders update]]></title>
     <link href="http://timofei7.github.com/blog/2013/02/14/chessinvaders-update/"/>
-    <updated>2013-02-14T01:40:00-08:00</updated>
+    <updated>2013-02-14T01:40:00-05:00</updated>
     <id>http://timofei7.github.com/blog/2013/02/14/chessinvaders-update</id>
     <content type="html"><![CDATA[<p>ChessInvaders is submitted to the Apple App store and is pending review!  I have a <a href="http://timofei7.github.com/chessinvaders/webplayer/">limited functionality web port up</a>. Some stuff doesn&#8217;t work due to it being on the web rather than on iOS.  To pinch the screen hold down the option key.</p>
 
@@ -29,7 +74,7 @@
   <entry>
     <title type="html"><![CDATA[wrapping Unity C# coroutines for exception handling, value retrieval, and locking]]></title>
     <link href="http://timofei7.github.com/blog/2013/02/05/unity-coroutine-wrapper/"/>
-    <updated>2013-02-05T01:40:00-08:00</updated>
+    <updated>2013-02-05T01:40:00-05:00</updated>
     <id>http://timofei7.github.com/blog/2013/02/05/unity-coroutine-wrapper</id>
     <content type="html"><![CDATA[<p>Firstly, coroutines are awesome.  If you aren&#8217;t familiar with them (particularly in the context of Unity3d) then you should be.  In short, <a href="http://en.wikipedia.org/wiki/Coroutine">coroutines</a> are methods that can suspend and resume execution.  In the context of Unity what this means is that you can have methods that appear to run concurrently. The Unity documentation has some <a href="http://docs.unity3d.com/Documentation/ScriptReference/index.Coroutines_26_Yield.html">examples</a>.</p>
 
@@ -619,7 +664,7 @@
   <entry>
     <title type="html"><![CDATA[generic singleton MonoBehavior part 2: singleton self loading prefab]]></title>
     <link href="http://timofei7.github.com/blog/2013/01/11/unity-prefab-singleton/"/>
-    <updated>2013-01-11T01:40:00-08:00</updated>
+    <updated>2013-01-11T01:40:00-05:00</updated>
     <id>http://timofei7.github.com/blog/2013/01/11/unity-prefab-singleton</id>
     <content type="html"><![CDATA[<p>I had a <a href="blog/2012/04/26/unity-singletons/">previous post</a> about singletons in <a href="http://www.unity3d.com">Unity3D</a> and have since added a useful functionality to that class.  One of the useful features of a singleton is that it is self instantiating.  But what if you want to use the Unity editor to expose some public variables and have some other assets hooked into your singleton?  So since you are probably using <a href="http://docs.unity3d.com/Documentation/Manual/Prefabs.html">prefabs</a> to manage game components in your scenes anyway, seems like it might be useful to have a self-loading prefab for components such as the player or a gui controller.</p>
 
@@ -937,7 +982,7 @@
   <entry>
     <title type="html"><![CDATA[chessInvaders update]]></title>
     <link href="http://timofei7.github.com/blog/2012/11/25/chessinvaders-update/"/>
-    <updated>2012-11-25T01:40:00-08:00</updated>
+    <updated>2012-11-25T01:40:00-05:00</updated>
     <id>http://timofei7.github.com/blog/2012/11/25/chessinvaders-update</id>
     <content type="html"><![CDATA[<p>Been too busy to post updates, but finally making progress on chessInvaders again.  An alpha version of the game was shown at a <a href="http://now.dartmouth.edu/2012/05/dartmouth-digital-arts-students-work-showcased-in-downtown-hanover/">Digital Arts Showcase</a> and was a great success.  One kid couldn&#8217;t put it down and played for half an hour straight refusing to let anybody else try.  I was able to get some positive feedback and am now planning on releasing it for the Christmas season (if it gets through the App Store approval in time).</p>
 
@@ -951,7 +996,7 @@
   <entry>
     <title type="html"><![CDATA[generic singleton MonoBehavior class]]></title>
     <link href="http://timofei7.github.com/blog/2012/04/26/unity-singletons/"/>
-    <updated>2012-04-26T01:40:00-07:00</updated>
+    <updated>2012-04-26T01:40:00-04:00</updated>
     <id>http://timofei7.github.com/blog/2012/04/26/unity-singletons</id>
     <content type="html"><![CDATA[<p>In <a href="http://www.unity3d.com">Unity3D</a> having a <a href="http://en.wikipedia.org/wiki/Singleton_pattern">singleton</a> class is very useful, whether for &#8220;global&#8221; state or simply for the convenience of having a static accessor so you don&#8217;t have to have lots of: <code>FindObjectOfType(typeof(Builder)) as Builder;</code></p>
 
@@ -1134,7 +1179,7 @@
   <entry>
     <title type="html"><![CDATA[udunit]]></title>
     <link href="http://timofei7.github.com/blog/2012/04/09/udunit/"/>
-    <updated>2012-04-09T01:40:00-07:00</updated>
+    <updated>2012-04-09T01:40:00-04:00</updated>
     <id>http://timofei7.github.com/blog/2012/04/09/udunit</id>
     <content type="html"><![CDATA[<p>Over a couple of weekends, mostly as an exercise in learning a new language / framework two friends of mine and I came up with: <a href="http://udunnit-frontend-dev.herokuapp.com">demo.udunit.com</a>.</p>
 
@@ -1152,7 +1197,7 @@ UdunIt (pronounced you-done-it, as in whodunit): A fun way to share, boast about
   <entry>
     <title type="html"><![CDATA[chessInvaders]]></title>
     <link href="http://timofei7.github.com/blog/2011/12/15/chessinvaders/"/>
-    <updated>2011-12-15T01:40:00-08:00</updated>
+    <updated>2011-12-15T01:40:00-05:00</updated>
     <id>http://timofei7.github.com/blog/2011/12/15/chessinvaders</id>
     <content type="html"><![CDATA[<p>The current project I am working on is an iPad game that teaches basic rules of chess in a fast paced not-quite-chess environment. The game is a small, but fun combination of space invaders and chess.  It teaches and drills the basic movement rules while remaining engaging.</p>
 
@@ -1209,7 +1254,7 @@ picasaOptions: {
   <entry>
     <title type="html"><![CDATA[3D Mesh Sculpting using the Kinect]]></title>
     <link href="http://timofei7.github.com/blog/2011/04/27/kinectsculpt/"/>
-    <updated>2011-04-27T01:40:00-07:00</updated>
+    <updated>2011-04-27T01:40:00-04:00</updated>
     <id>http://timofei7.github.com/blog/2011/04/27/kinectsculpt</id>
     <content type="html"><![CDATA[<iframe id="kinectscuplt" width="853" height="480" src="http://www.youtube.com/embed/4tIXcKJwe8M?rel=0&amp;hd=1" frameborder="0" allowfullscreen></iframe>
 
@@ -1244,7 +1289,7 @@ picasaOptions: {
   <entry>
     <title type="html"><![CDATA[a paper: The Neural Mechanisms and Purposes of Randomness in Consciousness]]></title>
     <link href="http://timofei7.github.com/blog/2010/06/08/a-paper-the-neural-mechanisms-and-purposes-of-randomness-in-consciousness/"/>
-    <updated>2010-06-08T01:21:36-07:00</updated>
+    <updated>2010-06-08T01:21:36-04:00</updated>
     <id>http://timofei7.github.com/blog/2010/06/08/a-paper-the-neural-mechanisms-and-purposes-of-randomness-in-consciousness</id>
     <content type="html"><![CDATA[<p>Do you believe in free will or determinism?   Either way,  imagine you are
 creating a life form, and that you want it to have free will.  You figure out
@@ -1631,7 +1676,7 @@ function. Biosystems, 67(1-3), 287-294. doi:DOI: 10.1016/S0303-2647(02)00086-2</
   <entry>
     <title type="html"><![CDATA[ENGS21: Gunkless Drain]]></title>
     <link href="http://timofei7.github.com/blog/2010/06/02/engs21/"/>
-    <updated>2010-06-02T01:43:00-07:00</updated>
+    <updated>2010-06-02T01:43:00-04:00</updated>
     <id>http://timofei7.github.com/blog/2010/06/02/engs21</id>
     <content type="html"><![CDATA[<iframe id="engs21" width="640" height="480" src="http://www.youtube.com/embed/Wk0fobSn1PY?rel=0&amp;hd=1" frameborder="0" allowfullscreen></iframe>
 
@@ -1688,7 +1733,7 @@ function. Biosystems, 67(1-3), 287-294. doi:DOI: 10.1016/S0303-2647(02)00086-2</
   <entry>
     <title type="html"><![CDATA[why the DLPFC is the coolest part of the brain]]></title>
     <link href="http://timofei7.github.com/blog/2010/04/30/why-the-dlpfc-is-the-coolest-part-of-the-brain/"/>
-    <updated>2010-04-30T01:33:47-07:00</updated>
+    <updated>2010-04-30T01:33:47-04:00</updated>
     <id>http://timofei7.github.com/blog/2010/04/30/why-the-dlpfc-is-the-coolest-part-of-the-brain</id>
     <content type="html"><![CDATA[<p>want to learn about why the dorsolateral prefrontal cortex is the coolest part
 of the brain?</p>
@@ -2149,7 +2194,7 @@ characteristic.</p>
   <entry>
     <title type="html"><![CDATA[Flow, Education, and Ritalin: The Missing Link Between Addiction And Learning]]></title>
     <link href="http://timofei7.github.com/blog/2010/03/11/flow-and-education/"/>
-    <updated>2010-03-11T22:10:37-08:00</updated>
+    <updated>2010-03-11T22:10:37-05:00</updated>
     <id>http://timofei7.github.com/blog/2010/03/11/flow-and-education</id>
     <content type="html"><![CDATA[<p><strong>Flow, Education, and Ritalin</strong><br/>
 My eyes are glued to the screen. They rarely blink. They become irritated but
@@ -2483,7 +2528,7 @@ ept08/vol66/num01/Joy_in_School.aspx</p>
   <entry>
     <title type="html"><![CDATA[A Moment in the Life of Camus' Sisyphus]]></title>
     <link href="http://timofei7.github.com/blog/2010/02/28/a-moment-in-the-life-of-camus-sisyphus/"/>
-    <updated>2010-02-28T22:30:47-08:00</updated>
+    <updated>2010-02-28T22:30:47-05:00</updated>
     <id>http://timofei7.github.com/blog/2010/02/28/a-moment-in-the-life-of-camus-sisyphus</id>
     <content type="html"><![CDATA[<p>I watch my cursed boulder tumble down my mountain. I heave a sigh of relief;
 my aching muscles allowed a brief respite. As I stand on its majestic craggy
@@ -2563,7 +2608,7 @@ experience. New York: HarperPerennial. (pg. 225)</p>
   <entry>
     <title type="html"><![CDATA[assignment: write about where I see myself in x number of years]]></title>
     <link href="http://timofei7.github.com/blog/2010/02/19/assignment-write-about-where-i-see-myself-in-x-number-of-years/"/>
-    <updated>2010-02-19T21:53:28-08:00</updated>
+    <updated>2010-02-19T21:53:28-05:00</updated>
     <id>http://timofei7.github.com/blog/2010/02/19/assignment-write-about-where-i-see-myself-in-x-number-of-years</id>
     <content type="html"><![CDATA[<p>Instead of writing seriously, I wrote an imaginary interview. BTW:Living in a
 van&#8230; happened in real life; C.com/&#8221;light goop&#8221; &#8230;well it was supposed to be
@@ -2683,7 +2728,7 @@ has been due to this process of discovery.</p>
   <entry>
     <title type="html"><![CDATA[fear, happiness]]></title>
     <link href="http://timofei7.github.com/blog/2010/01/10/fear-happiness/"/>
-    <updated>2010-01-10T22:24:05-08:00</updated>
+    <updated>2010-01-10T22:24:05-05:00</updated>
     <id>http://timofei7.github.com/blog/2010/01/10/fear-happiness</id>
     <content type="html"><![CDATA[<p>What is the mind when it is happy and when it is unhappy? Most likely the
 answer is different for each person, but to understand it for myself I first
@@ -2814,7 +2859,7 @@ Brace, 1960. pg. 57.</p>
   <entry>
     <title type="html"><![CDATA[Conscious Evolution: the possibilities of technology+education]]></title>
     <link href="http://timofei7.github.com/blog/2010/01/03/conscious-evolution/"/>
-    <updated>2010-01-03T22:16:28-08:00</updated>
+    <updated>2010-01-03T22:16:28-05:00</updated>
     <id>http://timofei7.github.com/blog/2010/01/03/conscious-evolution</id>
     <content type="html"><![CDATA[<p>Is it possible for humanity to consciously direct our own evolution and if so
 can we evolve to be better, smarter and faster? Can we evolve ourselves to be
@@ -2979,7 +3024,7 @@ enjoy it.</p>
   <entry>
     <title type="html"><![CDATA[Geopolitical Representations in a Networked World: current and future]]></title>
     <link href="http://timofei7.github.com/blog/2009/11/09/geopolitical-representations-in-a-networked-world-current-and-future/"/>
-    <updated>2009-11-09T23:32:21-08:00</updated>
+    <updated>2009-11-09T23:32:21-05:00</updated>
     <id>http://timofei7.github.com/blog/2009/11/09/geopolitical-representations-in-a-networked-world-current-and-future</id>
     <content type="html"><![CDATA[<p>They are afraid &#8211; the great firewall of China, the blocking of Facebook in
 Pakistan, Bangladesh and others, Iran’s blocking of foreign media and the
@@ -3317,7 +3362,7 @@ the age of participatory media. Daedalus, 139(2), 66-75,154. Retrieved August
   <entry>
     <title type="html"><![CDATA[ENGS31 DigitalElectronics -- TiNZ]]></title>
     <link href="http://timofei7.github.com/blog/2009/09/01/tinz/"/>
-    <updated>2009-09-01T01:39:00-07:00</updated>
+    <updated>2009-09-01T01:39:00-04:00</updated>
     <id>http://timofei7.github.com/blog/2009/09/01/tinz</id>
     <content type="html"><![CDATA[<iframe id="tinz" width="853" height="480" src="http://www.youtube.com/embed/jcJoUI1PBZo?rel=0&amp;hd=1" frameborder="0" allowfullscreen></iframe>
 
@@ -3357,7 +3402,7 @@ the age of participatory media. Daedalus, 139(2), 66-75,154. Retrieved August
   <entry>
     <title type="html"><![CDATA[Greenlite Dartmouth]]></title>
     <link href="http://timofei7.github.com/blog/2009/07/20/greenlite-dartmouth/"/>
-    <updated>2009-07-20T22:10:00-07:00</updated>
+    <updated>2009-07-20T22:10:00-04:00</updated>
     <id>http://timofei7.github.com/blog/2009/07/20/greenlite-dartmouth</id>
     <content type="html"><![CDATA[<iframe id="greenlite" width="640" height="480" src="http://www.youtube.com/embed/RGeYHYpLQa8?rel=0" frameborder="0" allowfullscreen></iframe>
 
@@ -3399,36 +3444,6 @@ I implemented this in Unity3D in C# using models I created in Maya. All the pola
 <p>I learned a lot on this project, from electrical metering to architecting a larger scale software project to working with motioncapture and a 3D game engine.  Another important lesson was that 3D is not necessarily better. Although people responded positively to the 3D animations (more so the quadruped version in the video than the biped in the web demo), the 3D version would have required many more man hours and at that stage in the project was simply too work intensive.</p>
 
 <p>You can see it all live at Dartmouth right now here: <a href="http://greenlite.dartmouth.edu">Greenlite Dartmouth</a></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Drawing Summer '08]]></title>
-    <link href="http://timofei7.github.com/blog/2008/08/25/drawing-summer-10/"/>
-    <updated>2008-08-25T23:04:00-07:00</updated>
-    <id>http://timofei7.github.com/blog/2008/08/25/drawing-summer-10</id>
-    <content type="html"><![CDATA[<div id="drawinggalleria"></div>
-
-
-<script type="text/javascript">
-jQuery('#drawinggalleria').galleria({
-debug: false,
-_toggleInfo: false,
-width: 600,
-picasa: 'useralbum:timofei/SART15Summer08',
-picasaOptions: {
-        description: true,
-}
-});
-</script>
-
-
-<p>This was an awesome summer. I lived in a van and spent two nights+ a week in the drawing studio.  Unfortunately most of these photos were taken with a phone camera and so the quality is not that great. I&#8217;ve given most of them away so no chance of retaking. There were lots more but the photos were simply too blurry.</p>
-
-<!--MORE-->
-
-
-<p>When I was a kid I used to love drawing, but by puberty I had exchanged it for computer games and model airplanes.  When I took drawing in college it was like I was a kid again.  This was another one of those fulfilling classes by the end of which I was confident that given some charcoal and paper and time I could create an aesthetically unoffensive and even possibly recognizable likeness of anything.</p>
 ]]></content>
   </entry>
   

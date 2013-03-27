@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Codes | tim tregubov]]></title>
   <link href="http://timofei7.github.com/blog/categories/codes/atom.xml" rel="self"/>
   <link href="http://timofei7.github.com/"/>
-  <updated>2013-02-14T17:10:18-08:00</updated>
+  <updated>2013-03-27T18:19:51-04:00</updated>
   <id>http://timofei7.github.com/</id>
   <author>
     <name><![CDATA[timofei7]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[wrapping Unity C# coroutines for exception handling, value retrieval, and locking]]></title>
     <link href="http://timofei7.github.com/blog/2013/02/05/unity-coroutine-wrapper/"/>
-    <updated>2013-02-05T01:40:00-08:00</updated>
+    <updated>2013-02-05T01:40:00-05:00</updated>
     <id>http://timofei7.github.com/blog/2013/02/05/unity-coroutine-wrapper</id>
     <content type="html"><![CDATA[<p>Firstly, coroutines are awesome.  If you aren't familiar with them (particularly in the context of Unity3d) then you should be.  In short, <a href="http://en.wikipedia.org/wiki/Coroutine">coroutines</a> are methods that can suspend and resume execution.  In the context of Unity what this means is that you can have methods that appear to run concurrently. The Unity documentation has some <a href="http://docs.unity3d.com/Documentation/ScriptReference/index.Coroutines_26_Yield.html">examples</a>.</p>
 
@@ -574,7 +574,7 @@ StartCoroutine(DoStuff(), "DoStuff", 10f); // will yield null</p>
   <entry>
     <title type="html"><![CDATA[generic singleton MonoBehavior part 2: singleton self loading prefab]]></title>
     <link href="http://timofei7.github.com/blog/2013/01/11/unity-prefab-singleton/"/>
-    <updated>2013-01-11T01:40:00-08:00</updated>
+    <updated>2013-01-11T01:40:00-05:00</updated>
     <id>http://timofei7.github.com/blog/2013/01/11/unity-prefab-singleton</id>
     <content type="html"><![CDATA[<p>I had a <a href="blog/2012/04/26/unity-singletons/">previous post</a> about singletons in <a href="http://www.unity3d.com">Unity3D</a> and have since added a useful functionality to that class.  One of the useful features of a singleton is that it is self instantiating.  But what if you want to use the Unity editor to expose some public variables and have some other assets hooked into your singleton?  So since you are probably using <a href="http://docs.unity3d.com/Documentation/Manual/Prefabs.html">prefabs</a> to manage game components in your scenes anyway, seems like it might be useful to have a self-loading prefab for components such as the player or a gui controller.</p>
 
@@ -903,7 +903,7 @@ StartCoroutine(DoStuff(), "DoStuff", 10f); // will yield null</p>
   <entry>
     <title type="html"><![CDATA[generic singleton MonoBehavior class]]></title>
     <link href="http://timofei7.github.com/blog/2012/04/26/unity-singletons/"/>
-    <updated>2012-04-26T01:40:00-07:00</updated>
+    <updated>2012-04-26T01:40:00-04:00</updated>
     <id>http://timofei7.github.com/blog/2012/04/26/unity-singletons</id>
     <content type="html"><![CDATA[<p>In <a href="http://www.unity3d.com">Unity3D</a> having a <a href="http://en.wikipedia.org/wiki/Singleton_pattern">singleton</a> class is very useful, whether for "global" state or simply for the convenience of having a static accessor so you don't have to have lots of: <code>FindObjectOfType(typeof(Builder)) as Builder;</code></p>
 

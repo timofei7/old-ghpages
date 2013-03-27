@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Log | tim tregubov]]></title>
   <link href="http://timofei7.github.com/blog/categories/log/atom.xml" rel="self"/>
   <link href="http://timofei7.github.com/"/>
-  <updated>2013-02-14T17:10:18-08:00</updated>
+  <updated>2013-03-27T18:19:51-04:00</updated>
   <id>http://timofei7.github.com/</id>
   <author>
     <name><![CDATA[timofei7]]></name>
@@ -15,8 +15,40 @@
   
   <entry>
     <title type="html"><![CDATA[chessInvaders update]]></title>
+    <link href="http://timofei7.github.com/blog/2013/03/20/chessinvaders-update/"/>
+    <updated>2013-03-20T05:18:00-04:00</updated>
+    <id>http://timofei7.github.com/blog/2013/03/20/chessinvaders-update</id>
+    <content type="html"><![CDATA[<p>It has been a month since <a href="https://itunes.apple.com/app/chess-invaders/id575380345">ChessInvaders</a> was published in the App Store!  It has "sold" (for free) more than 6k copies, and has been engaged with (played through at least one level) almost 15k times.  The download rate has slowed to about 10 a day, but about double that are playing every day!  I'm pretty happy with that given that it's a pretty hard and definitely beta quality game experience.</p>
+
+<p>There have even been some reviews!</p>
+
+<p><span class='pullquote-right' data-pullquote='vibrant colored retro-style 3-D graphics'>
+<blockquote><p>In this unique tower defense game, the battlefield is a Chess board and the warriors Chess pieces. You will control the courageous knight and fend off the waves of evil pawns. The game features three unlockable worlds, vibrant colored retro-style 3-D graphics, an electrifying soundtrack, and Game Center integration.</p><footer><strong>appadvice.com</strong> <cite><a href='http://appadvice.com/appnn/2013/02/todays-best-apps-word-dig-chess-invaders-and-sequences'>appadvice.com/appnn/2013/02/&hellip;</a></cite></footer></blockquote>
+</span></p>
+
+<p><blockquote><p>"Some people might be interested in chess but just find the typical game a bit too boring. […] Chess Invaders is poised to change all that for you. "</p><footer><strong>touchmyapps.com</strong> <cite><a href='http://www.touchmyapps.com/2013/02/20/10-new-app-store-games-in-review-february-11-17/'>www.touchmyapps.com/2013/02/20/&hellip;</a></cite></footer></blockquote></p>
+
+<p><span class='pullquote-right' data-pullquote='sensationelle 3D-Grafiken'>
+<blockquote><p>Schach ist öde und nur was für Langweiler und Nerds?? Chess Invaders definitiv nicht! Bereits beim Start überzeugt das Spiel von Entwickler Tim Tregubov durch sensationelle 3D-Grafiken. Ein besonders cooles Feature ist auch, dass es sich zwar eindeutig um Schach handelt, das Spiel aber eigentlich an etwas ganz anderes erinnert.</p><footer><strong>appgamers.de</strong> <cite><a href='http://www.appgamers.de/chess-invaders-abgespacetes-schach/'>www.appgamers.de/&hellip;</a></cite></footer></blockquote>
+</span></p>
+
+<p><blockquote><p>Anyone can play this colorful flashy game, but not everyone can beat it!</p><footer><strong>AnkaLeoNika</strong> <cite><a href='https://itunes.apple.com/app/chess-invaders/id575380345'>itunes.apple.com/app/&hellip;</a></cite></footer></blockquote></p>
+
+<p><blockquote><p>"Love the concept and the art!"</p><footer><strong>jenhuang87</strong> <cite><a href='https://itunes.apple.com/app/chess-invaders/id575380345'>itunes.apple.com/app/&hellip;</a></cite></footer></blockquote></p>
+
+<p>Download it here:
+<a href="https://itunes.apple.com/app/chess-invaders/id575380345">https://itunes.apple.com/app/chess-invaders/id575380345</a></p>
+
+<p>People have been discovering some pretty cool bugs along the way: including floating pawns and exploding gui elements!  The game turns out to be pretty hard, and especially hard on smaller screens.  At the last minute, I added an option to slow the game down (under Settings), and made some tweaks to the spawn rate, but don't be disheartened if you can't beat it -- only 32 people have so far.</p>
+
+<p>All in all, I have had some great feedback and have learned a lot!  I've started working on the next game, a color mixing puzzle game, which is coming along much faster, after which I hope to revisit ChessInvaders and give it a good reworking to make it more fun!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[chessInvaders update]]></title>
     <link href="http://timofei7.github.com/blog/2013/02/14/chessinvaders-update/"/>
-    <updated>2013-02-14T01:40:00-08:00</updated>
+    <updated>2013-02-14T01:40:00-05:00</updated>
     <id>http://timofei7.github.com/blog/2013/02/14/chessinvaders-update</id>
     <content type="html"><![CDATA[<p>ChessInvaders is submitted to the Apple App store and is pending review!  I have a <a href="/chessinvaders/webplayer/">limited functionality web port up</a>. Some stuff doesn't work due to it being on the web rather than on iOS.  To pinch the screen hold down the option key.</p>
 
@@ -29,7 +61,7 @@
   <entry>
     <title type="html"><![CDATA[chessInvaders update]]></title>
     <link href="http://timofei7.github.com/blog/2012/11/25/chessinvaders-update/"/>
-    <updated>2012-11-25T01:40:00-08:00</updated>
+    <updated>2012-11-25T01:40:00-05:00</updated>
     <id>http://timofei7.github.com/blog/2012/11/25/chessinvaders-update</id>
     <content type="html"><![CDATA[<p>Been too busy to post updates, but finally making progress on chessInvaders again.  An alpha version of the game was shown at a <a href="http://now.dartmouth.edu/2012/05/dartmouth-digital-arts-students-work-showcased-in-downtown-hanover/">Digital Arts Showcase</a> and was a great success.  One kid couldn't put it down and played for half an hour straight refusing to let anybody else try.  I was able to get some positive feedback and am now planning on releasing it for the Christmas season (if it gets through the App Store approval in time).</p>
 
@@ -43,7 +75,7 @@
   <entry>
     <title type="html"><![CDATA[udunit]]></title>
     <link href="http://timofei7.github.com/blog/2012/04/09/udunit/"/>
-    <updated>2012-04-09T01:40:00-07:00</updated>
+    <updated>2012-04-09T01:40:00-04:00</updated>
     <id>http://timofei7.github.com/blog/2012/04/09/udunit</id>
     <content type="html"><![CDATA[<p>Over a couple of weekends, mostly as an exercise in learning a new language / framework two friends of mine and I came up with: <a href="http://udunnit-frontend-dev.herokuapp.com">demo.udunit.com</a>.</p>
 
