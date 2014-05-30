@@ -114,9 +114,10 @@
 <h1><a href="/blog/2013/02/05/unity-coroutine-wrapper/">wrapping Unity C# coroutines for exception handling, value retrieval, and locking</a></h1>
 
 <!-- figure out how to include excerpt here-->
-<div class="entry-content"><p>Firstly, coroutines are awesome.  If you aren't familiar with them (particularly in the context of Unity3d) then you should be.  In short, <a href="http://en.wikipedia.org/wiki/Coroutine">coroutines</a> are methods that can suspend and resume execution.  In the context of Unity what this means is that you can have methods that appear to run concurrently. The Unity documentation has some <a href="http://docs.unity3d.com/Documentation/ScriptReference/index.Coroutines_26_Yield.html">examples</a>.</p>
+<div class="entry-content">Firstly, coroutines are awesome.  If you aren't familiar with them (particularly in the context of Unity3d) then you should be.  In short, [coroutines](http://en.wikipedia.org/wiki/Coroutine) are methods that can suspend and resume execution.  In the context of Unity what this means is that you can have methods that appear to run concurrently. The Unity documentation has some [examples](http://docs.unity3d.com/Documentation/ScriptReference/index.Coroutines_26_Yield.html).
 
-<p>Coroutines are <strong>the</strong> way to script a lot of things in Unity, however there are a few problems that you may run into if you use them heavily: exception handling, return values, and locking. Especially if you use nested coroutines!</p>
+Coroutines are **the** way to script a lot of things in Unity, however there are a few problems that you may run into if you use them heavily: exception handling, return values, and locking. Especially if you use nested coroutines!
+
 </div>
     
     
@@ -147,9 +148,10 @@
 <h1><a href="/blog/2013/01/11/unity-prefab-singleton/">generic singleton MonoBehavior part 2: singleton self loading prefab</a></h1>
 
 <!-- figure out how to include excerpt here-->
-<div class="entry-content"><p>I had a <a href="blog/2012/04/26/unity-singletons/">previous post</a> about singletons in <a href="http://www.unity3d.com">Unity3D</a> and have since added a useful functionality to that class.  One of the useful features of a singleton is that it is self instantiating.  But what if you want to use the Unity editor to expose some public variables and have some other assets hooked into your singleton?  So since you are probably using <a href="http://docs.unity3d.com/Documentation/Manual/Prefabs.html">prefabs</a> to manage game components in your scenes anyway, seems like it might be useful to have a self-loading prefab for components such as the player or a gui controller.</p>
+<div class="entry-content">I had a [previous post](blog/2012/04/26/unity-singletons/) about singletons in [Unity3D](http://www.unity3d.com) and have since added a useful functionality to that class.  One of the useful features of a singleton is that it is self instantiating.  But what if you want to use the Unity editor to expose some public variables and have some other assets hooked into your singleton?  So since you are probably using [prefabs](http://docs.unity3d.com/Documentation/Manual/Prefabs.html) to manage game components in your scenes anyway, seems like it might be useful to have a self-loading prefab for components such as the player or a gui controller. 
 
-<p>Just as singletons allow for really nice static access methods, this would allow me to really easily organize my project as a bunch of prefabs dumped into the Resources directory and when a level needed a particular component it would just use it, no need to instantiate and keep a reference within some big main class, nor keep it in the scene heirarchy at all to begin with.</p>
+Just as singletons allow for really nice static access methods, this would allow me to really easily organize my project as a bunch of prefabs dumped into the Resources directory and when a level needed a particular component it would just use it, no need to instantiate and keep a reference within some big main class, nor keep it in the scene heirarchy at all to begin with. 
+
 </div>
     
     
@@ -183,14 +185,15 @@
 <h1><a href="/blog/2012/04/26/unity-singletons/">generic singleton MonoBehavior class</a></h1>
 
 <!-- figure out how to include excerpt here-->
-<div class="entry-content"><p>In <a href="http://www.unity3d.com">Unity3D</a> having a <a href="http://en.wikipedia.org/wiki/Singleton_pattern">singleton</a> class is very useful, whether for "global" state or simply for the convenience of having a static accessor so you don't have to have lots of: <code>FindObjectOfType(typeof(Builder)) as Builder;</code></p>
+<div class="entry-content">In [Unity3D](http://www.unity3d.com) having a [singleton](http://en.wikipedia.org/wiki/Singleton_pattern) class is very useful, whether for "global" state or simply for the convenience of having a static accessor so you don't have to have lots of: <code>FindObjectOfType(typeof(Builder)) as Builder;</code>
 
-<p>So you code up a C# singleton and then realize that you actually need it to be a <a href="http://unity3d.com/support/documentation/ScriptReference/MonoBehaviour.html">MonoBehavior</a>, not just a <a href="http://unity3d.com/support/documentation/ScriptReference/ScriptableObject.html">ScriptableObject</a> -- say you want the singleton to run <a href="http://unity3d.com/support/documentation/ScriptReference/index.Coroutines_26_Yield.html">coroutines</a>, or have a transform, or any other MonoBehavior feature.  But monobehaviors <a href="http://unity3d.com/support/documentation/ScriptReference/MonoBehaviour.Awake.html">can't</a> be initialized with a constructor.</p>
+So you code up a C# singleton and then realize that you actually need it to be a [MonoBehavior](http://unity3d.com/support/documentation/ScriptReference/MonoBehaviour.html), not just a [ScriptableObject](http://unity3d.com/support/documentation/ScriptReference/ScriptableObject.html) -- say you want the singleton to run [coroutines](http://unity3d.com/support/documentation/ScriptReference/index.Coroutines_26_Yield.html), or have a transform, or any other MonoBehavior feature.  But monobehaviors [can't](http://unity3d.com/support/documentation/ScriptReference/MonoBehaviour.Awake.html) be initialized with a constructor. 
 
-<p>So what you want is a monobehavior pseudo singleton pattern.  The unity community wiki has some <a href="http://unifycommunity.com/wiki/index.php?title=Singleton">good info</a>
- about the various options but all require boilerplate.</p>
+So what you want is a monobehavior pseudo singleton pattern.  The unity community wiki has some [good info](http://unifycommunity.com/wiki/index.php?title=Singleton)
+ about the various options but all require boilerplate. 
 
-<p>So I wrote a parametrized generic pseudo singleton monobehavior class.  I attempted to compile all the best advice out there, so it is threadsafe, has some extra stuff for setting a parent, doesn't implement an Awake, and initializes lazily.</p>
+So I wrote a parametrized generic pseudo singleton monobehavior class.  I attempted to compile all the best advice out there, so it is threadsafe, has some extra stuff for setting a parent, doesn't implement an Awake, and initializes lazily.
+
 </div>
     
     
@@ -315,40 +318,40 @@
 
 <section class="tag-cloud">
     <h1>Tags</h1>
-    <a style='font-size: 0.80em' href='//energy'>energy</a>
-<a style='font-size: 1.51em' href='//chess'>chess</a>
-<a style='font-size: 0.80em' href='//startup'>startup</a>
+    <a style='font-size: 0.80em' href='//kinect'>kinect</a>
 <a style='font-size: 0.80em' href='//coroutine'>coroutine</a>
-<a style='font-size: 0.80em' href='//fear'>fear</a>
 <a style='font-size: 0.80em' href='//grad-school'>grad school</a>
-<a style='font-size: 0.80em' href='//future'>future</a>
-<a style='font-size: 1.51em' href='//3D'>3D</a>
-<a style='font-size: 0.80em' href='//digital-arts'>digital arts</a>
-<a style='font-size: 1.36em' href='//c-'>c#</a>
-<a style='font-size: 1.16em' href='//engineering'>engineering</a>
-<a style='font-size: 1.36em' href='//unity3d'>unity3d</a>
-<a style='font-size: 0.80em' href='//openCV'>openCV</a>
-<a style='font-size: 0.80em' href='//randomness'>randomness</a>
-<a style='font-size: 1.16em' href='//brain'>brain</a>
-<a style='font-size: 1.16em' href='//happiness'>happiness</a>
-<a style='font-size: 0.80em' href='//lift'>lift</a>
-<a style='font-size: 0.80em' href='//geometry'>geometry</a>
-<a style='font-size: 1.16em' href='//modeling'>modeling</a>
-<a style='font-size: 1.80em' href='//education'>education</a>
-<a style='font-size: 0.80em' href='//life'>life</a>
-<a style='font-size: 0.80em' href='//van'>van</a>
-<a style='font-size: 0.80em' href='//carving'>carving</a>
-<a style='font-size: 1.16em' href='//animation'>animation</a>
 <a style='font-size: 0.80em' href='//games'>games</a>
-<a style='font-size: 1.16em' href='//singleton'>singleton</a>
-<a style='font-size: 0.80em' href='//geopolitics'>geopolitics</a>
-<a style='font-size: 0.80em' href='//polarbear'>polarbear</a>
-<a style='font-size: 1.63em' href='//game'>game</a>
-<a style='font-size: 0.80em' href='//drawing'>drawing</a>
+<a style='font-size: 1.36em' href='//c-'>c#</a>
+<a style='font-size: 1.51em' href='//chess'>chess</a>
+<a style='font-size: 0.80em' href='//geometry'>geometry</a>
 <a style='font-size: 1.51em' href='//iOS'>iOS</a>
-<a style='font-size: 0.80em' href='//openNI'>openNI</a>
-<a style='font-size: 0.80em' href='//kinect'>kinect</a>
+<a style='font-size: 1.16em' href='//modeling'>modeling</a>
+<a style='font-size: 0.80em' href='//lift'>lift</a>
+<a style='font-size: 1.16em' href='//animation'>animation</a>
+<a style='font-size: 0.80em' href='//geopolitics'>geopolitics</a>
+<a style='font-size: 1.16em' href='//happiness'>happiness</a>
+<a style='font-size: 1.16em' href='//engineering'>engineering</a>
+<a style='font-size: 1.51em' href='//3D'>3D</a>
+<a style='font-size: 0.80em' href='//polarbear'>polarbear</a>
+<a style='font-size: 0.80em' href='//future'>future</a>
+<a style='font-size: 1.36em' href='//unity3d'>unity3d</a>
+<a style='font-size: 0.80em' href='//energy'>energy</a>
+<a style='font-size: 0.80em' href='//life'>life</a>
+<a style='font-size: 1.80em' href='//education'>education</a>
+<a style='font-size: 0.80em' href='//digital-arts'>digital arts</a>
+<a style='font-size: 1.16em' href='//brain'>brain</a>
+<a style='font-size: 0.80em' href='//van'>van</a>
+<a style='font-size: 0.80em' href='//openCV'>openCV</a>
+<a style='font-size: 1.16em' href='//singleton'>singleton</a>
+<a style='font-size: 0.80em' href='//randomness'>randomness</a>
+<a style='font-size: 0.80em' href='//drawing'>drawing</a>
+<a style='font-size: 0.80em' href='//carving'>carving</a>
+<a style='font-size: 1.63em' href='//game'>game</a>
 <a style='font-size: 0.80em' href='//scala'>scala</a>
+<a style='font-size: 0.80em' href='//startup'>startup</a>
+<a style='font-size: 0.80em' href='//fear'>fear</a>
+<a style='font-size: 0.80em' href='//openNI'>openNI</a>
  
 </section>
 
@@ -359,7 +362,7 @@
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2013 - timofei7 -
+  Copyright &copy; 2014 - timofei7 -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 

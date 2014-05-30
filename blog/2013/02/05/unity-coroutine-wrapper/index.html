@@ -9,7 +9,7 @@
   <meta name="author" content="timofei7">
 
   
-  <meta name="description" content="Firstly, coroutines are awesome. If you aren&#8217;t familiar with them (particularly in the context of Unity3d) then you should be. In short, &hellip;">
+  <meta name="description" content="Firstly, coroutines are awesome. If you aren&rsquo;t familiar with them (particularly in the context of Unity3d) then you should be. In short, &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -119,7 +119,7 @@
   </header>
 
 
-<div class="entry-content"><p>Firstly, coroutines are awesome.  If you aren&#8217;t familiar with them (particularly in the context of Unity3d) then you should be.  In short, <a href="http://en.wikipedia.org/wiki/Coroutine">coroutines</a> are methods that can suspend and resume execution.  In the context of Unity what this means is that you can have methods that appear to run concurrently. The Unity documentation has some <a href="http://docs.unity3d.com/Documentation/ScriptReference/index.Coroutines_26_Yield.html">examples</a>.</p>
+<div class="entry-content"><p>Firstly, coroutines are awesome.  If you aren&rsquo;t familiar with them (particularly in the context of Unity3d) then you should be.  In short, <a href="http://en.wikipedia.org/wiki/Coroutine">coroutines</a> are methods that can suspend and resume execution.  In the context of Unity what this means is that you can have methods that appear to run concurrently. The Unity documentation has some <a href="http://docs.unity3d.com/Documentation/ScriptReference/index.Coroutines_26_Yield.html">examples</a>.</p>
 
 <p>Coroutines are <strong>the</strong> way to script a lot of things in Unity, however there are a few problems that you may run into if you use them heavily: exception handling, return values, and locking. Especially if you use nested coroutines!</p>
 
@@ -128,7 +128,7 @@
 
 <h3>Return Values</h3>
 
-<p>Coroutines in Unity, although built on iterators, don&#8217;t handle return values. Even though it appears as if you can return a value, internally return values are used to keep track of where to resume.  But, &#8220;I want a coroutine to return something!&#8221;, you say.  So you work around that using a callback:</p>
+<p>Coroutines in Unity, although built on iterators, don&rsquo;t handle return values. Even though it appears as if you can return a value, internally return values are used to keep track of where to resume.  But, &ldquo;I want a coroutine to return something!&rdquo;, you say.  So you work around that using a callback:</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -171,11 +171,11 @@
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>Ok so this helps with getting a return value out of a coroutine.  It works well enough. Only caveat is in the callback code you can&#8217;t do another yield, not a big problem, and solveable by setting some variables. We&#8217;ll return to this topic.</p>
+<p>Ok so this helps with getting a return value out of a coroutine.  It works well enough. Only caveat is in the callback code you can&rsquo;t do another yield, not a big problem, and solveable by setting some variables. We&rsquo;ll return to this topic.</p>
 
 <h3>Exception Handling</h3>
 
-<p>There is no exception handling at the coroutine level.  You can&#8217;t put a <code>yield</code> statement in a <code>try…catch</code> block.  This in particular can cause a problem if you have nested coroutines:</p>
+<p>There is no exception handling at the coroutine level.  You can&rsquo;t put a <code>yield</code> statement in a <code>try…catch</code> block.  This in particular can cause a problem if you have nested coroutines:</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -206,9 +206,9 @@
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>Logically, if any of the nested coroutines throw an exception then the parent will stop execution.  Now, this is only fair, but since you can&#8217;t <code>try…catch</code> the nested coroutines it forces you to have to do error handling at a much more obnoxious nested level.  You have to make sure to handle all exceptions in each subroutine, even if it doesn&#8217;t really make sense to do that.  For instance you have a MovePiece coroutine,  if it fails (say the piece was attacked mid move) what you&#8217;d like to do in the parent coroutine (which is something like AttackState) is notice the failed move and handle it there.  If the MovePiece coroutine does a bunch of stuff (set some flags, run a few different animations) the parent probably only cares whether it was successfull or not.  You could use a callback like above to indicate success but, this doesn&#8217;t help if MovePiece threw an exception.  In that case the parent coroutine exits and we&#8217;re stuck handling the exception at too high a level (say in a non-coroutine above the parent). Not ideal.</p>
+<p>Logically, if any of the nested coroutines throw an exception then the parent will stop execution.  Now, this is only fair, but since you can&rsquo;t <code>try…catch</code> the nested coroutines it forces you to have to do error handling at a much more obnoxious nested level.  You have to make sure to handle all exceptions in each subroutine, even if it doesn&rsquo;t really make sense to do that.  For instance you have a MovePiece coroutine,  if it fails (say the piece was attacked mid move) what you&rsquo;d like to do in the parent coroutine (which is something like AttackState) is notice the failed move and handle it there.  If the MovePiece coroutine does a bunch of stuff (set some flags, run a few different animations) the parent probably only cares whether it was successfull or not.  You could use a callback like above to indicate success but, this doesn&rsquo;t help if MovePiece threw an exception.  In that case the parent coroutine exits and we&rsquo;re stuck handling the exception at too high a level (say in a non-coroutine above the parent). Not ideal.</p>
 
-<p>Ideally we&#8217;d be able to catch any exception per coroutine (nested or not) allowing us to think of each coroutine as a logical unit as it should be.  A great solution for this <a href="http://twistedoakstudios.com/blog/Post83_coroutines-more-than-you-want-to-know">exists</a>. Part of this solution is also a better way to handle return values without having to use a callback.  This uses a parametrized wrapper to Coroutine and allows us to handle exceptions and return values like so:</p>
+<p>Ideally we&rsquo;d be able to catch any exception per coroutine (nested or not) allowing us to think of each coroutine as a logical unit as it should be.  A great solution for this <a href="http://twistedoakstudios.com/blog/Post83_coroutines-more-than-you-want-to-know">exists</a>. Part of this solution is also a better way to handle return values without having to use a callback.  This uses a parametrized wrapper to Coroutine and allows us to handle exceptions and return values like so:</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -237,13 +237,13 @@
 
 <p></p>
 
-<p>That is much better!  Now the child exits without interrupting the parent and the parent can deal with it appropriately (exceptions and return values).  Now, what&#8217;s this about locking?</p>
+<p>That is much better!  Now the child exits without interrupting the parent and the parent can deal with it appropriately (exceptions and return values).  Now, what&rsquo;s this about locking?</p>
 
 <h3>Locking</h3>
 
-<p>The other problem is locking.  Coroutines (although technically not multi-threaded in Unity) do cause concurrency problems!  What if, based on user input, you start a Coroutine multiple times and it operates on the same objects?  A mess can ensue.  One solution in Unity is that you can start a coroutine using a string name of the IEnumerator method.  This uses reflection and is yucky.  Who want to use strings when you&#8217;re using a nice strongly typed language like C#?  But, if you use strings you can do <code>StopCoroutine("DoStuff"); StartCoroutine("DoStuff")</code>.  Another option is to just have some instance variable bool and appropriate logic for every coroutine.  This too gets messy quickly with lots of coroutines.</p>
+<p>The other problem is locking.  Coroutines (although technically not multi-threaded in Unity) do cause concurrency problems!  What if, based on user input, you start a Coroutine multiple times and it operates on the same objects?  A mess can ensue.  One solution in Unity is that you can start a coroutine using a string name of the IEnumerator method.  This uses reflection and is yucky.  Who want to use strings when you&rsquo;re using a nice strongly typed language like C#?  But, if you use strings you can do <code>StopCoroutine("DoStuff"); StartCoroutine("DoStuff")</code>.  Another option is to just have some instance variable bool and appropriate logic for every coroutine.  This too gets messy quickly with lots of coroutines.</p>
 
-<p>These techniques get you part of the way but what if you want a coroutine to actually just block/wait for a previous instance to finish running like traditional locking but without any undue messiness?  Well using <code>lock(someobject)</code> doesn&#8217;t work, because it would only be evaluated once and isn&#8217;t checked on the coroutine resume.  Some people have written large coroutine managers that help with all these problems but those seemed like overkill so I built on the exception handling stuff and added locking support. The idea is that you start the coroutine with a string identifier (if none is given no locking is performed) and an optional timeout period.  With the string identifier each MonoBehavior keeps the currently running coroutines in a queue and either yields (analogous to blocking on a lock) until it&#8217;s turn comes up or bails on a timeout.  Like so:</p>
+<p>These techniques get you part of the way but what if you want a coroutine to actually just block/wait for a previous instance to finish running like traditional locking but without any undue messiness?  Well using <code>lock(someobject)</code> doesn&rsquo;t work, because it would only be evaluated once and isn&rsquo;t checked on the coroutine resume.  Some people have written large coroutine managers that help with all these problems but those seemed like overkill so I built on the exception handling stuff and added locking support. The idea is that you start the coroutine with a string identifier (if none is given no locking is performed) and an optional timeout period.  With the string identifier each MonoBehavior keeps the currently running coroutines in a queue and either yields (analogous to blocking on a lock) until it&rsquo;s turn comes up or bails on a timeout.  Like so:</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -255,7 +255,7 @@
 <p>The easiest way to use this is to extend MonoBehaviour and use the new class as the base class for all your MonoBehaviours.  Here is mine:</p>
 
 <figure class='code'><figcaption><span>My MonoBehaviour Base Class   (TTMonoBehaviour.cs)</span> <a href='/downloads/code/csharp/TTMonoBehaviour.cs'>download</a></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -860,40 +860,40 @@
 
 <section class="tag-cloud">
     <h1>Tags</h1>
-    <a style='font-size: 1.36em' href='//unity3d'>unity3d</a>
-<a style='font-size: 0.80em' href='//digital-arts'>digital arts</a>
+    <a style='font-size: 1.36em' href='//c-'>c#</a>
 <a style='font-size: 0.80em' href='//games'>games</a>
-<a style='font-size: 1.16em' href='//animation'>animation</a>
-<a style='font-size: 0.80em' href='//energy'>energy</a>
-<a style='font-size: 0.80em' href='//scala'>scala</a>
+<a style='font-size: 0.80em' href='//geopolitics'>geopolitics</a>
 <a style='font-size: 0.80em' href='//carving'>carving</a>
-<a style='font-size: 1.80em' href='//education'>education</a>
-<a style='font-size: 0.80em' href='//kinect'>kinect</a>
-<a style='font-size: 1.63em' href='//game'>game</a>
+<a style='font-size: 0.80em' href='//scala'>scala</a>
+<a style='font-size: 0.80em' href='//startup'>startup</a>
+<a style='font-size: 0.80em' href='//lift'>lift</a>
+<a style='font-size: 0.80em' href='//van'>van</a>
+<a style='font-size: 0.80em' href='//coroutine'>coroutine</a>
+<a style='font-size: 1.16em' href='//singleton'>singleton</a>
+<a style='font-size: 1.51em' href='//chess'>chess</a>
+<a style='font-size: 0.80em' href='//energy'>energy</a>
+<a style='font-size: 0.80em' href='//openNI'>openNI</a>
+<a style='font-size: 0.80em' href='//drawing'>drawing</a>
+<a style='font-size: 0.80em' href='//fear'>fear</a>
 <a style='font-size: 1.16em' href='//happiness'>happiness</a>
 <a style='font-size: 0.80em' href='//geometry'>geometry</a>
-<a style='font-size: 1.16em' href='//modeling'>modeling</a>
-<a style='font-size: 1.51em' href='//iOS'>iOS</a>
-<a style='font-size: 0.80em' href='//lift'>lift</a>
-<a style='font-size: 1.16em' href='//singleton'>singleton</a>
-<a style='font-size: 0.80em' href='//openNI'>openNI</a>
-<a style='font-size: 0.80em' href='//openCV'>openCV</a>
-<a style='font-size: 0.80em' href='//future'>future</a>
-<a style='font-size: 0.80em' href='//geopolitics'>geopolitics</a>
-<a style='font-size: 1.16em' href='//brain'>brain</a>
-<a style='font-size: 0.80em' href='//van'>van</a>
-<a style='font-size: 1.16em' href='//engineering'>engineering</a>
-<a style='font-size: 0.80em' href='//life'>life</a>
-<a style='font-size: 1.51em' href='//3D'>3D</a>
-<a style='font-size: 0.80em' href='//coroutine'>coroutine</a>
 <a style='font-size: 0.80em' href='//randomness'>randomness</a>
-<a style='font-size: 0.80em' href='//fear'>fear</a>
-<a style='font-size: 0.80em' href='//drawing'>drawing</a>
+<a style='font-size: 0.80em' href='//digital-arts'>digital arts</a>
+<a style='font-size: 0.80em' href='//openCV'>openCV</a>
+<a style='font-size: 1.16em' href='//modeling'>modeling</a>
 <a style='font-size: 0.80em' href='//polarbear'>polarbear</a>
-<a style='font-size: 1.36em' href='//c-'>c#</a>
-<a style='font-size: 0.80em' href='//startup'>startup</a>
+<a style='font-size: 1.16em' href='//engineering'>engineering</a>
 <a style='font-size: 0.80em' href='//grad-school'>grad school</a>
-<a style='font-size: 1.51em' href='//chess'>chess</a>
+<a style='font-size: 0.80em' href='//kinect'>kinect</a>
+<a style='font-size: 1.36em' href='//unity3d'>unity3d</a>
+<a style='font-size: 1.80em' href='//education'>education</a>
+<a style='font-size: 0.80em' href='//future'>future</a>
+<a style='font-size: 1.16em' href='//animation'>animation</a>
+<a style='font-size: 1.16em' href='//brain'>brain</a>
+<a style='font-size: 1.63em' href='//game'>game</a>
+<a style='font-size: 1.51em' href='//3D'>3D</a>
+<a style='font-size: 0.80em' href='//life'>life</a>
+<a style='font-size: 1.51em' href='//iOS'>iOS</a>
  
 </section>
 
@@ -904,7 +904,7 @@
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2013 - timofei7 -
+  Copyright &copy; 2014 - timofei7 -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 

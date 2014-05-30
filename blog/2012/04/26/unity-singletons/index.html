@@ -9,7 +9,7 @@
   <meta name="author" content="timofei7">
 
   
-  <meta name="description" content="In Unity3D having a singleton class is very useful, whether for &#8220;global&#8221; state or simply for the convenience of having a static accessor &hellip;">
+  <meta name="description" content="In Unity3D having a singleton class is very useful, whether for &ldquo;global&rdquo; state or simply for the convenience of having a static accessor &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -119,14 +119,14 @@
   </header>
 
 
-<div class="entry-content"><p>In <a href="http://www.unity3d.com">Unity3D</a> having a <a href="http://en.wikipedia.org/wiki/Singleton_pattern">singleton</a> class is very useful, whether for &#8220;global&#8221; state or simply for the convenience of having a static accessor so you don&#8217;t have to have lots of: <code>FindObjectOfType(typeof(Builder)) as Builder;</code></p>
+<div class="entry-content"><p>In <a href="http://www.unity3d.com">Unity3D</a> having a <a href="http://en.wikipedia.org/wiki/Singleton_pattern">singleton</a> class is very useful, whether for &ldquo;global&rdquo; state or simply for the convenience of having a static accessor so you don&rsquo;t have to have lots of: <code>FindObjectOfType(typeof(Builder)) as Builder;</code></p>
 
-<p>So you code up a C# singleton and then realize that you actually need it to be a <a href="http://unity3d.com/support/documentation/ScriptReference/MonoBehaviour.html">MonoBehavior</a>, not just a <a href="http://unity3d.com/support/documentation/ScriptReference/ScriptableObject.html">ScriptableObject</a> &#8211; say you want the singleton to run <a href="http://unity3d.com/support/documentation/ScriptReference/index.Coroutines_26_Yield.html">coroutines</a>, or have a transform, or any other MonoBehavior feature.  But monobehaviors <a href="http://unity3d.com/support/documentation/ScriptReference/MonoBehaviour.Awake.html">can&#8217;t</a> be initialized with a constructor.</p>
+<p>So you code up a C# singleton and then realize that you actually need it to be a <a href="http://unity3d.com/support/documentation/ScriptReference/MonoBehaviour.html">MonoBehavior</a>, not just a <a href="http://unity3d.com/support/documentation/ScriptReference/ScriptableObject.html">ScriptableObject</a> &mdash; say you want the singleton to run <a href="http://unity3d.com/support/documentation/ScriptReference/index.Coroutines_26_Yield.html">coroutines</a>, or have a transform, or any other MonoBehavior feature.  But monobehaviors <a href="http://unity3d.com/support/documentation/ScriptReference/MonoBehaviour.Awake.html">can&rsquo;t</a> be initialized with a constructor.</p>
 
 <p>So what you want is a monobehavior pseudo singleton pattern.  The unity community wiki has some <a href="http://unifycommunity.com/wiki/index.php?title=Singleton">good info</a>
  about the various options but all require boilerplate.</p>
 
-<p>So I wrote a parametrized generic pseudo singleton monobehavior class.  I attempted to compile all the best advice out there, so it is threadsafe, has some extra stuff for setting a parent, doesn&#8217;t implement an Awake, and initializes lazily.</p>
+<p>So I wrote a parametrized generic pseudo singleton monobehavior class.  I attempted to compile all the best advice out there, so it is threadsafe, has some extra stuff for setting a parent, doesn&rsquo;t implement an Awake, and initializes lazily.</p>
 
 <!--more-->
 
@@ -137,8 +137,8 @@
 
 <p>So now this blog has its first code section:</p>
 
-<figure class='code'><figcaption><span>Singleton.cs # </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span>Singleton.cs </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -214,8 +214,8 @@
 <span class='line-number'>74</span>
 <span class='line-number'>75</span>
 <span class='line-number'>76</span>
-</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="n">using</span> <span class="n">UnityEngine</span><span class="p">;</span>
-</span><span class='line'><span class="n">using</span> <span class="n">System</span><span class="p">.</span><span class="n">Collections</span><span class="p">;</span>
+</pre></td><td class='code'><pre><code class='c#'><span class='line'><span class="k">using</span> <span class="nn">UnityEngine</span><span class="p">;</span>
+</span><span class='line'><span class="k">using</span> <span class="nn">System.Collections</span><span class="p">;</span>
 </span><span class='line'>
 </span><span class='line'><span class="c1">/// &lt;summary&gt;</span>
 </span><span class='line'><span class="c1">/// MONOBEHAVIOR PSEUDO SINGLETON ABSTRACT CLASS</span>
@@ -226,10 +226,10 @@
 </span><span class='line'><span class="c1">///      : http://tinyurl.com/cc73a9h</span>
 </span><span class='line'><span class="c1">///      : http://unifycommunity.com/wiki/index.php?title=Singleton</span>
 </span><span class='line'><span class="c1">/// &lt;/summary&gt;</span>
-</span><span class='line'><span class="n">public</span> <span class="n">abstract</span> <span class="n">class</span> <span class="n">Singleton</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">:</span> <span class="n">MonoBehaviour</span> <span class="n">where</span> <span class="n">T</span> <span class="o">:</span> <span class="n">MonoBehaviour</span>
+</span><span class='line'><span class="k">public</span> <span class="k">abstract</span> <span class="k">class</span> <span class="nc">Singleton</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span> <span class="p">:</span> <span class="n">MonoBehaviour</span> <span class="k">where</span> <span class="n">T</span> <span class="p">:</span> <span class="n">MonoBehaviour</span>
 </span><span class='line'><span class="p">{</span>
 </span><span class='line'>
-</span><span class='line'>  <span class="n">private</span> <span class="k">static</span> <span class="n">T</span> <span class="n">_instance</span> <span class="o">=</span> <span class="n">null</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">private</span> <span class="k">static</span> <span class="n">T</span> <span class="n">_instance</span> <span class="p">=</span> <span class="k">null</span><span class="p">;</span>
 </span><span class='line'>          
 </span><span class='line'>  <span class="c1">/// &lt;summary&gt;</span>
 </span><span class='line'>  <span class="c1">/// gets the instance of this Singleton</span>
@@ -238,21 +238,21 @@
 </span><span class='line'>  <span class="c1">/// or make your public methods static</span>
 </span><span class='line'>  <span class="c1">/// and have them use Instance</span>
 </span><span class='line'>  <span class="c1">/// &lt;/summary&gt;</span>
-</span><span class='line'>  <span class="n">public</span> <span class="k">static</span> <span class="n">T</span> <span class="n">Instance</span> <span class="p">{</span>
-</span><span class='line'>      <span class="n">get</span> <span class="p">{</span>
-</span><span class='line'>          <span class="k">if</span> <span class="p">(</span><span class="n">_instance</span> <span class="o">==</span> <span class="n">null</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>              <span class="n">_instance</span> <span class="o">=</span> <span class="p">(</span><span class="n">T</span><span class="p">)</span><span class="n">FindObjectOfType</span> <span class="p">(</span><span class="n">typeof</span><span class="p">(</span><span class="n">T</span><span class="p">));</span>
-</span><span class='line'>              <span class="k">if</span> <span class="p">(</span><span class="n">_instance</span> <span class="o">==</span> <span class="n">null</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">public</span> <span class="k">static</span> <span class="n">T</span> <span class="n">Instance</span> <span class="p">{</span>
+</span><span class='line'>      <span class="k">get</span> <span class="p">{</span>
+</span><span class='line'>          <span class="k">if</span> <span class="p">(</span><span class="n">_instance</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>              <span class="n">_instance</span> <span class="p">=</span> <span class="p">(</span><span class="n">T</span><span class="p">)</span><span class="n">FindObjectOfType</span> <span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="n">T</span><span class="p">));</span>
+</span><span class='line'>              <span class="k">if</span> <span class="p">(</span><span class="n">_instance</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span> <span class="p">{</span>
 </span><span class='line'>                  
-</span><span class='line'>                  <span class="n">string</span> <span class="n">goName</span> <span class="o">=</span> <span class="n">typeof</span><span class="p">(</span><span class="n">T</span><span class="p">).</span><span class="n">ToString</span> <span class="p">();</span>           
+</span><span class='line'>                  <span class="kt">string</span> <span class="n">goName</span> <span class="p">=</span> <span class="k">typeof</span><span class="p">(</span><span class="n">T</span><span class="p">).</span><span class="n">ToString</span> <span class="p">();</span>          
 </span><span class='line'>                  
-</span><span class='line'>                  <span class="n">GameObject</span> <span class="n">go</span> <span class="o">=</span> <span class="n">GameObject</span><span class="p">.</span><span class="n">Find</span> <span class="p">(</span><span class="n">goName</span><span class="p">);</span>
-</span><span class='line'>                  <span class="k">if</span> <span class="p">(</span><span class="n">go</span> <span class="o">==</span> <span class="n">null</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>                      <span class="n">go</span> <span class="o">=</span> <span class="n">new</span> <span class="n">GameObject</span> <span class="p">();</span>
-</span><span class='line'>                      <span class="n">go</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">goName</span><span class="p">;</span>
+</span><span class='line'>                  <span class="n">GameObject</span> <span class="n">go</span> <span class="p">=</span> <span class="n">GameObject</span><span class="p">.</span><span class="n">Find</span> <span class="p">(</span><span class="n">goName</span><span class="p">);</span>
+</span><span class='line'>                  <span class="k">if</span> <span class="p">(</span><span class="n">go</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>                      <span class="n">go</span> <span class="p">=</span> <span class="k">new</span> <span class="n">GameObject</span> <span class="p">();</span>
+</span><span class='line'>                      <span class="n">go</span><span class="p">.</span><span class="n">name</span> <span class="p">=</span> <span class="n">goName</span><span class="p">;</span>
 </span><span class='line'>                  <span class="p">}</span>
 </span><span class='line'>                  
-</span><span class='line'>                  <span class="n">_instance</span> <span class="o">=</span> <span class="n">go</span><span class="p">.</span><span class="n">AddComponent</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="p">();</span>                 
+</span><span class='line'>                  <span class="n">_instance</span> <span class="p">=</span> <span class="n">go</span><span class="p">.</span><span class="n">AddComponent</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span> <span class="p">();</span>                 
 </span><span class='line'>              <span class="p">}</span>
 </span><span class='line'>          <span class="p">}</span>
 </span><span class='line'>          <span class="k">return</span> <span class="n">_instance</span><span class="p">;</span>
@@ -262,10 +262,10 @@
 </span><span class='line'>  <span class="c1">/// &lt;summary&gt;</span>
 </span><span class='line'>  <span class="c1">/// for garbage collection</span>
 </span><span class='line'>  <span class="c1">/// &lt;/summary&gt;</span>
-</span><span class='line'>  <span class="n">public</span> <span class="k">virtual</span> <span class="kt">void</span> <span class="n">OnApplicationQuit</span> <span class="p">()</span>
+</span><span class='line'>  <span class="k">public</span> <span class="k">virtual</span> <span class="k">void</span> <span class="nf">OnApplicationQuit</span> <span class="p">()</span>
 </span><span class='line'>  <span class="p">{</span>
 </span><span class='line'>      <span class="c1">// release reference on exit</span>
-</span><span class='line'>      <span class="n">_instance</span> <span class="o">=</span> <span class="n">null</span><span class="p">;</span>
+</span><span class='line'>      <span class="n">_instance</span> <span class="p">=</span> <span class="k">null</span><span class="p">;</span>
 </span><span class='line'>  <span class="p">}</span>
 </span><span class='line'>  
 </span><span class='line'>  <span class="c1">// in your child class you can implement Awake()</span>
@@ -278,15 +278,15 @@
 </span><span class='line'>  <span class="c1">/// parent this to another gameobject by string</span>
 </span><span class='line'>  <span class="c1">/// call from Awake if you so desire</span>
 </span><span class='line'>  <span class="c1">/// &lt;/summary&gt;</span>
-</span><span class='line'>  <span class="n">protected</span> <span class="kt">void</span> <span class="n">SetParent</span> <span class="p">(</span><span class="n">string</span> <span class="n">parentGOName</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">protected</span> <span class="k">void</span> <span class="nf">SetParent</span> <span class="p">(</span><span class="kt">string</span> <span class="n">parentGOName</span><span class="p">)</span>
 </span><span class='line'>  <span class="p">{</span>
-</span><span class='line'>      <span class="k">if</span> <span class="p">(</span><span class="n">parentGOName</span> <span class="o">!=</span> <span class="n">null</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>          <span class="n">GameObject</span> <span class="n">parentGO</span> <span class="o">=</span> <span class="n">GameObject</span><span class="p">.</span><span class="n">Find</span> <span class="p">(</span><span class="n">parentGOName</span><span class="p">);</span>
-</span><span class='line'>          <span class="k">if</span> <span class="p">(</span><span class="n">parentGO</span> <span class="o">==</span> <span class="n">null</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>              <span class="n">parentGO</span> <span class="o">=</span> <span class="n">new</span> <span class="n">GameObject</span> <span class="p">();</span>
-</span><span class='line'>              <span class="n">parentGO</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">parentGOName</span><span class="p">;</span>
+</span><span class='line'>      <span class="k">if</span> <span class="p">(</span><span class="n">parentGOName</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>          <span class="n">GameObject</span> <span class="n">parentGO</span> <span class="p">=</span> <span class="n">GameObject</span><span class="p">.</span><span class="n">Find</span> <span class="p">(</span><span class="n">parentGOName</span><span class="p">);</span>
+</span><span class='line'>          <span class="k">if</span> <span class="p">(</span><span class="n">parentGO</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>              <span class="n">parentGO</span> <span class="p">=</span> <span class="k">new</span> <span class="n">GameObject</span> <span class="p">();</span>
+</span><span class='line'>              <span class="n">parentGO</span><span class="p">.</span><span class="n">name</span> <span class="p">=</span> <span class="n">parentGOName</span><span class="p">;</span>
 </span><span class='line'>          <span class="p">}</span>
-</span><span class='line'>          <span class="n">this</span><span class="p">.</span><span class="n">transform</span><span class="p">.</span><span class="n">parent</span> <span class="o">=</span> <span class="n">parentGO</span><span class="p">.</span><span class="n">transform</span><span class="p">;</span>
+</span><span class='line'>          <span class="k">this</span><span class="p">.</span><span class="n">transform</span><span class="p">.</span><span class="n">parent</span> <span class="p">=</span> <span class="n">parentGO</span><span class="p">.</span><span class="n">transform</span><span class="p">;</span>
 </span><span class='line'>      <span class="p">}</span>
 </span><span class='line'>  <span class="p">}</span>
 </span><span class='line'><span class="p">}</span>
@@ -453,40 +453,40 @@
 
 <section class="tag-cloud">
     <h1>Tags</h1>
-    <a style='font-size: 1.51em' href='//iOS'>iOS</a>
-<a style='font-size: 0.80em' href='//scala'>scala</a>
-<a style='font-size: 1.16em' href='//animation'>animation</a>
-<a style='font-size: 0.80em' href='//geopolitics'>geopolitics</a>
-<a style='font-size: 0.80em' href='//drawing'>drawing</a>
-<a style='font-size: 0.80em' href='//polarbear'>polarbear</a>
-<a style='font-size: 0.80em' href='//geometry'>geometry</a>
-<a style='font-size: 1.63em' href='//game'>game</a>
-<a style='font-size: 1.16em' href='//engineering'>engineering</a>
-<a style='font-size: 0.80em' href='//van'>van</a>
-<a style='font-size: 0.80em' href='//coroutine'>coroutine</a>
-<a style='font-size: 0.80em' href='//energy'>energy</a>
-<a style='font-size: 0.80em' href='//digital-arts'>digital arts</a>
-<a style='font-size: 0.80em' href='//carving'>carving</a>
-<a style='font-size: 0.80em' href='//kinect'>kinect</a>
-<a style='font-size: 1.36em' href='//unity3d'>unity3d</a>
-<a style='font-size: 0.80em' href='//grad-school'>grad school</a>
-<a style='font-size: 0.80em' href='//life'>life</a>
-<a style='font-size: 0.80em' href='//openCV'>openCV</a>
-<a style='font-size: 0.80em' href='//randomness'>randomness</a>
-<a style='font-size: 1.16em' href='//happiness'>happiness</a>
-<a style='font-size: 0.80em' href='//games'>games</a>
-<a style='font-size: 1.80em' href='//education'>education</a>
-<a style='font-size: 1.16em' href='//brain'>brain</a>
-<a style='font-size: 1.36em' href='//c-'>c#</a>
-<a style='font-size: 1.51em' href='//3D'>3D</a>
-<a style='font-size: 1.16em' href='//singleton'>singleton</a>
+    <a style='font-size: 0.80em' href='//startup'>startup</a>
 <a style='font-size: 1.16em' href='//modeling'>modeling</a>
-<a style='font-size: 0.80em' href='//openNI'>openNI</a>
-<a style='font-size: 0.80em' href='//startup'>startup</a>
-<a style='font-size: 0.80em' href='//future'>future</a>
+<a style='font-size: 1.16em' href='//happiness'>happiness</a>
+<a style='font-size: 1.16em' href='//animation'>animation</a>
+<a style='font-size: 1.16em' href='//brain'>brain</a>
+<a style='font-size: 0.80em' href='//kinect'>kinect</a>
+<a style='font-size: 0.80em' href='//coroutine'>coroutine</a>
+<a style='font-size: 0.80em' href='//drawing'>drawing</a>
+<a style='font-size: 0.80em' href='//digital-arts'>digital arts</a>
+<a style='font-size: 0.80em' href='//van'>van</a>
 <a style='font-size: 0.80em' href='//lift'>lift</a>
+<a style='font-size: 0.80em' href='//geometry'>geometry</a>
+<a style='font-size: 1.36em' href='//unity3d'>unity3d</a>
+<a style='font-size: 0.80em' href='//games'>games</a>
+<a style='font-size: 0.80em' href='//energy'>energy</a>
 <a style='font-size: 0.80em' href='//fear'>fear</a>
+<a style='font-size: 1.36em' href='//c-'>c#</a>
+<a style='font-size: 0.80em' href='//grad-school'>grad school</a>
+<a style='font-size: 0.80em' href='//openCV'>openCV</a>
+<a style='font-size: 1.16em' href='//singleton'>singleton</a>
+<a style='font-size: 1.16em' href='//engineering'>engineering</a>
+<a style='font-size: 0.80em' href='//scala'>scala</a>
+<a style='font-size: 0.80em' href='//openNI'>openNI</a>
+<a style='font-size: 1.80em' href='//education'>education</a>
+<a style='font-size: 1.51em' href='//3D'>3D</a>
+<a style='font-size: 0.80em' href='//polarbear'>polarbear</a>
+<a style='font-size: 0.80em' href='//future'>future</a>
+<a style='font-size: 1.63em' href='//game'>game</a>
+<a style='font-size: 0.80em' href='//geopolitics'>geopolitics</a>
 <a style='font-size: 1.51em' href='//chess'>chess</a>
+<a style='font-size: 0.80em' href='//carving'>carving</a>
+<a style='font-size: 0.80em' href='//randomness'>randomness</a>
+<a style='font-size: 0.80em' href='//life'>life</a>
+<a style='font-size: 1.51em' href='//iOS'>iOS</a>
  
 </section>
 
@@ -497,7 +497,7 @@
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2013 - timofei7 -
+  Copyright &copy; 2014 - timofei7 -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 

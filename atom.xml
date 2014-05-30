@@ -4,7 +4,7 @@
   <title><![CDATA[tim tregubov]]></title>
   <link href="http://timofei7.github.com/atom.xml" rel="self"/>
   <link href="http://timofei7.github.com/"/>
-  <updated>2013-03-27T18:37:17-04:00</updated>
+  <updated>2014-05-30T00:59:09-04:00</updated>
   <id>http://timofei7.github.com/</id>
   <author>
     <name><![CDATA[timofei7]]></name>
@@ -18,7 +18,7 @@
     <link href="http://timofei7.github.com/blog/2013/03/20/chessinvaders-update/"/>
     <updated>2013-03-20T05:18:00-04:00</updated>
     <id>http://timofei7.github.com/blog/2013/03/20/chessinvaders-update</id>
-    <content type="html"><![CDATA[<p>It has been a month since <a href="https://itunes.apple.com/app/chess-invaders/id575380345">ChessInvaders</a> was published in the App Store!  It has &#8220;sold&#8221; (for free) more than 6k copies, and has been engaged with (played through at least one level) almost 15k times.  The download rate has slowed to about 10 a day, but about double that are playing every day!  I&#8217;m pretty happy with that given that it&#8217;s a pretty hard and definitely beta quality game experience.</p>
+    <content type="html"><![CDATA[<p>It has been a month since <a href="https://itunes.apple.com/app/chess-invaders/id575380345">ChessInvaders</a> was published in the App Store!  It has &ldquo;sold&rdquo; (for free) more than 6k copies, and has been engaged with (played through at least one level) almost 15k times.  The download rate has slowed to about 10 a day, but about double that are playing every day!  I&rsquo;m pretty happy with that given that it&rsquo;s a pretty hard and definitely beta quality game experience.</p>
 
 <p>There have even been some reviews!</p>
 
@@ -57,9 +57,9 @@
 <p>Download it here:
 <a href="https://itunes.apple.com/app/chess-invaders/id575380345">https://itunes.apple.com/app/chess-invaders/id575380345</a></p>
 
-<p>People have been discovering some pretty cool bugs along the way: including floating pawns and exploding gui elements!  The game turns out to be pretty hard, and especially hard on smaller screens.  At the last minute, I added an option to slow the game down (under Settings), and made some tweaks to the spawn rate, but don&#8217;t be disheartened if you can&#8217;t beat it &#8211; only 32 people have so far.</p>
+<p>People have been discovering some pretty cool bugs along the way: including floating pawns and exploding gui elements!  The game turns out to be pretty hard, and especially hard on smaller screens.  At the last minute, I added an option to slow the game down (under Settings), and made some tweaks to the spawn rate, but don&rsquo;t be disheartened if you can&rsquo;t beat it &mdash; only 32 people have so far.</p>
 
-<p>All in all, I have had some great feedback and have learned a lot!  I&#8217;ve started working on the next game, a color mixing puzzle game, which is coming along much faster, after which I hope to revisit ChessInvaders and give it a good reworking to make it more fun!</p>
+<p>All in all, I have had some great feedback and have learned a lot!  I&rsquo;ve started working on the next game, a color mixing puzzle game, which is coming along much faster, after which I hope to revisit ChessInvaders and give it a good reworking to make it more fun!</p>
 ]]></content>
   </entry>
   
@@ -68,11 +68,11 @@
     <link href="http://timofei7.github.com/blog/2013/02/14/chessinvaders-update/"/>
     <updated>2013-02-14T01:40:00-05:00</updated>
     <id>http://timofei7.github.com/blog/2013/02/14/chessinvaders-update</id>
-    <content type="html"><![CDATA[<p>ChessInvaders is submitted to the Apple App store and is pending review!  I have a <a href="http://timofei7.github.com/chessinvaders/webplayer/">limited functionality web port up</a>. Some stuff doesn&#8217;t work due to it being on the web rather than on iOS.  To pinch the screen hold down the option key.</p>
+    <content type="html"><![CDATA[<p>ChessInvaders is submitted to the Apple App store and is pending review!  I have a <a href="http://timofei7.github.com/chessinvaders/webplayer/">limited functionality web port up</a>. Some stuff doesn&rsquo;t work due to it being on the web rather than on iOS.  To pinch the screen hold down the option key.</p>
 
-<p>Turns out that porting to the web wasn&#8217;t straightforward at all. The Unity web player runs in a partial trust environment which ends up affecting Coroutines in a weird way.  If you have some classes where you are overriding virtual IEnumerator or Coroutine methods but still want to call the base class versions then those trigger a ValidationException.  All my GUI code is built out of smaller components which all have virtual Coroutine TurnOn/TurnOff methods, blam, that won&#8217;t work on the web.  I hacked it up to work for now, but some functionality isn&#8217;t there (highscores) and its not worth it to try to redesign my GUI code right now.</p>
+<p>Turns out that porting to the web wasn&rsquo;t straightforward at all. The Unity web player runs in a partial trust environment which ends up affecting Coroutines in a weird way.  If you have some classes where you are overriding virtual IEnumerator or Coroutine methods but still want to call the base class versions then those trigger a ValidationException.  All my GUI code is built out of smaller components which all have virtual Coroutine TurnOn/TurnOff methods, blam, that won&rsquo;t work on the web.  I hacked it up to work for now, but some functionality isn&rsquo;t there (highscores) and its not worth it to try to redesign my GUI code right now.</p>
 
-<p>Regardless, hopefully soon it&#8217;ll be coming to the app store on an iOS device near you!  Also it&#8217;ll be free.</p>
+<p>Regardless, hopefully soon it&rsquo;ll be coming to the app store on an iOS device near you!  Also it&rsquo;ll be free.</p>
 ]]></content>
   </entry>
   
@@ -81,7 +81,7 @@
     <link href="http://timofei7.github.com/blog/2013/02/05/unity-coroutine-wrapper/"/>
     <updated>2013-02-05T01:40:00-05:00</updated>
     <id>http://timofei7.github.com/blog/2013/02/05/unity-coroutine-wrapper</id>
-    <content type="html"><![CDATA[<p>Firstly, coroutines are awesome.  If you aren&#8217;t familiar with them (particularly in the context of Unity3d) then you should be.  In short, <a href="http://en.wikipedia.org/wiki/Coroutine">coroutines</a> are methods that can suspend and resume execution.  In the context of Unity what this means is that you can have methods that appear to run concurrently. The Unity documentation has some <a href="http://docs.unity3d.com/Documentation/ScriptReference/index.Coroutines_26_Yield.html">examples</a>.</p>
+    <content type="html"><![CDATA[<p>Firstly, coroutines are awesome.  If you aren&rsquo;t familiar with them (particularly in the context of Unity3d) then you should be.  In short, <a href="http://en.wikipedia.org/wiki/Coroutine">coroutines</a> are methods that can suspend and resume execution.  In the context of Unity what this means is that you can have methods that appear to run concurrently. The Unity documentation has some <a href="http://docs.unity3d.com/Documentation/ScriptReference/index.Coroutines_26_Yield.html">examples</a>.</p>
 
 <p>Coroutines are <strong>the</strong> way to script a lot of things in Unity, however there are a few problems that you may run into if you use them heavily: exception handling, return values, and locking. Especially if you use nested coroutines!</p>
 
@@ -90,7 +90,7 @@
 
 <h3>Return Values</h3>
 
-<p>Coroutines in Unity, although built on iterators, don&#8217;t handle return values. Even though it appears as if you can return a value, internally return values are used to keep track of where to resume.  But, &#8220;I want a coroutine to return something!&#8221;, you say.  So you work around that using a callback:</p>
+<p>Coroutines in Unity, although built on iterators, don&rsquo;t handle return values. Even though it appears as if you can return a value, internally return values are used to keep track of where to resume.  But, &ldquo;I want a coroutine to return something!&rdquo;, you say.  So you work around that using a callback:</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -133,11 +133,11 @@
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>Ok so this helps with getting a return value out of a coroutine.  It works well enough. Only caveat is in the callback code you can&#8217;t do another yield, not a big problem, and solveable by setting some variables. We&#8217;ll return to this topic.</p>
+<p>Ok so this helps with getting a return value out of a coroutine.  It works well enough. Only caveat is in the callback code you can&rsquo;t do another yield, not a big problem, and solveable by setting some variables. We&rsquo;ll return to this topic.</p>
 
 <h3>Exception Handling</h3>
 
-<p>There is no exception handling at the coroutine level.  You can&#8217;t put a <code>yield</code> statement in a <code>try…catch</code> block.  This in particular can cause a problem if you have nested coroutines:</p>
+<p>There is no exception handling at the coroutine level.  You can&rsquo;t put a <code>yield</code> statement in a <code>try…catch</code> block.  This in particular can cause a problem if you have nested coroutines:</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -168,9 +168,9 @@
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>Logically, if any of the nested coroutines throw an exception then the parent will stop execution.  Now, this is only fair, but since you can&#8217;t <code>try…catch</code> the nested coroutines it forces you to have to do error handling at a much more obnoxious nested level.  You have to make sure to handle all exceptions in each subroutine, even if it doesn&#8217;t really make sense to do that.  For instance you have a MovePiece coroutine,  if it fails (say the piece was attacked mid move) what you&#8217;d like to do in the parent coroutine (which is something like AttackState) is notice the failed move and handle it there.  If the MovePiece coroutine does a bunch of stuff (set some flags, run a few different animations) the parent probably only cares whether it was successfull or not.  You could use a callback like above to indicate success but, this doesn&#8217;t help if MovePiece threw an exception.  In that case the parent coroutine exits and we&#8217;re stuck handling the exception at too high a level (say in a non-coroutine above the parent). Not ideal.</p>
+<p>Logically, if any of the nested coroutines throw an exception then the parent will stop execution.  Now, this is only fair, but since you can&rsquo;t <code>try…catch</code> the nested coroutines it forces you to have to do error handling at a much more obnoxious nested level.  You have to make sure to handle all exceptions in each subroutine, even if it doesn&rsquo;t really make sense to do that.  For instance you have a MovePiece coroutine,  if it fails (say the piece was attacked mid move) what you&rsquo;d like to do in the parent coroutine (which is something like AttackState) is notice the failed move and handle it there.  If the MovePiece coroutine does a bunch of stuff (set some flags, run a few different animations) the parent probably only cares whether it was successfull or not.  You could use a callback like above to indicate success but, this doesn&rsquo;t help if MovePiece threw an exception.  In that case the parent coroutine exits and we&rsquo;re stuck handling the exception at too high a level (say in a non-coroutine above the parent). Not ideal.</p>
 
-<p>Ideally we&#8217;d be able to catch any exception per coroutine (nested or not) allowing us to think of each coroutine as a logical unit as it should be.  A great solution for this <a href="http://twistedoakstudios.com/blog/Post83_coroutines-more-than-you-want-to-know">exists</a>. Part of this solution is also a better way to handle return values without having to use a callback.  This uses a parametrized wrapper to Coroutine and allows us to handle exceptions and return values like so:</p>
+<p>Ideally we&rsquo;d be able to catch any exception per coroutine (nested or not) allowing us to think of each coroutine as a logical unit as it should be.  A great solution for this <a href="http://twistedoakstudios.com/blog/Post83_coroutines-more-than-you-want-to-know">exists</a>. Part of this solution is also a better way to handle return values without having to use a callback.  This uses a parametrized wrapper to Coroutine and allows us to handle exceptions and return values like so:</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -199,13 +199,13 @@
 
 <p></p>
 
-<p>That is much better!  Now the child exits without interrupting the parent and the parent can deal with it appropriately (exceptions and return values).  Now, what&#8217;s this about locking?</p>
+<p>That is much better!  Now the child exits without interrupting the parent and the parent can deal with it appropriately (exceptions and return values).  Now, what&rsquo;s this about locking?</p>
 
 <h3>Locking</h3>
 
-<p>The other problem is locking.  Coroutines (although technically not multi-threaded in Unity) do cause concurrency problems!  What if, based on user input, you start a Coroutine multiple times and it operates on the same objects?  A mess can ensue.  One solution in Unity is that you can start a coroutine using a string name of the IEnumerator method.  This uses reflection and is yucky.  Who want to use strings when you&#8217;re using a nice strongly typed language like C#?  But, if you use strings you can do <code>StopCoroutine("DoStuff"); StartCoroutine("DoStuff")</code>.  Another option is to just have some instance variable bool and appropriate logic for every coroutine.  This too gets messy quickly with lots of coroutines.</p>
+<p>The other problem is locking.  Coroutines (although technically not multi-threaded in Unity) do cause concurrency problems!  What if, based on user input, you start a Coroutine multiple times and it operates on the same objects?  A mess can ensue.  One solution in Unity is that you can start a coroutine using a string name of the IEnumerator method.  This uses reflection and is yucky.  Who want to use strings when you&rsquo;re using a nice strongly typed language like C#?  But, if you use strings you can do <code>StopCoroutine("DoStuff"); StartCoroutine("DoStuff")</code>.  Another option is to just have some instance variable bool and appropriate logic for every coroutine.  This too gets messy quickly with lots of coroutines.</p>
 
-<p>These techniques get you part of the way but what if you want a coroutine to actually just block/wait for a previous instance to finish running like traditional locking but without any undue messiness?  Well using <code>lock(someobject)</code> doesn&#8217;t work, because it would only be evaluated once and isn&#8217;t checked on the coroutine resume.  Some people have written large coroutine managers that help with all these problems but those seemed like overkill so I built on the exception handling stuff and added locking support. The idea is that you start the coroutine with a string identifier (if none is given no locking is performed) and an optional timeout period.  With the string identifier each MonoBehavior keeps the currently running coroutines in a queue and either yields (analogous to blocking on a lock) until it&#8217;s turn comes up or bails on a timeout.  Like so:</p>
+<p>These techniques get you part of the way but what if you want a coroutine to actually just block/wait for a previous instance to finish running like traditional locking but without any undue messiness?  Well using <code>lock(someobject)</code> doesn&rsquo;t work, because it would only be evaluated once and isn&rsquo;t checked on the coroutine resume.  Some people have written large coroutine managers that help with all these problems but those seemed like overkill so I built on the exception handling stuff and added locking support. The idea is that you start the coroutine with a string identifier (if none is given no locking is performed) and an optional timeout period.  With the string identifier each MonoBehavior keeps the currently running coroutines in a queue and either yields (analogous to blocking on a lock) until it&rsquo;s turn comes up or bails on a timeout.  Like so:</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -217,7 +217,7 @@
 <p>The easiest way to use this is to extend MonoBehaviour and use the new class as the base class for all your MonoBehaviours.  Here is mine:</p>
 
 <figure class='code'><figcaption><span>My MonoBehaviour Base Class   (TTMonoBehaviour.cs)</span> <a href='http://timofei7.github.com/downloads/code/csharp/TTMonoBehaviour.cs'>download</a></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -680,10 +680,10 @@
 
 <p></p>
 
-<p>Below is my updated singleton class. What I ended up doing was adding an Attribute so you could just define the Prefab attribute for any singletons that did have associated prefabs and off you go.  I have left in some debug statements commented out for clarity.  The only caveat is that of course you could accidentally have added multiple instances of the prefab in your scene &#8211; what I do now is to just throw an exception if that is the case (an alternative may be to just choose one and self-destruct the others but deciding which is correct is unclear).</p>
+<p>Below is my updated singleton class. What I ended up doing was adding an Attribute so you could just define the Prefab attribute for any singletons that did have associated prefabs and off you go.  I have left in some debug statements commented out for clarity.  The only caveat is that of course you could accidentally have added multiple instances of the prefab in your scene &mdash; what I do now is to just throw an exception if that is the case (an alternative may be to just choose one and self-destruct the others but deciding which is correct is unclear).</p>
 
-<figure class='code'><figcaption><span>Singleton.cs # </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span>Singleton.cs </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -830,9 +830,9 @@
 <span class='line-number'>145</span>
 <span class='line-number'>146</span>
 <span class='line-number'>147</span>
-</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="n">using</span> <span class="n">UnityEngine</span><span class="p">;</span>
-</span><span class='line'><span class="n">using</span> <span class="n">System</span><span class="p">.</span><span class="n">Collections</span><span class="p">;</span>
-</span><span class='line'><span class="n">using</span> <span class="n">System</span><span class="p">;</span>
+</pre></td><td class='code'><pre><code class='c#'><span class='line'><span class="k">using</span> <span class="nn">UnityEngine</span><span class="p">;</span>
+</span><span class='line'><span class="k">using</span> <span class="nn">System.Collections</span><span class="p">;</span>
+</span><span class='line'><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
 </span><span class='line'>
 </span><span class='line'><span class="c1">/// &lt;summary&gt;</span>
 </span><span class='line'><span class="c1">/// Prefab attribute. Use this on child classes</span>
@@ -841,13 +841,13 @@
 </span><span class='line'><span class="c1">/// that has the same name as the class,</span>
 </span><span class='line'><span class="c1">/// otherwise [Prefab(&quot;path/to/prefab&quot;)] to define it specifically. </span>
 </span><span class='line'><span class="c1">/// &lt;/summary&gt;</span>
-</span><span class='line'><span class="p">[</span><span class="n">AttributeUsage</span><span class="p">(</span><span class="n">AttributeTargets</span><span class="p">.</span><span class="n">Class</span><span class="p">,</span><span class="n">Inherited</span> <span class="o">=</span> <span class="nb">true</span><span class="p">)]</span>
-</span><span class='line'><span class="n">public</span> <span class="n">class</span> <span class="n">PrefabAttribute</span> <span class="o">:</span> <span class="n">Attribute</span>
+</span><span class='line'><span class="na">[AttributeUsage(AttributeTargets.Class,Inherited = true)]</span>
+</span><span class='line'><span class="k">public</span> <span class="k">class</span> <span class="nc">PrefabAttribute</span> <span class="p">:</span> <span class="n">Attribute</span>
 </span><span class='line'><span class="p">{</span>
-</span><span class='line'>    <span class="n">string</span> <span class="n">_name</span><span class="p">;</span>
-</span><span class='line'>  <span class="n">public</span> <span class="n">string</span> <span class="n">Name</span> <span class="p">{</span> <span class="n">get</span> <span class="p">{</span> <span class="k">return</span> <span class="n">this</span><span class="p">.</span><span class="n">_name</span><span class="p">;</span> <span class="p">}</span> <span class="p">}</span>
-</span><span class='line'>  <span class="n">public</span> <span class="n">PrefabAttribute</span><span class="p">()</span> <span class="p">{</span> <span class="n">this</span><span class="p">.</span><span class="n">_name</span> <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">;</span> <span class="p">}</span>
-</span><span class='line'>    <span class="n">public</span> <span class="n">PrefabAttribute</span><span class="p">(</span><span class="n">string</span> <span class="n">name</span><span class="p">)</span> <span class="p">{</span> <span class="n">this</span><span class="p">.</span><span class="n">_name</span> <span class="o">=</span> <span class="n">name</span><span class="p">;</span> <span class="p">}</span>
+</span><span class='line'>    <span class="kt">string</span> <span class="n">_name</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">public</span> <span class="kt">string</span> <span class="n">Name</span> <span class="p">{</span> <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="n">_name</span><span class="p">;</span> <span class="p">}</span> <span class="p">}</span>
+</span><span class='line'>  <span class="k">public</span> <span class="nf">PrefabAttribute</span><span class="p">()</span> <span class="p">{</span> <span class="k">this</span><span class="p">.</span><span class="n">_name</span> <span class="p">=</span> <span class="s">&quot;&quot;</span><span class="p">;</span> <span class="p">}</span>
+</span><span class='line'>    <span class="k">public</span> <span class="nf">PrefabAttribute</span><span class="p">(</span><span class="kt">string</span> <span class="n">name</span><span class="p">)</span> <span class="p">{</span> <span class="k">this</span><span class="p">.</span><span class="n">_name</span> <span class="p">=</span> <span class="n">name</span><span class="p">;</span> <span class="p">}</span>
 </span><span class='line'><span class="p">}</span>
 </span><span class='line'>
 </span><span class='line'><span class="c1">/// &lt;summary&gt;</span>
@@ -859,11 +859,11 @@
 </span><span class='line'><span class="c1">///          : http://tinyurl.com/cc73a9h</span>
 </span><span class='line'><span class="c1">///          : http://unifycommunity.com/wiki/index.php?title=Singleton</span>
 </span><span class='line'><span class="c1">/// &lt;/summary&gt;</span>
-</span><span class='line'><span class="n">public</span> <span class="n">abstract</span> <span class="n">class</span> <span class="n">Singleton</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">:</span> <span class="n">MonoBehaviour</span> <span class="n">where</span> <span class="n">T</span> <span class="o">:</span> <span class="n">MonoBehaviour</span>
+</span><span class='line'><span class="k">public</span> <span class="k">abstract</span> <span class="k">class</span> <span class="nc">Singleton</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span> <span class="p">:</span> <span class="n">MonoBehaviour</span> <span class="k">where</span> <span class="n">T</span> <span class="p">:</span> <span class="n">MonoBehaviour</span>
 </span><span class='line'><span class="p">{</span>
 </span><span class='line'>  
-</span><span class='line'>  <span class="n">private</span> <span class="k">static</span> <span class="n">T</span> <span class="n">_instance</span> <span class="o">=</span> <span class="n">null</span><span class="p">;</span>
-</span><span class='line'>  <span class="n">public</span> <span class="k">static</span> <span class="n">bool</span> <span class="n">IsAwake</span> <span class="p">{</span> <span class="n">get</span> <span class="p">{</span> <span class="k">return</span> <span class="p">(</span><span class="n">_instance</span> <span class="o">!=</span> <span class="n">null</span><span class="p">);</span> <span class="p">}</span> <span class="p">}</span>
+</span><span class='line'>  <span class="k">private</span> <span class="k">static</span> <span class="n">T</span> <span class="n">_instance</span> <span class="p">=</span> <span class="k">null</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">public</span> <span class="k">static</span> <span class="kt">bool</span> <span class="n">IsAwake</span> <span class="p">{</span> <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="p">(</span><span class="n">_instance</span> <span class="p">!=</span> <span class="k">null</span><span class="p">);</span> <span class="p">}</span> <span class="p">}</span>
 </span><span class='line'>          
 </span><span class='line'>  <span class="c1">/// &lt;summary&gt;</span>
 </span><span class='line'>  <span class="c1">/// gets the instance of this Singleton</span>
@@ -873,69 +873,69 @@
 </span><span class='line'>  <span class="c1">/// and have them use Instance internally</span>
 </span><span class='line'>  <span class="c1">/// for a nice clean interface</span>
 </span><span class='line'>  <span class="c1">/// &lt;/summary&gt;</span>
-</span><span class='line'>  <span class="n">public</span> <span class="k">static</span> <span class="n">T</span> <span class="n">Instance</span> <span class="p">{</span>
-</span><span class='line'>      <span class="n">get</span> <span class="p">{</span>
-</span><span class='line'>          <span class="n">Type</span> <span class="n">mytype</span> <span class="o">=</span> <span class="n">typeof</span><span class="p">(</span><span class="n">T</span><span class="p">);</span>
-</span><span class='line'>          <span class="k">if</span> <span class="p">(</span><span class="n">_instance</span> <span class="o">==</span> <span class="n">null</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>              <span class="n">_instance</span> <span class="o">=</span> <span class="p">(</span><span class="n">T</span><span class="p">)</span><span class="n">FindObjectOfType</span> <span class="p">(</span><span class="n">mytype</span><span class="p">);</span>
-</span><span class='line'>              <span class="k">if</span> <span class="p">(</span><span class="n">_instance</span> <span class="o">==</span> <span class="n">null</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">public</span> <span class="k">static</span> <span class="n">T</span> <span class="n">Instance</span> <span class="p">{</span>
+</span><span class='line'>      <span class="k">get</span> <span class="p">{</span>
+</span><span class='line'>          <span class="n">Type</span> <span class="n">mytype</span> <span class="p">=</span> <span class="k">typeof</span><span class="p">(</span><span class="n">T</span><span class="p">);</span>
+</span><span class='line'>          <span class="k">if</span> <span class="p">(</span><span class="n">_instance</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>              <span class="n">_instance</span> <span class="p">=</span> <span class="p">(</span><span class="n">T</span><span class="p">)</span><span class="n">FindObjectOfType</span> <span class="p">(</span><span class="n">mytype</span><span class="p">);</span>
+</span><span class='line'>              <span class="k">if</span> <span class="p">(</span><span class="n">_instance</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span> <span class="p">{</span>
 </span><span class='line'>                  <span class="c1">//Debug.Log(&quot;initializing instance of: &quot; + mytype.Name);</span>
-</span><span class='line'>                  <span class="n">string</span> <span class="n">goName</span> <span class="o">=</span> <span class="n">mytype</span><span class="p">.</span><span class="n">ToString</span> <span class="p">();</span>
-</span><span class='line'>                  <span class="n">GameObject</span> <span class="n">go</span> <span class="o">=</span> <span class="n">GameObject</span><span class="p">.</span><span class="n">Find</span> <span class="p">(</span><span class="n">goName</span><span class="p">);</span>
-</span><span class='line'>                  <span class="k">if</span> <span class="p">(</span><span class="n">go</span> <span class="o">==</span> <span class="n">null</span><span class="p">)</span> <span class="c1">// try again searching for a cloned object</span>
+</span><span class='line'>                  <span class="kt">string</span> <span class="n">goName</span> <span class="p">=</span> <span class="n">mytype</span><span class="p">.</span><span class="n">ToString</span> <span class="p">();</span>
+</span><span class='line'>                  <span class="n">GameObject</span> <span class="n">go</span> <span class="p">=</span> <span class="n">GameObject</span><span class="p">.</span><span class="n">Find</span> <span class="p">(</span><span class="n">goName</span><span class="p">);</span>
+</span><span class='line'>                  <span class="k">if</span> <span class="p">(</span><span class="n">go</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span> <span class="c1">// try again searching for a cloned object</span>
 </span><span class='line'>                  <span class="p">{</span>
-</span><span class='line'>                      <span class="n">go</span> <span class="o">=</span> <span class="n">GameObject</span><span class="p">.</span><span class="n">Find</span> <span class="p">(</span><span class="n">goName</span><span class="o">+</span><span class="s">&quot;(Clone)&quot;</span><span class="p">);</span>
-</span><span class='line'>                      <span class="k">if</span> <span class="p">(</span><span class="n">go</span> <span class="o">!=</span> <span class="n">null</span><span class="p">)</span>
+</span><span class='line'>                      <span class="n">go</span> <span class="p">=</span> <span class="n">GameObject</span><span class="p">.</span><span class="n">Find</span> <span class="p">(</span><span class="n">goName</span><span class="p">+</span><span class="s">&quot;(Clone)&quot;</span><span class="p">);</span>
+</span><span class='line'>                      <span class="k">if</span> <span class="p">(</span><span class="n">go</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
 </span><span class='line'>                      <span class="p">{</span>
 </span><span class='line'>                          <span class="c1">//Debug.Log(&quot;found clone of object using it!&quot;); </span>
 </span><span class='line'>                      <span class="p">}</span>
 </span><span class='line'>                  <span class="p">}</span>
 </span><span class='line'>                  
-</span><span class='line'>                  <span class="k">if</span> <span class="p">(</span><span class="n">go</span> <span class="o">==</span> <span class="n">null</span><span class="p">)</span> <span class="c1">//if still not found try prefab or create</span>
+</span><span class='line'>                  <span class="k">if</span> <span class="p">(</span><span class="n">go</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span> <span class="c1">//if still not found try prefab or create</span>
 </span><span class='line'>                  <span class="p">{</span>
-</span><span class='line'>                      <span class="n">bool</span> <span class="n">hasPrefab</span> <span class="o">=</span> <span class="n">Attribute</span><span class="p">.</span><span class="n">IsDefined</span><span class="p">(</span><span class="n">mytype</span><span class="p">,</span> <span class="n">typeof</span><span class="p">(</span><span class="n">PrefabAttribute</span><span class="p">));</span>
+</span><span class='line'>                      <span class="kt">bool</span> <span class="n">hasPrefab</span> <span class="p">=</span> <span class="n">Attribute</span><span class="p">.</span><span class="n">IsDefined</span><span class="p">(</span><span class="n">mytype</span><span class="p">,</span> <span class="k">typeof</span><span class="p">(</span><span class="n">PrefabAttribute</span><span class="p">));</span>
 </span><span class='line'>                      <span class="c1">// checks if the [Prefab] attribute is set and pulls that if it can</span>
 </span><span class='line'>                      <span class="k">if</span> <span class="p">(</span><span class="n">hasPrefab</span><span class="p">)</span>
 </span><span class='line'>                      <span class="p">{</span>
-</span><span class='line'>                          <span class="n">PrefabAttribute</span> <span class="n">attr</span> <span class="o">=</span> <span class="p">(</span><span class="n">PrefabAttribute</span><span class="p">)</span><span class="n">Attribute</span><span class="p">.</span><span class="n">GetCustomAttribute</span><span class="p">(</span><span class="n">mytype</span><span class="p">,</span><span class="n">typeof</span><span class="p">(</span><span class="n">PrefabAttribute</span><span class="p">));</span>
-</span><span class='line'>                          <span class="n">string</span> <span class="n">prefabname</span> <span class="o">=</span> <span class="n">attr</span><span class="p">.</span><span class="n">Name</span><span class="p">;</span>
+</span><span class='line'>                          <span class="n">PrefabAttribute</span> <span class="n">attr</span> <span class="p">=</span> <span class="p">(</span><span class="n">PrefabAttribute</span><span class="p">)</span><span class="n">Attribute</span><span class="p">.</span><span class="n">GetCustomAttribute</span><span class="p">(</span><span class="n">mytype</span><span class="p">,</span><span class="k">typeof</span><span class="p">(</span><span class="n">PrefabAttribute</span><span class="p">));</span>
+</span><span class='line'>                          <span class="kt">string</span> <span class="n">prefabname</span> <span class="p">=</span> <span class="n">attr</span><span class="p">.</span><span class="n">Name</span><span class="p">;</span>
 </span><span class='line'>                          <span class="c1">//Debug.LogWarning(goName + &quot; not found attempting to instantiate prefab... either: &quot; + goName + &quot; or: &quot; + prefabname);</span>
-</span><span class='line'>                          <span class="n">try</span>
+</span><span class='line'>                          <span class="k">try</span>
 </span><span class='line'>                          <span class="p">{</span>
-</span><span class='line'>                              <span class="k">if</span> <span class="p">(</span><span class="n">prefabname</span> <span class="o">!=</span> <span class="s">&quot;&quot;</span><span class="p">)</span>
+</span><span class='line'>                              <span class="k">if</span> <span class="p">(</span><span class="n">prefabname</span> <span class="p">!=</span> <span class="s">&quot;&quot;</span><span class="p">)</span>
 </span><span class='line'>                              <span class="p">{</span>
-</span><span class='line'>                                  <span class="n">go</span> <span class="o">=</span> <span class="p">(</span><span class="n">GameObject</span><span class="p">)</span><span class="n">Instantiate</span><span class="p">(</span><span class="n">Resources</span><span class="p">.</span><span class="n">Load</span><span class="p">(</span><span class="n">prefabname</span><span class="p">,</span> <span class="n">typeof</span><span class="p">(</span><span class="n">GameObject</span><span class="p">)));</span>
+</span><span class='line'>                                  <span class="n">go</span> <span class="p">=</span> <span class="p">(</span><span class="n">GameObject</span><span class="p">)</span><span class="n">Instantiate</span><span class="p">(</span><span class="n">Resources</span><span class="p">.</span><span class="n">Load</span><span class="p">(</span><span class="n">prefabname</span><span class="p">,</span> <span class="k">typeof</span><span class="p">(</span><span class="n">GameObject</span><span class="p">)));</span>
 </span><span class='line'>                              <span class="p">}</span>
 </span><span class='line'>                              <span class="k">else</span>
 </span><span class='line'>                              <span class="p">{</span>
-</span><span class='line'>                                  <span class="n">go</span> <span class="o">=</span> <span class="p">(</span><span class="n">GameObject</span><span class="p">)</span><span class="n">Instantiate</span><span class="p">(</span><span class="n">Resources</span><span class="p">.</span><span class="n">Load</span><span class="p">(</span><span class="n">goName</span><span class="p">,</span> <span class="n">typeof</span><span class="p">(</span><span class="n">GameObject</span><span class="p">)));</span>
+</span><span class='line'>                                  <span class="n">go</span> <span class="p">=</span> <span class="p">(</span><span class="n">GameObject</span><span class="p">)</span><span class="n">Instantiate</span><span class="p">(</span><span class="n">Resources</span><span class="p">.</span><span class="n">Load</span><span class="p">(</span><span class="n">goName</span><span class="p">,</span> <span class="k">typeof</span><span class="p">(</span><span class="n">GameObject</span><span class="p">)));</span>
 </span><span class='line'>                              <span class="p">}</span>
-</span><span class='line'>                          <span class="p">}</span> <span class="n">catch</span> <span class="p">(</span><span class="n">Exception</span> <span class="n">e</span><span class="p">)</span>
+</span><span class='line'>                          <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">Exception</span> <span class="n">e</span><span class="p">)</span>
 </span><span class='line'>                          <span class="p">{</span>
-</span><span class='line'>                              <span class="n">Debug</span><span class="p">.</span><span class="n">LogError</span><span class="p">(</span><span class="s">&quot;could not instantiate prefab even though prefab attribute was set: &quot;</span> <span class="o">+</span> <span class="n">e</span><span class="p">.</span><span class="n">Message</span> <span class="o">+</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span> <span class="o">+</span> <span class="n">e</span><span class="p">.</span><span class="n">StackTrace</span><span class="p">);</span>
+</span><span class='line'>                              <span class="n">Debug</span><span class="p">.</span><span class="n">LogError</span><span class="p">(</span><span class="s">&quot;could not instantiate prefab even though prefab attribute was set: &quot;</span> <span class="p">+</span> <span class="n">e</span><span class="p">.</span><span class="n">Message</span> <span class="p">+</span> <span class="s">&quot;\n&quot;</span> <span class="p">+</span> <span class="n">e</span><span class="p">.</span><span class="n">StackTrace</span><span class="p">);</span>
 </span><span class='line'>                          <span class="p">}</span>
 </span><span class='line'>                      <span class="p">}</span>
-</span><span class='line'>                      <span class="k">if</span> <span class="p">(</span><span class="n">go</span> <span class="o">==</span> <span class="n">null</span><span class="p">)</span>
+</span><span class='line'>                      <span class="k">if</span> <span class="p">(</span><span class="n">go</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span>
 </span><span class='line'>                      <span class="p">{</span>
 </span><span class='line'>                          <span class="c1">//Debug.LogWarning(goName + &quot; not found creating...&quot;);</span>
-</span><span class='line'>                          <span class="n">go</span> <span class="o">=</span> <span class="n">new</span> <span class="n">GameObject</span> <span class="p">();</span>
-</span><span class='line'>                          <span class="n">go</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">goName</span><span class="p">;</span>
+</span><span class='line'>                          <span class="n">go</span> <span class="p">=</span> <span class="k">new</span> <span class="n">GameObject</span> <span class="p">();</span>
+</span><span class='line'>                          <span class="n">go</span><span class="p">.</span><span class="n">name</span> <span class="p">=</span> <span class="n">goName</span><span class="p">;</span>
 </span><span class='line'>                      <span class="p">}</span>
 </span><span class='line'>                  <span class="p">}</span>
-</span><span class='line'>                  <span class="n">_instance</span> <span class="o">=</span> <span class="n">go</span><span class="p">.</span><span class="n">GetComponent</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">();</span>
-</span><span class='line'>                  <span class="k">if</span> <span class="p">(</span><span class="n">_instance</span> <span class="o">==</span> <span class="n">null</span><span class="p">)</span>
+</span><span class='line'>                  <span class="n">_instance</span> <span class="p">=</span> <span class="n">go</span><span class="p">.</span><span class="n">GetComponent</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;();</span>
+</span><span class='line'>                  <span class="k">if</span> <span class="p">(</span><span class="n">_instance</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span>
 </span><span class='line'>                  <span class="p">{</span>
-</span><span class='line'>                      <span class="n">_instance</span> <span class="o">=</span> <span class="n">go</span><span class="p">.</span><span class="n">AddComponent</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">();</span>
+</span><span class='line'>                      <span class="n">_instance</span> <span class="p">=</span> <span class="n">go</span><span class="p">.</span><span class="n">AddComponent</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;();</span>
 </span><span class='line'>                  <span class="p">}</span>
 </span><span class='line'>              <span class="p">}</span>
 </span><span class='line'>              <span class="k">else</span>
 </span><span class='line'>              <span class="p">{</span>
 </span><span class='line'>                  <span class="c1">//Debug.Log(mytype.Name + &quot; had to be searched for but was found&quot;); </span>
-</span><span class='line'>                  <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="n">FindObjectsOfType</span><span class="p">(</span><span class="n">mytype</span><span class="p">).</span><span class="n">Length</span><span class="p">;</span>
-</span><span class='line'>                  <span class="k">if</span> <span class="p">(</span><span class="n">count</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span>
+</span><span class='line'>                  <span class="kt">int</span> <span class="n">count</span> <span class="p">=</span> <span class="n">FindObjectsOfType</span><span class="p">(</span><span class="n">mytype</span><span class="p">).</span><span class="n">Length</span><span class="p">;</span>
+</span><span class='line'>                  <span class="k">if</span> <span class="p">(</span><span class="n">count</span> <span class="p">&gt;</span> <span class="m">1</span><span class="p">)</span>
 </span><span class='line'>                  <span class="p">{</span>
-</span><span class='line'>                      <span class="n">Debug</span><span class="p">.</span><span class="n">LogError</span><span class="p">(</span><span class="s">&quot;Singleton: there are &quot;</span> <span class="o">+</span> <span class="n">count</span><span class="p">.</span><span class="n">ToString</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot; of &quot;</span> <span class="o">+</span> <span class="n">mytype</span><span class="p">.</span><span class="n">Name</span><span class="p">);</span>
-</span><span class='line'>                      <span class="n">throw</span> <span class="n">new</span> <span class="n">Exception</span><span class="p">(</span><span class="s">&quot;Too many (&quot;</span> <span class="o">+</span> <span class="n">count</span><span class="p">.</span><span class="n">ToString</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot;) prefab singletons of type: &quot;</span> <span class="o">+</span> <span class="n">mytype</span><span class="p">.</span><span class="n">Name</span><span class="p">);</span>
+</span><span class='line'>                      <span class="n">Debug</span><span class="p">.</span><span class="n">LogError</span><span class="p">(</span><span class="s">&quot;Singleton: there are &quot;</span> <span class="p">+</span> <span class="n">count</span><span class="p">.</span><span class="n">ToString</span><span class="p">()</span> <span class="p">+</span> <span class="s">&quot; of &quot;</span> <span class="p">+</span> <span class="n">mytype</span><span class="p">.</span><span class="n">Name</span><span class="p">);</span>
+</span><span class='line'>                      <span class="k">throw</span> <span class="k">new</span> <span class="nf">Exception</span><span class="p">(</span><span class="s">&quot;Too many (&quot;</span> <span class="p">+</span> <span class="n">count</span><span class="p">.</span><span class="n">ToString</span><span class="p">()</span> <span class="p">+</span> <span class="s">&quot;) prefab singletons of type: &quot;</span> <span class="p">+</span> <span class="n">mytype</span><span class="p">.</span><span class="n">Name</span><span class="p">);</span>
 </span><span class='line'>                  <span class="p">}</span>
 </span><span class='line'>              <span class="p">}</span>
 </span><span class='line'>          <span class="p">}</span>
@@ -947,10 +947,10 @@
 </span><span class='line'>  <span class="c1">/// &lt;summary&gt;</span>
 </span><span class='line'>  <span class="c1">/// for garbage collection</span>
 </span><span class='line'>  <span class="c1">/// &lt;/summary&gt;</span>
-</span><span class='line'>  <span class="n">public</span> <span class="k">virtual</span> <span class="kt">void</span> <span class="n">OnApplicationQuit</span> <span class="p">()</span>
+</span><span class='line'>  <span class="k">public</span> <span class="k">virtual</span> <span class="k">void</span> <span class="nf">OnApplicationQuit</span> <span class="p">()</span>
 </span><span class='line'>  <span class="p">{</span>
 </span><span class='line'>      <span class="c1">// release reference on exit</span>
-</span><span class='line'>      <span class="n">_instance</span> <span class="o">=</span> <span class="n">null</span><span class="p">;</span>
+</span><span class='line'>      <span class="n">_instance</span> <span class="p">=</span> <span class="k">null</span><span class="p">;</span>
 </span><span class='line'>  <span class="p">}</span>
 </span><span class='line'>  
 </span><span class='line'>  <span class="c1">// in your child class you can implement Awake()</span>
@@ -963,16 +963,16 @@
 </span><span class='line'>  <span class="c1">/// parent this to another gameobject by string</span>
 </span><span class='line'>  <span class="c1">/// call from Awake if you so desire</span>
 </span><span class='line'>  <span class="c1">/// &lt;/summary&gt;</span>
-</span><span class='line'>  <span class="n">protected</span> <span class="kt">void</span> <span class="n">SetParent</span> <span class="p">(</span><span class="n">string</span> <span class="n">parentGOName</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">protected</span> <span class="k">void</span> <span class="nf">SetParent</span> <span class="p">(</span><span class="kt">string</span> <span class="n">parentGOName</span><span class="p">)</span>
 </span><span class='line'>  <span class="p">{</span>
-</span><span class='line'>      <span class="k">if</span> <span class="p">(</span><span class="n">parentGOName</span> <span class="o">!=</span> <span class="n">null</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>          <span class="n">GameObject</span> <span class="n">parentGO</span> <span class="o">=</span> <span class="n">GameObject</span><span class="p">.</span><span class="n">Find</span> <span class="p">(</span><span class="n">parentGOName</span><span class="p">);</span>
-</span><span class='line'>          <span class="k">if</span> <span class="p">(</span><span class="n">parentGO</span> <span class="o">==</span> <span class="n">null</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>              <span class="n">parentGO</span> <span class="o">=</span> <span class="n">new</span> <span class="n">GameObject</span> <span class="p">();</span>
-</span><span class='line'>              <span class="n">parentGO</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">parentGOName</span><span class="p">;</span>
-</span><span class='line'>              <span class="n">parentGO</span><span class="p">.</span><span class="n">transform</span><span class="p">.</span><span class="n">parent</span> <span class="o">=</span> <span class="n">null</span><span class="p">;</span>
+</span><span class='line'>      <span class="k">if</span> <span class="p">(</span><span class="n">parentGOName</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>          <span class="n">GameObject</span> <span class="n">parentGO</span> <span class="p">=</span> <span class="n">GameObject</span><span class="p">.</span><span class="n">Find</span> <span class="p">(</span><span class="n">parentGOName</span><span class="p">);</span>
+</span><span class='line'>          <span class="k">if</span> <span class="p">(</span><span class="n">parentGO</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>              <span class="n">parentGO</span> <span class="p">=</span> <span class="k">new</span> <span class="n">GameObject</span> <span class="p">();</span>
+</span><span class='line'>              <span class="n">parentGO</span><span class="p">.</span><span class="n">name</span> <span class="p">=</span> <span class="n">parentGOName</span><span class="p">;</span>
+</span><span class='line'>              <span class="n">parentGO</span><span class="p">.</span><span class="n">transform</span><span class="p">.</span><span class="n">parent</span> <span class="p">=</span> <span class="k">null</span><span class="p">;</span>
 </span><span class='line'>          <span class="p">}</span>
-</span><span class='line'>          <span class="n">this</span><span class="p">.</span><span class="n">transform</span><span class="p">.</span><span class="n">parent</span> <span class="o">=</span> <span class="n">parentGO</span><span class="p">.</span><span class="n">transform</span><span class="p">;</span>
+</span><span class='line'>          <span class="k">this</span><span class="p">.</span><span class="n">transform</span><span class="p">.</span><span class="n">parent</span> <span class="p">=</span> <span class="n">parentGO</span><span class="p">.</span><span class="n">transform</span><span class="p">;</span>
 </span><span class='line'>      <span class="p">}</span>
 </span><span class='line'>  <span class="p">}</span>
 </span><span class='line'>  
@@ -980,7 +980,7 @@
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>What do you think?  Only other caveats are those associated with using the <a href="http://docs.unity3d.com/Documentation/ScriptReference/Resources.html">Resources folder</a> in general such as not being able to strip out components that aren&#8217;t used.  Since my games so far have been small this hasn&#8217;t been an issue and I know that I should clean out any resources that I&#8217;m definitely not using.</p>
+<p>What do you think?  Only other caveats are those associated with using the <a href="http://docs.unity3d.com/Documentation/ScriptReference/Resources.html">Resources folder</a> in general such as not being able to strip out components that aren&rsquo;t used.  Since my games so far have been small this hasn&rsquo;t been an issue and I know that I should clean out any resources that I&rsquo;m definitely not using.</p>
 ]]></content>
   </entry>
   
@@ -989,7 +989,7 @@
     <link href="http://timofei7.github.com/blog/2012/11/25/chessinvaders-update/"/>
     <updated>2012-11-25T01:40:00-05:00</updated>
     <id>http://timofei7.github.com/blog/2012/11/25/chessinvaders-update</id>
-    <content type="html"><![CDATA[<p>Been too busy to post updates, but finally making progress on chessInvaders again.  An alpha version of the game was shown at a <a href="http://now.dartmouth.edu/2012/05/dartmouth-digital-arts-students-work-showcased-in-downtown-hanover/">Digital Arts Showcase</a> and was a great success.  One kid couldn&#8217;t put it down and played for half an hour straight refusing to let anybody else try.  I was able to get some positive feedback and am now planning on releasing it for the Christmas season (if it gets through the App Store approval in time).</p>
+    <content type="html"><![CDATA[<p>Been too busy to post updates, but finally making progress on chessInvaders again.  An alpha version of the game was shown at a <a href="http://now.dartmouth.edu/2012/05/dartmouth-digital-arts-students-work-showcased-in-downtown-hanover/">Digital Arts Showcase</a> and was a great success.  One kid couldn&rsquo;t put it down and played for half an hour straight refusing to let anybody else try.  I was able to get some positive feedback and am now planning on releasing it for the Christmas season (if it gets through the App Store approval in time).</p>
 
 <!--MORE-->
 
@@ -1003,14 +1003,14 @@
     <link href="http://timofei7.github.com/blog/2012/04/26/unity-singletons/"/>
     <updated>2012-04-26T01:40:00-04:00</updated>
     <id>http://timofei7.github.com/blog/2012/04/26/unity-singletons</id>
-    <content type="html"><![CDATA[<p>In <a href="http://www.unity3d.com">Unity3D</a> having a <a href="http://en.wikipedia.org/wiki/Singleton_pattern">singleton</a> class is very useful, whether for &#8220;global&#8221; state or simply for the convenience of having a static accessor so you don&#8217;t have to have lots of: <code>FindObjectOfType(typeof(Builder)) as Builder;</code></p>
+    <content type="html"><![CDATA[<p>In <a href="http://www.unity3d.com">Unity3D</a> having a <a href="http://en.wikipedia.org/wiki/Singleton_pattern">singleton</a> class is very useful, whether for &ldquo;global&rdquo; state or simply for the convenience of having a static accessor so you don&rsquo;t have to have lots of: <code>FindObjectOfType(typeof(Builder)) as Builder;</code></p>
 
-<p>So you code up a C# singleton and then realize that you actually need it to be a <a href="http://unity3d.com/support/documentation/ScriptReference/MonoBehaviour.html">MonoBehavior</a>, not just a <a href="http://unity3d.com/support/documentation/ScriptReference/ScriptableObject.html">ScriptableObject</a> &#8211; say you want the singleton to run <a href="http://unity3d.com/support/documentation/ScriptReference/index.Coroutines_26_Yield.html">coroutines</a>, or have a transform, or any other MonoBehavior feature.  But monobehaviors <a href="http://unity3d.com/support/documentation/ScriptReference/MonoBehaviour.Awake.html">can&#8217;t</a> be initialized with a constructor.</p>
+<p>So you code up a C# singleton and then realize that you actually need it to be a <a href="http://unity3d.com/support/documentation/ScriptReference/MonoBehaviour.html">MonoBehavior</a>, not just a <a href="http://unity3d.com/support/documentation/ScriptReference/ScriptableObject.html">ScriptableObject</a> &mdash; say you want the singleton to run <a href="http://unity3d.com/support/documentation/ScriptReference/index.Coroutines_26_Yield.html">coroutines</a>, or have a transform, or any other MonoBehavior feature.  But monobehaviors <a href="http://unity3d.com/support/documentation/ScriptReference/MonoBehaviour.Awake.html">can&rsquo;t</a> be initialized with a constructor.</p>
 
 <p>So what you want is a monobehavior pseudo singleton pattern.  The unity community wiki has some <a href="http://unifycommunity.com/wiki/index.php?title=Singleton">good info</a>
  about the various options but all require boilerplate.</p>
 
-<p>So I wrote a parametrized generic pseudo singleton monobehavior class.  I attempted to compile all the best advice out there, so it is threadsafe, has some extra stuff for setting a parent, doesn&#8217;t implement an Awake, and initializes lazily.</p>
+<p>So I wrote a parametrized generic pseudo singleton monobehavior class.  I attempted to compile all the best advice out there, so it is threadsafe, has some extra stuff for setting a parent, doesn&rsquo;t implement an Awake, and initializes lazily.</p>
 
 <!--more-->
 
@@ -1021,8 +1021,8 @@
 
 <p>So now this blog has its first code section:</p>
 
-<figure class='code'><figcaption><span>Singleton.cs # </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span>Singleton.cs </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -1098,8 +1098,8 @@
 <span class='line-number'>74</span>
 <span class='line-number'>75</span>
 <span class='line-number'>76</span>
-</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="n">using</span> <span class="n">UnityEngine</span><span class="p">;</span>
-</span><span class='line'><span class="n">using</span> <span class="n">System</span><span class="p">.</span><span class="n">Collections</span><span class="p">;</span>
+</pre></td><td class='code'><pre><code class='c#'><span class='line'><span class="k">using</span> <span class="nn">UnityEngine</span><span class="p">;</span>
+</span><span class='line'><span class="k">using</span> <span class="nn">System.Collections</span><span class="p">;</span>
 </span><span class='line'>
 </span><span class='line'><span class="c1">/// &lt;summary&gt;</span>
 </span><span class='line'><span class="c1">/// MONOBEHAVIOR PSEUDO SINGLETON ABSTRACT CLASS</span>
@@ -1110,10 +1110,10 @@
 </span><span class='line'><span class="c1">///      : http://tinyurl.com/cc73a9h</span>
 </span><span class='line'><span class="c1">///      : http://unifycommunity.com/wiki/index.php?title=Singleton</span>
 </span><span class='line'><span class="c1">/// &lt;/summary&gt;</span>
-</span><span class='line'><span class="n">public</span> <span class="n">abstract</span> <span class="n">class</span> <span class="n">Singleton</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">:</span> <span class="n">MonoBehaviour</span> <span class="n">where</span> <span class="n">T</span> <span class="o">:</span> <span class="n">MonoBehaviour</span>
+</span><span class='line'><span class="k">public</span> <span class="k">abstract</span> <span class="k">class</span> <span class="nc">Singleton</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span> <span class="p">:</span> <span class="n">MonoBehaviour</span> <span class="k">where</span> <span class="n">T</span> <span class="p">:</span> <span class="n">MonoBehaviour</span>
 </span><span class='line'><span class="p">{</span>
 </span><span class='line'>
-</span><span class='line'>  <span class="n">private</span> <span class="k">static</span> <span class="n">T</span> <span class="n">_instance</span> <span class="o">=</span> <span class="n">null</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">private</span> <span class="k">static</span> <span class="n">T</span> <span class="n">_instance</span> <span class="p">=</span> <span class="k">null</span><span class="p">;</span>
 </span><span class='line'>          
 </span><span class='line'>  <span class="c1">/// &lt;summary&gt;</span>
 </span><span class='line'>  <span class="c1">/// gets the instance of this Singleton</span>
@@ -1122,21 +1122,21 @@
 </span><span class='line'>  <span class="c1">/// or make your public methods static</span>
 </span><span class='line'>  <span class="c1">/// and have them use Instance</span>
 </span><span class='line'>  <span class="c1">/// &lt;/summary&gt;</span>
-</span><span class='line'>  <span class="n">public</span> <span class="k">static</span> <span class="n">T</span> <span class="n">Instance</span> <span class="p">{</span>
-</span><span class='line'>      <span class="n">get</span> <span class="p">{</span>
-</span><span class='line'>          <span class="k">if</span> <span class="p">(</span><span class="n">_instance</span> <span class="o">==</span> <span class="n">null</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>              <span class="n">_instance</span> <span class="o">=</span> <span class="p">(</span><span class="n">T</span><span class="p">)</span><span class="n">FindObjectOfType</span> <span class="p">(</span><span class="n">typeof</span><span class="p">(</span><span class="n">T</span><span class="p">));</span>
-</span><span class='line'>              <span class="k">if</span> <span class="p">(</span><span class="n">_instance</span> <span class="o">==</span> <span class="n">null</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">public</span> <span class="k">static</span> <span class="n">T</span> <span class="n">Instance</span> <span class="p">{</span>
+</span><span class='line'>      <span class="k">get</span> <span class="p">{</span>
+</span><span class='line'>          <span class="k">if</span> <span class="p">(</span><span class="n">_instance</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>              <span class="n">_instance</span> <span class="p">=</span> <span class="p">(</span><span class="n">T</span><span class="p">)</span><span class="n">FindObjectOfType</span> <span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="n">T</span><span class="p">));</span>
+</span><span class='line'>              <span class="k">if</span> <span class="p">(</span><span class="n">_instance</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span> <span class="p">{</span>
 </span><span class='line'>                  
-</span><span class='line'>                  <span class="n">string</span> <span class="n">goName</span> <span class="o">=</span> <span class="n">typeof</span><span class="p">(</span><span class="n">T</span><span class="p">).</span><span class="n">ToString</span> <span class="p">();</span>           
+</span><span class='line'>                  <span class="kt">string</span> <span class="n">goName</span> <span class="p">=</span> <span class="k">typeof</span><span class="p">(</span><span class="n">T</span><span class="p">).</span><span class="n">ToString</span> <span class="p">();</span>          
 </span><span class='line'>                  
-</span><span class='line'>                  <span class="n">GameObject</span> <span class="n">go</span> <span class="o">=</span> <span class="n">GameObject</span><span class="p">.</span><span class="n">Find</span> <span class="p">(</span><span class="n">goName</span><span class="p">);</span>
-</span><span class='line'>                  <span class="k">if</span> <span class="p">(</span><span class="n">go</span> <span class="o">==</span> <span class="n">null</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>                      <span class="n">go</span> <span class="o">=</span> <span class="n">new</span> <span class="n">GameObject</span> <span class="p">();</span>
-</span><span class='line'>                      <span class="n">go</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">goName</span><span class="p">;</span>
+</span><span class='line'>                  <span class="n">GameObject</span> <span class="n">go</span> <span class="p">=</span> <span class="n">GameObject</span><span class="p">.</span><span class="n">Find</span> <span class="p">(</span><span class="n">goName</span><span class="p">);</span>
+</span><span class='line'>                  <span class="k">if</span> <span class="p">(</span><span class="n">go</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>                      <span class="n">go</span> <span class="p">=</span> <span class="k">new</span> <span class="n">GameObject</span> <span class="p">();</span>
+</span><span class='line'>                      <span class="n">go</span><span class="p">.</span><span class="n">name</span> <span class="p">=</span> <span class="n">goName</span><span class="p">;</span>
 </span><span class='line'>                  <span class="p">}</span>
 </span><span class='line'>                  
-</span><span class='line'>                  <span class="n">_instance</span> <span class="o">=</span> <span class="n">go</span><span class="p">.</span><span class="n">AddComponent</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="p">();</span>                 
+</span><span class='line'>                  <span class="n">_instance</span> <span class="p">=</span> <span class="n">go</span><span class="p">.</span><span class="n">AddComponent</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span> <span class="p">();</span>                 
 </span><span class='line'>              <span class="p">}</span>
 </span><span class='line'>          <span class="p">}</span>
 </span><span class='line'>          <span class="k">return</span> <span class="n">_instance</span><span class="p">;</span>
@@ -1146,10 +1146,10 @@
 </span><span class='line'>  <span class="c1">/// &lt;summary&gt;</span>
 </span><span class='line'>  <span class="c1">/// for garbage collection</span>
 </span><span class='line'>  <span class="c1">/// &lt;/summary&gt;</span>
-</span><span class='line'>  <span class="n">public</span> <span class="k">virtual</span> <span class="kt">void</span> <span class="n">OnApplicationQuit</span> <span class="p">()</span>
+</span><span class='line'>  <span class="k">public</span> <span class="k">virtual</span> <span class="k">void</span> <span class="nf">OnApplicationQuit</span> <span class="p">()</span>
 </span><span class='line'>  <span class="p">{</span>
 </span><span class='line'>      <span class="c1">// release reference on exit</span>
-</span><span class='line'>      <span class="n">_instance</span> <span class="o">=</span> <span class="n">null</span><span class="p">;</span>
+</span><span class='line'>      <span class="n">_instance</span> <span class="p">=</span> <span class="k">null</span><span class="p">;</span>
 </span><span class='line'>  <span class="p">}</span>
 </span><span class='line'>  
 </span><span class='line'>  <span class="c1">// in your child class you can implement Awake()</span>
@@ -1162,15 +1162,15 @@
 </span><span class='line'>  <span class="c1">/// parent this to another gameobject by string</span>
 </span><span class='line'>  <span class="c1">/// call from Awake if you so desire</span>
 </span><span class='line'>  <span class="c1">/// &lt;/summary&gt;</span>
-</span><span class='line'>  <span class="n">protected</span> <span class="kt">void</span> <span class="n">SetParent</span> <span class="p">(</span><span class="n">string</span> <span class="n">parentGOName</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">protected</span> <span class="k">void</span> <span class="nf">SetParent</span> <span class="p">(</span><span class="kt">string</span> <span class="n">parentGOName</span><span class="p">)</span>
 </span><span class='line'>  <span class="p">{</span>
-</span><span class='line'>      <span class="k">if</span> <span class="p">(</span><span class="n">parentGOName</span> <span class="o">!=</span> <span class="n">null</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>          <span class="n">GameObject</span> <span class="n">parentGO</span> <span class="o">=</span> <span class="n">GameObject</span><span class="p">.</span><span class="n">Find</span> <span class="p">(</span><span class="n">parentGOName</span><span class="p">);</span>
-</span><span class='line'>          <span class="k">if</span> <span class="p">(</span><span class="n">parentGO</span> <span class="o">==</span> <span class="n">null</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>              <span class="n">parentGO</span> <span class="o">=</span> <span class="n">new</span> <span class="n">GameObject</span> <span class="p">();</span>
-</span><span class='line'>              <span class="n">parentGO</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">parentGOName</span><span class="p">;</span>
+</span><span class='line'>      <span class="k">if</span> <span class="p">(</span><span class="n">parentGOName</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>          <span class="n">GameObject</span> <span class="n">parentGO</span> <span class="p">=</span> <span class="n">GameObject</span><span class="p">.</span><span class="n">Find</span> <span class="p">(</span><span class="n">parentGOName</span><span class="p">);</span>
+</span><span class='line'>          <span class="k">if</span> <span class="p">(</span><span class="n">parentGO</span> <span class="p">==</span> <span class="k">null</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>              <span class="n">parentGO</span> <span class="p">=</span> <span class="k">new</span> <span class="n">GameObject</span> <span class="p">();</span>
+</span><span class='line'>              <span class="n">parentGO</span><span class="p">.</span><span class="n">name</span> <span class="p">=</span> <span class="n">parentGOName</span><span class="p">;</span>
 </span><span class='line'>          <span class="p">}</span>
-</span><span class='line'>          <span class="n">this</span><span class="p">.</span><span class="n">transform</span><span class="p">.</span><span class="n">parent</span> <span class="o">=</span> <span class="n">parentGO</span><span class="p">.</span><span class="n">transform</span><span class="p">;</span>
+</span><span class='line'>          <span class="k">this</span><span class="p">.</span><span class="n">transform</span><span class="p">.</span><span class="n">parent</span> <span class="p">=</span> <span class="n">parentGO</span><span class="p">.</span><span class="n">transform</span><span class="p">;</span>
 </span><span class='line'>      <span class="p">}</span>
 </span><span class='line'>  <span class="p">}</span>
 </span><span class='line'><span class="p">}</span>
@@ -1189,13 +1189,13 @@
     <content type="html"><![CDATA[<p>Over a couple of weekends, mostly as an exercise in learning a new language / framework two friends of mine and I came up with: <a href="http://udunnit-frontend-dev.herokuapp.com">demo.udunit.com</a>.</p>
 
 <p>In a nutshell it is:<br/>
-UdunIt (pronounced you-done-it, as in whodunit): A fun way to share, boast about and track your progress towards major life accomplishments, as well as discover new ones to take on! People love grouping things into lists &#8211; it&#8217;s a natural human tendency: The Four-thousand Foot Mountains of New Hampshire, California Micro-brews, Best Restaurants in Austin, TX. We want to motivate people to take on these challenges, to get out and do something. Udunit will bring social and gaming aspects to these accomplishment lists, building on people’s desire to share their accomplishments as well as their competitive natures.</p>
+UdunIt (pronounced you-done-it, as in whodunit): A fun way to share, boast about and track your progress towards major life accomplishments, as well as discover new ones to take on! People love grouping things into lists &mdash; it&rsquo;s a natural human tendency: The Four-thousand Foot Mountains of New Hampshire, California Micro-brews, Best Restaurants in Austin, TX. We want to motivate people to take on these challenges, to get out and do something. Udunit will bring social and gaming aspects to these accomplishment lists, building on people’s desire to share their accomplishments as well as their competitive natures.</p>
 
-<p>Based on Foursquare&#8217;s <a href="http://engineering.foursquare.com">engineering blog</a> (which has lots of good technical information about how they do things) we decided to give <a href="http://liftweb.net">Lift</a> a try and learn <a href="http://www.scala-lang.org">Scala</a> along the way!  Did we like it?  Yes and no. I am intellectually attracted to functional programming and enjoyed Scala in that regard. However, the type system gave us some headaches (seems to be a common comment), and we found that in general there was a tendency in the community toward less than readable code. Lift&#8217;s documentation left a lot to be desired and was often behind the current &#8220;best&#8221; way of doing things.</p>
+<p>Based on Foursquare&rsquo;s <a href="http://engineering.foursquare.com">engineering blog</a> (which has lots of good technical information about how they do things) we decided to give <a href="http://liftweb.net">Lift</a> a try and learn <a href="http://www.scala-lang.org">Scala</a> along the way!  Did we like it?  Yes and no. I am intellectually attracted to functional programming and enjoyed Scala in that regard. However, the type system gave us some headaches (seems to be a common comment), and we found that in general there was a tendency in the community toward less than readable code. Lift&rsquo;s documentation left a lot to be desired and was often behind the current &ldquo;best&rdquo; way of doing things.</p>
 
-<p>It was fun+frustrating to play with and our next project won&#8217;t be using Lift/Scala,   but I&#8217;ve been playing with <a href="http://www.opalang.com">Opa</a> and am excited to try that for a project!</p>
+<p>It was fun+frustrating to play with and our next project won&rsquo;t be using Lift/Scala,   but I&rsquo;ve been playing with <a href="http://www.opalang.com">Opa</a> and am excited to try that for a project!</p>
 
-<p>Feel free to check out <a href="http://udunnit-frontend-dev.herokuapp.com">UdunIt</a> and use it!  The basic funcionality is there, and I&#8217;ll leave it up in case it suddenly starts getting popular. :-)</p>
+<p>Feel free to check out <a href="http://udunnit-frontend-dev.herokuapp.com">UdunIt</a> and use it!  The basic funcionality is there, and I&rsquo;ll leave it up in case it suddenly starts getting popular. :&ndash;)</p>
 ]]></content>
   </entry>
   
@@ -1271,7 +1271,7 @@ picasaOptions: {
 <!--more-->
 
 
-<p>Originally the goal was simple: do some Kinect programming.  It then morphed into what was going to become a physics based game in which you have to define physical properties of objects using intuitive physics based gestures.  For instance to define the bounciness of an object you would set the coefficient of restitution by showing the dropped-from height and the first bounce-up-to height using your hands &#8211; simple yet also correct. For friction you could indicate the angle of incline necessary to break static friction with you arms.  Other properties were harder to do intuitively.  One idea was a constant force model in which a progress bar would indicate some total possible energy available to expend and a user would, for instance, mime lifting an object and the progress bar (on a simple timer) would indicate how much force they need to lift the object (mass in relation to earths gravity), the longer (per distance) it took, the more mass the object had.  This was starting to become less intuitive.</p>
+<p>Originally the goal was simple: do some Kinect programming.  It then morphed into what was going to become a physics based game in which you have to define physical properties of objects using intuitive physics based gestures.  For instance to define the bounciness of an object you would set the coefficient of restitution by showing the dropped-from height and the first bounce-up-to height using your hands &mdash; simple yet also correct. For friction you could indicate the angle of incline necessary to break static friction with you arms.  Other properties were harder to do intuitively.  One idea was a constant force model in which a progress bar would indicate some total possible energy available to expend and a user would, for instance, mime lifting an object and the progress bar (on a simple timer) would indicate how much force they need to lift the object (mass in relation to earths gravity), the longer (per distance) it took, the more mass the object had.  This was starting to become less intuitive.</p>
 
 <p>The final physical property was shape, and with that came the idea of exploring mesh deformation using the Kinect.  So the final project after much paper reading became simply to implement some of that.  I had never done any motion programming or any image recognition so playing with this was interesting.  After coming up with a fairly uninteresting demo of the coefficient of restitution, I focused on mesh manipulation.</p>
 
@@ -1299,21 +1299,21 @@ picasaOptions: {
     <content type="html"><![CDATA[<p>Do you believe in free will or determinism?   Either way,  imagine you are
 creating a life form, and that you want it to have free will.  You figure out
 that you need to design an organ that would be responsible for this.  You
-decide to call it the &#8220;free willer&#8221;.</p>
+decide to call it the &ldquo;free willer&rdquo;.</p>
 
 <p>What would this organ do? You realize that it must make decisions, as that is
-what &#8220;will&#8221; allows you to do.  But how will it do so?  You realize that
-learning is involved &#8211; that this organ needs to take into consideration past
+what &ldquo;will&rdquo; allows you to do.  But how will it do so?  You realize that
+learning is involved &mdash; that this organ needs to take into consideration past
 events. Oops, you have just created the deterministic willer!</p>
 
-<p>Ok ok, let&#8217;s back up a minute.  If we don&#8217;t take into consideration past
-events&#8230; well then the decisions it would make would have to be random.  Is
-that what we want? Not really, random decisions won&#8217;t get this new life form
+<p>Ok ok, let&rsquo;s back up a minute.  If we don&rsquo;t take into consideration past
+events&hellip; well then the decisions it would make would have to be random.  Is
+that what we want? Not really, random decisions won&rsquo;t get this new life form
 very far!</p>
 
 <p>What other decision mechanisms could we come up with for this organ?  Well it
 could be influenced by some predetermined set of rules or genes that get
-better over time, but that&#8217;s just another determinism!</p>
+better over time, but that&rsquo;s just another determinism!</p>
 
 <p>Ideally what we want is something that is influenced by past events
 (learning). Something that can improve its programming over generations
@@ -1326,7 +1326,7 @@ purposefully introduce randomness into our thinking process so that we can
 come up with unique solutions and choices that are not predetermined by the
 universe or by our genes and past experiences (at least not exclusively).</p>
 
-<p>Here&#8217;s a paper I wrote about this that goes into this in more detail.  The
+<p>Here&rsquo;s a paper I wrote about this that goes into this in more detail.  The
 brain is sooo cool.</p>
 
 <!--more-->
@@ -1349,7 +1349,7 @@ optimum (ibid., pg 120). A local search algorithm is an algorithm that changes
 the current state (or states) based on information it knows about surrounding
 states rather than exhaustively searching down paths from a start state. A
 simple example of this is the hill climbing algorithm (ibid., pg.122). The
-algorithm simply examines positions in the search space adjacent to it&#8217;s
+algorithm simply examines positions in the search space adjacent to it&rsquo;s
 current position and picks the better one. When nothing adjacent is better it
 stops. However, stopping at this point does not necessarily imply the best
 solution: this might be the top of a small hill that is next to a big
@@ -1375,7 +1375,7 @@ selection. Each successor state is an offspring of a parent state organism and
 the successors are selected based on their fitness. Genetic algorithms take
 this a step further by combining two parent states analogously to sexual
 reproduction. They are similar to stochastic beam search except with the
-addition of a few steps that deal with crossing the &#8216;genes&#8217; of the parent
+addition of a few steps that deal with crossing the &lsquo;genes&rsquo; of the parent
 states. States are usually stored as sequences of characters or numbers and
 after being crossed are also randomly mutated.</p>
 
@@ -1398,7 +1398,7 @@ artificial neural networks.</p>
 
 <p>Artificial neural networks can have a fairly simple mathematical model. A
 neural network is composed of units connected to each other. Each connection
-has a weight which not only carries the &#8216;strength&#8217; of the connection but also
+has a weight which not only carries the &lsquo;strength&rsquo; of the connection but also
 whether it is excitatory or inhibitory (the numerical weight is signed). Each
 node has inputs (which are summed), an activation function (either a hard
 threshold or a sigmoid) and output links to other nodes (ibid., 728). After
@@ -1409,7 +1409,7 @@ that although it is quite simplified, it shows a probabilistic network
 analogous to the neural network of the cortex.</p>
 
 <p><strong>Probabilistic Neurons</strong><br/>
-Since the brain&#8217;s neuronal circuitry is the basis for artificial neural
+Since the brain&rsquo;s neuronal circuitry is the basis for artificial neural
 networks, there are clear parallels even though the actual system is much more
 complicated than the computational model. The weights can be conveyed not only
 by width of the synaptic gap (usually around one forty-thousandth of a
@@ -1423,10 +1423,10 @@ various currents from the dendrites on the postsynaptic neuron are summed up
 in the trigger zone near the nucleus of the neuron. That current is what
 triggers the neuron and is capable of being measured as potential in an
 electroencephalogram (EEG) (ibid., pg. 42). If the current reaches the action
-potential then the neuron will trigger it&#8217;s own axonal pulses. The axonal
-pulses take some time to travel but there is no attenuation of the signal &#8211;
+potential then the neuron will trigger it&rsquo;s own axonal pulses. The axonal
+pulses take some time to travel but there is no attenuation of the signal &mdash;
 this is essential to be able to transmit values over long distances without
-losing energy. Dendrite current modulation is different &#8211; it is able to
+losing energy. Dendrite current modulation is different &mdash; it is able to
 integrate with currents from other dendrites in the cell body current loop.
 This enables the summing of potentials (ibid., pg. 46). One thing to note
 about the pulse-width conversion (ibid, pg. 46) is that it is not stepped or
@@ -1448,11 +1448,11 @@ excitation and inhibition from interneurons (shorter local reach neurons
 collectively there is an oscillation pattern. This oscillation constrains the
 times during which neurons may fire and thus produces a synchronizing effect
 (Buzsaki, G., 2006, pg. 76). Neuronal firing often needs to be synchronized to
-produce the desired effect &#8211; if two neurons fire and if, because of the
+produce the desired effect &mdash; if two neurons fire and if, because of the
 oscillation, the probability that they will fire simultaneously is increased,
-they are more likely to push a third neuron over it&#8217;s activation threshold. If
+they are more likely to push a third neuron over it&rsquo;s activation threshold. If
 the neural process is widely distributed and complex then the synchronicity
-becomes even more important in it&#8217;s constraint of timing differences because
+becomes even more important in it&rsquo;s constraint of timing differences because
 of distance (ibid., pg. 115). There are several different oscillation
 frequencies ranging from multiple seconds to 600hz. Since they temporally
 constrain neural firing the different frequencies have different
@@ -1465,9 +1465,9 @@ fluctuation may be a necessary part of the temporal organization of the brain
 as a whole. All of this oscillation can be seen as noise, not only because the
 neurons are firing without any external stimuli but also because the
 relationship between all the different oscillation frequencies is <em>e</em> (2.71),
-the natural logarithm &#8211; this results in a chaotic pattern that appears like
-&#8220;pink&#8221; noise on an EEG (ibid., pg. 113). &#8220;Pink&#8221; noise is also known as complex
-noise &#8211; this is because its power ratio is 1/<em>f</em>, meaning that the amplitude
+the natural logarithm &mdash; this results in a chaotic pattern that appears like
+&ldquo;pink&rdquo; noise on an EEG (ibid., pg. 113). &ldquo;Pink&rdquo; noise is also known as complex
+noise &mdash; this is because its power ratio is 1/<em>f</em>, meaning that the amplitude
 of the waves decreases as the frequency increases. Although to a physicist
 this would simply suggest that it is a noisy system, what appears as noise is
 also a chaotic yet functional synchronizer and organizer of neuron systems
@@ -1484,8 +1484,8 @@ pg 122).</p></blockquote>
 <p>However, these collective patterns are transient, they fluctuate around
 different brain areas, organizing temporal information where needed on
 specific time-scales depending on how large of a neuronal pattern is needed.
-&#8220;Transient order emerges from halfway between order and disorder from the
-territory of complexity&#8221; (ibid., pg 135).</p>
+&ldquo;Transient order emerges from halfway between order and disorder from the
+territory of complexity&rdquo; (ibid., pg 135).</p>
 
 <p>It turns out that the power ratio of the pink noise also happens to fit the
 data for other time-related brain tasks: forgetting, habituation, music and
@@ -1498,9 +1498,9 @@ connections sites (Buzsaki, G., 2006, pg. 32)), even small local perturbations
 can become amplified and spread throughout the network.</p>
 
 <p>This amplification is of great importance. Consider a neuron that is almost
-ready to fire, but does not quite have enough current to reach it&#8217;s action
+ready to fire, but does not quite have enough current to reach it&rsquo;s action
 potential. A noise input could cause it to fire when it otherwise would not
-have. Because the noise is stochastic, the neuron&#8217;s firing is not
+have. Because the noise is stochastic, the neuron&rsquo;s firing is not
 deterministic. It may or may not fire depending on the noise in the system
 around it. Small weak local signals can become noticeable when the noise bumps
 it up. Additionally small periodic signals can act as attractors to the noise
@@ -1527,9 +1527,9 @@ all have their own movement will be pushed around by the motion of the smaller
 particles in a random fashion. Brownian motion over longer periods/distances
 is random, but can be predicted at short intervals by the average velocity and
 density of the molecules in the suspension (Buzsaki, G., 2006, pg. 121). It
-has been shown that brownian motion applies to all biological systems, &#8220;as a
+has been shown that brownian motion applies to all biological systems, &ldquo;as a
 result of thermal agitation processes, molecules are constantly on the move,
-colliding with each other and bouncing back and forth&#8221; (Marguet, D., Lenne,
+colliding with each other and bouncing back and forth&rdquo; (Marguet, D., Lenne,
 PF., Rigneault, H., He, HT., 2006, pg. 288). On a macroscopic level however
 brownian motion is a diffusion process.</p>
 
@@ -1585,21 +1585,21 @@ quantum-mechanical deus ex machina. (Koch, C., 2006).</p>
 <p><strong>Consciousness</strong><br/>
 How do these various theories relate to consciousness? Randomness can be, at
 least partially, an escape from determinism. If every neuron firing were
-physically determined then there is no way that we as as &#8216;free agent&#8217; could
-have chosen differently from how we did choose. This breaks a mandate of &#8216;free
-will&#8217;: we are free to have chosen differently from how we did choose. However,
-going too far toward randomness would break the other mandate of &#8216;free will&#8217;:
+physically determined then there is no way that we as as &lsquo;free agent&rsquo; could
+have chosen differently from how we did choose. This breaks a mandate of &lsquo;free
+will&rsquo;: we are free to have chosen differently from how we did choose. However,
+going too far toward randomness would break the other mandate of &lsquo;free will&rsquo;:
 our actions belong to us and reflect who we are (and that our actions are not
 simply random). A middle ground would surprisingly satisfy both of these
 criteria and allow a free will that is both based on our past experiences but
 is not tied down to them deterministically. If the system is probabilistic,
-then at any point we can say both, &#8220;I could have done differently,&#8221; and &#8220;I
-chose that way based on my past experiences, based on who I am.&#8221; At least
+then at any point we can say both, &ldquo;I could have done differently,&rdquo; and &ldquo;I
+chose that way based on my past experiences, based on who I am.&rdquo; At least
 semantically this fulfills the requirements of free will. Additionally, it is
 hard to imagine what third rule would invalidate this solution and would at
 the same time define the concept of free will in such a way as to keep the
-common intuition of what it is. Wegner in &#8220;The Illusion of Conscious Will&#8221;
-poses a thought experiment of inventing a Free Willer &#8211; an organ that makes
+common intuition of what it is. Wegner in &ldquo;The Illusion of Conscious Will&rdquo;
+poses a thought experiment of inventing a Free Willer &mdash; an organ that makes
 free will choices. Such an instrument cannot ignore past experiences as that
 would be meaningless, and it cannot be purely random as that is equally
 meaningless. How do the various sources and types of randomness affect the
@@ -1652,14 +1652,14 @@ frequency preferences of neurons. Trends in Neurosciences, 23(5), 216-222.
 doi:DOI: 10.1016/S0166-2236(00)01547-2</p>
 
 <p>Koch, C., &amp; Hepp, K. (2006). Quantum mechanics in the brain. Nature,
-440(7084), 611-611. Retrieved from http://dx.doi.org/10.1038/440611a</p>
+440(7084), 611-611. Retrieved from <a href="http://dx.doi.org/10.1038/440611a">http://dx.doi.org/10.1038/440611a</a></p>
 
 <p>Llinás, R. (2003). Consciousness and the thalamocortical loop. International
 Congress Series, 1250, 409-416. doi:DOI: 10.1016/S0531-5131(03)01067-7</p>
 
 <p>Marguet, D., Lenne, P., Rigneault, H., &amp; He, H. (2006). Dynamics in the plasma
 membrane: How to combine fluidity and order. The EMBO Journal, 25(15),
-3446-3457. Retrieved fromhttp://dx.doi.org/10.1038/sj.emboj.7601204</p>
+3446-3457. Retrieved from<a href="http://dx.doi.org/10.1038/sj.emboj.7601204">http://dx.doi.org/10.1038/sj.emboj.7601204</a></p>
 
 <p>Nelson, E. (1967). Dynamical theories of brownian motion. Princeton, N.J.:
 Princeton University Press.</p>
@@ -1667,7 +1667,7 @@ Princeton University Press.</p>
 <p>Osaka, N. (2003). Neural basis of consciousness. Philadelphia, PA: John
 Benjamins Pub.</p>
 
-<p>Penrose, R. (1989). The emperor&#8217;s new mind :Concerning computers, minds, and
+<p>Penrose, R. (1989). The emperor&rsquo;s new mind :Concerning computers, minds, and
 the laws of physics. Oxford; New York: Oxford University Press.</p>
 
 <p>Russell, S. J., &amp; Norvig, P. (2003). Artificial intelligence :A modern
@@ -1688,7 +1688,7 @@ function. Biosystems, 67(1-3), 287-294. doi:DOI: 10.1016/S0303-2647(02)00086-2</
 
 <p>(Gunkless SolidWorks Design: Tim Tregubov,  Spring 2010)</p>
 
-<p>For the &#8220;flagship&#8221; engineering class my group, Divya Gunasekaran, Elizabeth Klinger, Alannah Linkhorn, Pavel Sotskov, and myself, designed and built a self-cleaning drain. It was a small device that would retrofit in your shower drain and was foot powered to help clear clogged drains.  By the end of the course we had a working, tested prototype.</p>
+<p>For the &ldquo;flagship&rdquo; engineering class my group, Divya Gunasekaran, Elizabeth Klinger, Alannah Linkhorn, Pavel Sotskov, and myself, designed and built a self-cleaning drain. It was a small device that would retrofit in your shower drain and was foot powered to help clear clogged drains.  By the end of the course we had a working, tested prototype.</p>
 
 <!--more-->
 
@@ -1698,7 +1698,7 @@ function. Biosystems, 67(1-3), 287-294. doi:DOI: 10.1016/S0303-2647(02)00086-2</
 <iframe id="engs21_2" width="640" height="480" src="http://www.youtube.com/embed/EyW0I3QAJUw?rel=0" frameborder="0" allowfullscreen></iframe>
 
 
-<p>My goals for the class on the outset were: to learn some machining and SolidWorks &#8212; basically an engineering experience outside of electronics and computer engineering.  That happened, along with some fun design stuff and a lot of report writing and gantt charting.</p>
+<p>My goals for the class on the outset were: to learn some machining and SolidWorks &mdash;&ndash; basically an engineering experience outside of electronics and computer engineering.  That happened, along with some fun design stuff and a lot of report writing and gantt charting.</p>
 
 <p>My contributions to the project were:</p>
 
@@ -1753,7 +1753,7 @@ volition, selection, short-term memory, attention, planning, and overall
 consciousness located and by what neurological processes do they occur. The
 prime brain areas that is thought to be responsible are the frontal lobes.
 However a problem is presented when studying this area in humans: comparison
-to monkey&#8217;s brains has been difficult as the PFC, prefrontal cortex, is
+to monkey&rsquo;s brains has been difficult as the PFC, prefrontal cortex, is
 structured somewhat differently (Petrides, M., Pandya, D.N., 1999 and Fuster,
 J. M., 2008. pg. 21) and thus comparisons can be complicated, and invasive
 techniques are largely limited to non-humans. Lesion studies have sometimes
@@ -1806,7 +1806,7 @@ indirect communication to other systems that are connected to other prefrontal
 areas (such as the limbic system through the medial PFC areas), but also
 provides a way for disperse systems to be indirectly wired together through
 this central area. The convergence of cortico-cortical pathways suggests that
-part of the DLPFC&#8217;s operation is as a cross-modal area of association (Fuster,
+part of the DLPFC&rsquo;s operation is as a cross-modal area of association (Fuster,
 J. M., 2008. pg. 34).</p>
 
 <p><strong>Experimental Connections</strong><br/>
@@ -1817,7 +1817,7 @@ memories (Miyashita, Y., 1993)). The inferior temporal cortex receives visual
 input contra-laterally from the occipital lobe and the two sides are sub-
 cortically connected. In this experiment two monkeys were given split visual
 stimuli and were trained to associate certain cues with categories of stimuli.
-Then the connection between the inferior temporal cortices was severed &#8211; to
+Then the connection between the inferior temporal cortices was severed &mdash; to
 theoretically prevent a cue presented to the ipsilateral side (the side that
 did not see the choice) from activating a category recall on the contralateral
 side. The bottom-up condition was when both the cue and the choice were
@@ -1851,15 +1851,15 @@ Memory neurons are neurons that in a delay task appear to activate during the
 delay period between a presentation and a recall of a stimuli. Some activate
 during the stimulus, others right after, and even others stay active for a
 while. The DLPFC has more memory neurons than any other prefrontal area
-(Fuster, J. M., 2008. pg. 247). As a side note, the Frontal Eye Fields &#8211; area
-8 &#8211; contains memory cells that are particularly attuned for eye saccades to
+(Fuster, J. M., 2008. pg. 247). As a side note, the Frontal Eye Fields &mdash; area
+8 &mdash; contains memory cells that are particularly attuned for eye saccades to
 cued locations, whereas in areas 46 and 9 there is some evidence for memory
 neuron specialization toward spatial tasks. There are however memory neurons
 in many other areas of the brain, including the thalamus, inferotemporal
 cortex and basal ganglia, but those memory neurons appear to be specialized
 toward the sensory task of the particular area, whereas in the prefrontal
 cortex the memory neurons are more multi-modal. The simple existence of memory
-neurons is not enough to show the DLPFC&#8217;s role in working memory.</p>
+neurons is not enough to show the DLPFC&rsquo;s role in working memory.</p>
 
 <p>Working memory as a function of the DLPFC has been primarily shown via delay
 tasks with either lesion patients or appropriately trained animals with
@@ -1867,7 +1867,7 @@ ablations/lesions or reversible lesions via cooling. Commonly a delay task
 will begin with the representation of a cue. The cue informs the participant
 about a choice that is to be made later (usually the location of a salient
 item such as food). Then the cue is covered up for some amount of time: the
-delay period. Following this a choice is presented &#8211; the correct choice being
+delay period. Following this a choice is presented &mdash; the correct choice being
 informed by the cue presented prior to the delay. In many studies of animals,
 when the delay is non-existent or very short, the DLPFC lesioned animals
 perform normally, but as the delay increases so success at the task drops
@@ -1881,7 +1881,7 @@ DLPFC plays a vital role in its working memory functionality. A study of the
 interaction of the DLPFC and other brain areas (Fuster, J. M., Bauer, R. H., &amp;
 Jervey, J. P., 1985) shows working memory to be more than a few memory neurons
 but a distributed representational network encompassing many brain areas. In
-particular it reveals the DLPFC as a top-down moderator of &#8220;online&#8221; working
+particular it reveals the DLPFC as a top-down moderator of &ldquo;online&rdquo; working
 memory tasks. The study used a Peltier chip to cool down the DLPFC and the
 inferotemporal cortex in turn. Single neuron recording was used to record the
 activity of memory neurons sensitive to certain colors in the inferotemporal
@@ -1898,11 +1898,11 @@ measured during the same delay task. The results were very similar: there was
 a modulation effect in addition to lowered task performance. Fuster makes the
 supposition that the model for working memory is that of,</p>
 
-<blockquote><p>&#8220;a frontal substrate of executive memory cooperating with other brain
+<blockquote><p>&ldquo;a frontal substrate of executive memory cooperating with other brain
 structures, cortical and subcortical, for the maintenance of working memory.
 The function of working memory would be distributed, much as its neural
-substrate, albeit under a degree of prefrontal executive &#8211; or &#8216;top-down&#8217;
-&#8211;control.&#8221; (Fuster, J. M., 2008. pg. 251)</p></blockquote>
+substrate, albeit under a degree of prefrontal executive &mdash; or &lsquo;top-down&rsquo;
+&mdash;control.&rdquo; (Fuster, J. M., 2008. pg. 251)</p></blockquote>
 
 <p>Reverberating reentry is the method by which these cortico-cortical/cortico-
 subcortical memory loops are maintained neurologically (pg. 252). Projections
@@ -1915,7 +1915,7 @@ which are specialized to the sensory features of that memory.</p>
 
 <p>There have been many PET and fMRI studies that have localized spatial working
 memory to the DLPFC especially in monkeys, however in human studies not only
-has it been harder to pinpoint some studies seem to suggest that the DLPF&#8217;s
+has it been harder to pinpoint some studies seem to suggest that the DLPF&rsquo;s
 role is quite more elaborate and involved.</p>
 
 <p><strong>Cross-Temporal Integration</strong><br/>
@@ -1925,25 +1925,25 @@ to trigger the DLPFC. Additionally, as already mentioned, the greater the
 delay the more a DLPFC lesion causes impairment. Several studies show DLPFC
 lesioned monkeys</p>
 
-<blockquote><p>&#8220;deficient at tasks in which temporal frequency, temporal order, or temporal
+<blockquote><p>&ldquo;deficient at tasks in which temporal frequency, temporal order, or temporal
 sequence is of the essence. [..] The dorsolateral prefrontal cortex seems most
 important for the mediation of the cross-temporal contingencies, as delay
-tasks require&#8221; (Fuster, J. M., 2008. pg. 145).</p></blockquote>
+tasks require&rdquo; (Fuster, J. M., 2008. pg. 145).</p></blockquote>
 
 <p>This is not surprising as working memory is an essential component of
 temporally organizing cognition and behavior.</p>
 
 <p><strong>Cross-Modal Integration </strong><br/>
-Much of the DLPFC&#8217;s functionality can be attributed to how interconnected it
+Much of the DLPFC&rsquo;s functionality can be attributed to how interconnected it
 is. This interconnectedness however not only enables cross-temporal
-integration but also cross-modal integration &#8211; neurons that receive
+integration but also cross-modal integration &mdash; neurons that receive
 projections from multiple sensory areas are the mechanism behind this.</p>
 
 <p>Fuster demonstrated cross-modal integration with a single neuron recording
 study performed on monkeys (Fuster, J. M., 2008. pg. 226). The monkeys were
-trained to associate an auditory tone with a particular visual stimuli &#8211; in
+trained to associate an auditory tone with a particular visual stimuli &mdash; in
 this case a color. The experiment first presented the animal with the auditory
-cue and then after a delay presented two colors buttons &#8211; the animal would
+cue and then after a delay presented two colors buttons &mdash; the animal would
 need to choose the correct one that corresponded with the learned association.
 Single cell neurons were recorded in the DLPFC that responded both to the
 auditory cue and to the color. Thus the sensory rule for the experimental
@@ -1951,9 +1951,9 @@ condition was encoded in a multi-modal association. This is a precursor to the
 rule encoding functionality that the DLPFC is implicated in as well.</p>
 
 <p><strong>Planning, Acting and Rule Encoding</strong><br/>
-The DLPFC is essential to the &#8220;ability to maintain any memory, recent or
+The DLPFC is essential to the &ldquo;ability to maintain any memory, recent or
 remote, in the active state for the prospective performance of a goal-directed
-act&#8221; (Fuster, J. M., 2008. pg. 146). Performance of a goal directed act
+act&rdquo; (Fuster, J. M., 2008. pg. 146). Performance of a goal directed act
 requires planning for the act and acting on in the plan. Related to this is
 the ability to encode the rules that may be required for the task. The
 beginnings of rule encoding are in the cross-modal associative abilities of
@@ -2022,33 +2022,33 @@ whether the stimuli were spatial or not. This result seems to indicate that
 monitoring is an additional feature of the DLPFC.</p>
 
 <p><strong>Will and Volition</strong><br/>
-Given the DLPFC&#8217;s role in so many aspects of &#8220;executive control&#8221; perhaps it
+Given the DLPFC&rsquo;s role in so many aspects of &ldquo;executive control&rdquo; perhaps it
 also has a role in the voluntary choice of actions that is so tightly
 associated with the concept of consciousness.</p>
 
-<blockquote><p>&#8220;Damage in the dorsolateral prefrontal cortex in humans leads to a lack of
+<blockquote><p>&ldquo;Damage in the dorsolateral prefrontal cortex in humans leads to a lack of
 spontaneous activity, distractibility by environmental cues, and the
 repetitive, stereotypic use of inappropriate behavioral responses
 (perseveration). These phenomena may indicate an inability to choose or
-initiate the correct course of action.&#8221; (Freeman, A., Libet, B., &amp; Sutherland,
+initiate the correct course of action.&rdquo; (Freeman, A., Libet, B., &amp; Sutherland,
 K., 1999 pg. 16).</p></blockquote>
 
-<p>Frith defines the actual act of such choosing as &#8220;a deliberate selection
+<p>Frith defines the actual act of such choosing as &ldquo;a deliberate selection
 [that] is subjectively experienced as willed and occurs when we have a choice
 of action. [These] spontaneous or self-generated actions are not specified by
-an external trigger stimulus, but are internally driven.&#8221; (Frith et al, 1991).
+an external trigger stimulus, but are internally driven.&rdquo; (Frith et al, 1991).
 One of the main findings on volition and the DLPFC is his PET study of word
 generation and finger movements.</p>
 
 <p>The word generation experiment consists of 3 conditions: in the first the
 subject hears a list of random words and repeats each word. In the second the
 subject hears words that have unambiguous opposites and must say out loud the
-opposite words. The final third condition the subject hears the word &#8220;next&#8221;
+opposite words. The final third condition the subject hears the word &ldquo;next&rdquo;
 and must choose a word that starts with a preset letter. The idea is that the
-first two conditions are &#8220;externally specified&#8221; (Frith et al, 1991); the word
+first two conditions are &ldquo;externally specified&rdquo; (Frith et al, 1991); the word
 to repeat is unambiguous and no choice exists. In the third condition however
 the subject must pick a word. The PET scans showed no difference in rCBF
-between the first two &#8220;externally specified&#8221; conditions while the third
+between the first two &ldquo;externally specified&rdquo; conditions while the third
 condition showed increased left DLPFC rCBF.</p>
 
 <p>The finger movement part of the experiment had similar results (although rCBF
@@ -2059,7 +2059,7 @@ opposite, and in the third free-willed condition they had to choose which
 finger to raise.</p>
 
 <p>One problem with the word generation part of this experiment is that there is
-a small working memory component &#8211; that of keeping the already stated
+a small working memory component &mdash; that of keeping the already stated
 previous word in mind. However, a later study by Desmond et al in 1998,
 changed the condition to involve no working memory by simply giving the
 participant different word stems that required choice of completions on each
@@ -2071,20 +2071,20 @@ movement also activated the DLPFC (Freeman, A., Libet, B., &amp; Sutherland, K.,
 <p>However the DLPFC, as has been previously mentioned, does not act alone in any
 of this. In each of these tasks the DLPFC worked with other brain areas by
 virtue of its interconnectedness (Freeman, A., Libet, B., &amp; Sutherland, K.,
-1999 pg. 20). The conclusion may be that the DLPFC &#8220;plays a role in the
+1999 pg. 20). The conclusion may be that the DLPFC &ldquo;plays a role in the
 selection of action, [but] the performance of the action itself is facilitated
-by &#8216;lower&#8217; motor regions, such as SMA and basal ganglia&#8221; (pg. 21). And
-furthermore, the &#8220;DLPFC seems to be involved in keeping possible action in
-mind before they are executed, and selecting which one will be performed&#8221; (pg.
+by &lsquo;lower&rsquo; motor regions, such as SMA and basal ganglia&rdquo; (pg. 21). And
+furthermore, the &ldquo;DLPFC seems to be involved in keeping possible action in
+mind before they are executed, and selecting which one will be performed&rdquo; (pg.
 27).</p>
 
 <p><strong>Disorders and Lesions</strong><br/>
 What role does the DLPFC play in human disorders? Lesions of the DLPFC
 contribute to a myriad of symptoms including: lack of drive and awareness
-(selective attention suppressed), visuospatial neglect (FEF damage), &#8220;frontal
-dynamic aphasia&#8221;: reduced verbal production quality, apathy and &#8220;dysexecutive
-syndrome&#8221; leading to being &#8220;incapacitated in initiating spontaneous and
-deliberate action&#8221; (Fuster, J. M., 2008. pg. 198). Working memory deficits
+(selective attention suppressed), visuospatial neglect (FEF damage), &ldquo;frontal
+dynamic aphasia&rdquo;: reduced verbal production quality, apathy and &ldquo;dysexecutive
+syndrome&rdquo; leading to being &ldquo;incapacitated in initiating spontaneous and
+deliberate action&rdquo; (Fuster, J. M., 2008. pg. 198). Working memory deficits
 contribute to a myriad of failures upstream including in action selection,
 temporal integration, and goal oriented planning. The DLPFC is also implicated
 in several neurological disorders.</p>
@@ -2100,9 +2100,9 @@ Lindenberg et al to not only using PET to study rCBF during the WCST but also
 presynaptic dopamine. Their study showed an inverse correlation with reduced
 DLPFC activation and increased striatal 6-FD uptake, leading to the conclusion
 that dopaminergic transmission dysfunction in schizophrenia may be DLPFC
-related. Since schizophrenia is characterized by, &#8220;the failure to construct
-logically coherent temporal configurations (gestalts) of thought &#8211; and
-consequently of speech and behavior&#8221; (Fuster, J. M., 2008. pg. 313) &#8211; that
+related. Since schizophrenia is characterized by, &ldquo;the failure to construct
+logically coherent temporal configurations (gestalts) of thought &mdash; and
+consequently of speech and behavior&rdquo; (Fuster, J. M., 2008. pg. 313) &mdash; that
 precisely implicates the DLPFC in terms of working memory and temporal
 integration problems.</p>
 
@@ -2111,7 +2111,7 @@ A summary of DLPFC working memory involvement is provided by D&#8217;Esposito et
 
 <blockquote><p>When the amount of to-be-remembered information presented at the beginning
 of a delayed-response trial approaches or exceeds short-term memory capacity
-[&#8230;], dorsolateral PFC is preferentially engaged. Dorsolateral PFC-supported
+[&hellip;], dorsolateral PFC is preferentially engaged. Dorsolateral PFC-supported
 processes may facilitate the efficient encoding of information. During the
 subsequent delay interval, when no information is accessible to the subject,
 both ventro- and dorsolateral PFC are recruited. If manipulation of this
@@ -2120,17 +2120,17 @@ is recruited to an additional extent. Upon the presentation of the probe
 stimulus, when a subject is required to make a response based on what was
 presented at the beginning of the trial, dorsolateral PFC is again engaged,
 presumably as the subject scans the information that was retained across the
-trial and chooses an appropriate motor response. [&#8230;] Together, the results
+trial and chooses an appropriate motor response. [&hellip;] Together, the results
 of these studies highlight the temporal dynamics of PFC function during
 working memory task performance. (2000)</p></blockquote>
 
-<p>However it is obvious from the DLPFC&#8217;s involvement in selection and planning
+<p>However it is obvious from the DLPFC&rsquo;s involvement in selection and planning
 and volition that its function cannot be limited to only working memory.
 Selective attention is at the most basic level attention to internal
 representations. These internal representations are maintained by working
 memory and thus these two are closely related. Additionally planning involves
-attention to future possibilities, what Ingvar (1985) called &#8220;memory of the
-future&#8221;, and is thus also closely related to working memory. It appears that
+attention to future possibilities, what Ingvar (1985) called &ldquo;memory of the
+future&rdquo;, and is thus also closely related to working memory. It appears that
 although there is no cohesive theory for the DLPFC, a general sense could be
 that all things DLPFC are related to temporal integration across multiple
 sensory modes. The interconnectedness of the DLPFC is its defining
@@ -2144,21 +2144,21 @@ characteristic.</p>
 
 <p>Basic mathematical rules are encoded by primate prefrontal cortex neurons. Proceedings of the National Academy of Sciences, 107(5), 2277-2282. doi:10.1073/pnas.0909180107 Curtis, C. E., &amp; D&#8217;Esposito, M. (2004).</p>
 
-<p>The effects of prefrontal lesions on working memory performance and theory. Cognitive, Affective, &amp; Behavioral Neuroscience, 4(4), 528-539. Retrieved from http://cabn.psychonomic-journals.org/content/4/4/528.abstract Desmond, J. E., Gabrieli, J. D. E., &amp; Glover, G. H. (1998).</p>
+<p>The effects of prefrontal lesions on working memory performance and theory. Cognitive, Affective, &amp; Behavioral Neuroscience, 4(4), 528-539. Retrieved from <a href="http://cabn.psychonomic-journals.org/content/4/4/528.abstract">http://cabn.psychonomic-journals.org/content/4/4/528.abstract</a> Desmond, J. E., Gabrieli, J. D. E., &amp; Glover, G. H. (1998).</p>
 
-<p>Dissociation of frontal and cerebellar activity in a cognitive task: Evidence for a distinction between selection and search. NeuroImage, 7(4), 368-376. Retrieved from http://www.sciencedirect.com/science/article/B6WNP-45M2XYH-W/2/bf49e4719a18fb7a65ba16cf0b5d3547 D&#8217;Esposito, M., Detre, J. A., Alsop, D. C., Shin, R. K., Atlas, S., &amp; Grossman, M. (1995).</p>
+<p>Dissociation of frontal and cerebellar activity in a cognitive task: Evidence for a distinction between selection and search. NeuroImage, 7(4), 368-376. Retrieved from <a href="http://www.sciencedirect.com/science/article/B6WNP-45M2XYH-W/2/bf49e4719a18fb7a65ba16cf0b5d3547">http://www.sciencedirect.com/science/article/B6WNP-45M2XYH-W/2/bf49e4719a18fb7a65ba16cf0b5d3547</a> D&#8217;Esposito, M., Detre, J. A., Alsop, D. C., Shin, R. K., Atlas, S., &amp; Grossman, M. (1995).</p>
 
-<p>The neural basis of the central executive system of working memory. Nature, 378(6554), 279-281. Retrieved from http://dx.doi.org/10.1038/378279a0 D&#8217;Esposito, M., Postle, B. R., &amp; Rypma, B. (2000).</p>
+<p>The neural basis of the central executive system of working memory. Nature, 378(6554), 279-281. Retrieved from <a href="http://dx.doi.org/10.1038/378279a0">http://dx.doi.org/10.1038/378279a0</a> D&#8217;Esposito, M., Postle, B. R., &amp; Rypma, B. (2000).</p>
 
-<p>Prefrontal cortical contributions to working memory: Evidence from event-related fMRI studies.. Experimental Brain Research, 133(1), 3-11. Retrieved from http://dx.doi.org/10.1007/s002210000395 D&#8217;Esposito, M., (2003).</p>
+<p>Prefrontal cortical contributions to working memory: Evidence from event-related fMRI studies.. Experimental Brain Research, 133(1), 3-11. Retrieved from <a href="http://dx.doi.org/10.1007/s002210000395">http://dx.doi.org/10.1007/s002210000395</a> D&#8217;Esposito, M., (2003).</p>
 
-<p>Neurological foundations of cognitive neuroscience. Cambridge, Mass.: MIT Press. Retrieved from http://www.netLibrary.com/urlapi.asp?action=summary&amp;v=1&amp;bookid=78182 Freeman, A., Libet, B., &amp; Sutherland, K. (1999).</p>
+<p>Neurological foundations of cognitive neuroscience. Cambridge, Mass.: MIT Press. Retrieved from <a href="http://www.netLibrary.com/urlapi.asp?action=summary&amp;v=1&amp;bookid=78182">http://www.netLibrary.com/urlapi.asp?action=summary&amp;v=1&amp;bookid=78182</a> Freeman, A., Libet, B., &amp; Sutherland, K. (1999).</p>
 
 <p>The volitional brain :Towards a neuroscience of free will. Thorverton: Imprint Academic. Freeman, A., Libet, B., &amp; Sutherland, K. (1999).</p>
 
 <p>The volitional brain :Towards a neuroscience of free will. Thorverton: Imprint Academic. Frith, C. D., Friston, K., Liddle, P. F., &amp; Frackowiak, R. S. J. (1991).</p>
 
-<p>Willed action and the prefrontal cortex in man: A study with PET. Proceedings: Biological Sciences, 244(1311), 241-246. Retrieved from http://www.jstor.org/stable/76606 Fuster, J. M. (2008).</p>
+<p>Willed action and the prefrontal cortex in man: A study with PET. Proceedings: Biological Sciences, 244(1311), 241-246. Retrieved from <a href="http://www.jstor.org/stable/76606">http://www.jstor.org/stable/76606</a> Fuster, J. M. (2008).</p>
 
 <p>The prefrontal cortex (4th ed.). Amsterdam; Boston: Academic Press/Elsevier. Fuster, J. M., Bauer, R. H., &amp; Jervey, J. P. (1985).</p>
 
@@ -2168,19 +2168,19 @@ characteristic.</p>
 
 <p>Functional specialization within the dorsolateral prefrontal cortex: A review of anatomical and physiological studies of non-human primates. Neuroscience Research, 54(2), 73-84. doi:DOI: 10.1016/j.neures.2005.10.013 Meyer-Lindenberg, A., Miletich, R. S., Kohn, P. D., Esposito, G., Carson, R. E., Quarantelli, M., et al. (2002).</p>
 
-<p>Reduced prefrontal activity predicts exaggerated striatal dopaminergic function in schizophrenia. Nature Neuroscience, 5(3), 267-271. Retrieved from http://dx.doi.org/10.1038/nn804 Miller, E. K., &amp; Cohen, J. D. (2001).</p>
+<p>Reduced prefrontal activity predicts exaggerated striatal dopaminergic function in schizophrenia. Nature Neuroscience, 5(3), 267-271. Retrieved from <a href="http://dx.doi.org/10.1038/nn804">http://dx.doi.org/10.1038/nn804</a> Miller, E. K., &amp; Cohen, J. D. (2001).</p>
 
-<p>An integrative theory of prefrontal cortex function. Annual Review of Neuroscience, 24(1), 167-202. Retrieved from http://dx.doi.org/10.1146/annurev.neuro.24.1.167 Miyashita, Y. (1993).</p>
+<p>An integrative theory of prefrontal cortex function. Annual Review of Neuroscience, 24(1), 167-202. Retrieved from <a href="http://dx.doi.org/10.1146/annurev.neuro.24.1.167">http://dx.doi.org/10.1146/annurev.neuro.24.1.167</a> Miyashita, Y. (1993).</p>
 
-<p>Inferior temporal cortex: Where visual perception meets memory. Annual Review of Neuroscience, 16(1), 245-263. Retrieved from http://dx.doi.org/10.1146/annurev.ne.16.030193.001333 Morris, R. G., Ahmed, S., Syed, G. M., &amp; Toone, B. K. (1993).</p>
+<p>Inferior temporal cortex: Where visual perception meets memory. Annual Review of Neuroscience, 16(1), 245-263. Retrieved from <a href="http://dx.doi.org/10.1146/annurev.ne.16.030193.001333">http://dx.doi.org/10.1146/annurev.ne.16.030193.001333</a> Morris, R. G., Ahmed, S., Syed, G. M., &amp; Toone, B. K. (1993).</p>
 
 <p>Neural correlates of planning ability: Frontal lobe activation during the tower of london test. Neuropsychologia, 31(12), 1367-1378. doi:DOI: 10.1016/0028-3932(93)90104-8 Petrides, M., &amp; Pandya, D. N. (1999).</p>
 
 <p>Dorsolateral prefrontal cortex: Comparative cytoarchitectonic analysis in the human and the macaque brain and corticocortical connection patterns. European Journal of Neuroscience, 11(3), 1011. doi:10.1046/j.1460-9568.1999.00518.x Petrides, M. (2000).</p>
 
-<p>The role of the mid-dorsolateral prefrontal cortex in working memory. Experimental Brain Research, 133(1), 44-54. Retrieved from http://dx.doi.org/10.1007/s002210000399 Rossi, A., Pessoa, L., Desimone, R., &amp; Ungerleider, L. (2009).</p>
+<p>The role of the mid-dorsolateral prefrontal cortex in working memory. Experimental Brain Research, 133(1), 44-54. Retrieved from <a href="http://dx.doi.org/10.1007/s002210000399">http://dx.doi.org/10.1007/s002210000399</a> Rossi, A., Pessoa, L., Desimone, R., &amp; Ungerleider, L. (2009).</p>
 
-<p>The prefrontal cortex and the executive control of attention. Experimental Brain Research, 192(3), 489-497. Retrieved from http://dx.doi.org/10.1007/s00221-008-1642-z Ryding, E., BraÅdvik, B., &amp; Ingvar, D. H. (1996).</p>
+<p>The prefrontal cortex and the executive control of attention. Experimental Brain Research, 192(3), 489-497. Retrieved from <a href="http://dx.doi.org/10.1007/s00221-008-1642-z">http://dx.doi.org/10.1007/s00221-008-1642-z</a> Ryding, E., BraÅdvik, B., &amp; Ingvar, D. H. (1996).</p>
 
 <p>Silent speech activates prefrontal cortical regions asymmetrically, as well as speech-related areas in the dominant hemisphere. Brain and Language, 52(3), 435-451. doi:DOI: 10.1006/brln.1996.0023 Singh, J., &amp; Knight, R. T. (1990).</p>
 
@@ -2188,11 +2188,11 @@ characteristic.</p>
 
 <p>Role of the lateral prefrontal cortex in executive behavioral control. Physiological Reviews, 88(1), 37-57. doi:10.1152/physrev.00014.2007 Tomita, H., Ohbayashi, M., Nakahara, K., Hasegawa, I., &amp; Miyashita, Y. (1999).</p>
 
-<p>Top-down signal from prefrontal cortex in executive control of memory retrieval. Nature, 401(6754), 699-703. Retrieved from http://dx.doi.org/10.1038/44372 Weinberger, D. R., Berman, K. F., Zec, R. F., &amp; National Institute of Mental Health. (1986; 1986).</p>
+<p>Top-down signal from prefrontal cortex in executive control of memory retrieval. Nature, 401(6754), 699-703. Retrieved from <a href="http://dx.doi.org/10.1038/44372">http://dx.doi.org/10.1038/44372</a> Weinberger, D. R., Berman, K. F., Zec, R. F., &amp; National Institute of Mental Health. (1986; 1986).</p>
 
 <p>Physiologic dysfunction of dorsolateral prefrontal cortex in schizophrenia. Washington, D.C.: National Institute of Mental Health. White, I. M., &amp; Wise, S. P. (1999).</p>
 
-<p>Rule-dependent neuronal activity in the prefrontal cortex. Experimental Brain Research, 126(3), 315-335. Retrieved from http://dx.doi.org/10.1007/s002210050740</p>
+<p>Rule-dependent neuronal activity in the prefrontal cortex. Experimental Brain Research, 126(3), 315-335. Retrieved from <a href="http://dx.doi.org/10.1007/s002210050740">http://dx.doi.org/10.1007/s002210050740</a></p>
 ]]></content>
   </entry>
   
@@ -2213,15 +2213,15 @@ tête-à-tête, our ego and the task battling together for mutual gain.</p>
 
 
 <p>In positive psychology the term coined by Mihaly Csikszentmihalyi to describe
-this is &#8220;flow&#8221;. In his seminal work on flow, Csikszentmihalyi uses various
+this is &ldquo;flow&rdquo;. In his seminal work on flow, Csikszentmihalyi uses various
 experiential self-report methods to study flow, and he has found some key
 techniques that can help in achieving this state. However, he does not mention
 the biological mechanisms behind flow. Examining this connection leads to some
 interesting findings. If the brain functions during a state of flow include
-the brain&#8217;s attention pathways, then this likely implicates dopamine as one of
+the brain&rsquo;s attention pathways, then this likely implicates dopamine as one of
 the brain chemicals through which flow is experienced. Dopamine is in part not
 only responsible for regulating attention but is also the primary
-neurotransmitter of reward. Is flow then a state of constant dopamine rush&#8211;a
+neurotransmitter of reward. Is flow then a state of constant dopamine rush&mdash;a
 stream of attention and reward causing a physical high? This would explain the
 addictive nature of flow. Additionally we could then draw further powerful
 conclusions about the utility of flow in our lives. Specifically a
@@ -2231,9 +2231,9 @@ address in attempting to make a case that more research into this area would
 be indispensable:</p>
 
 <ol>
-<li>What are the cognitive pathways involved in flow?</li>
-<li>Is dopamine the cause of flow?</li>
-<li>Is education a practical application for flow theory?
+<li> What are the cognitive pathways involved in flow?</li>
+<li> Is dopamine the cause of flow?</li>
+<li> Is education a practical application for flow theory?
 Understanding how flow happens and how it relates to attention and reward can
 be potentially useful in developing new techniques for learning and also can
 have broader significance such as in finding non-drug based treatments for
@@ -2242,21 +2242,21 @@ attention disorders.</li>
 
 
 <p><strong>What are the cognitive pathways involved in flow?</strong><br/>
-Csikszentmihalyi (1990) defines flow as &#8220;an intrinsically motivated, task-
+Csikszentmihalyi (1990) defines flow as &ldquo;an intrinsically motivated, task-
 focused state characterized by full concentration, a change in the awareness
 of time (e.g., time passing quickly), feelings of clarity and control, a
-merging of action and awareness, and a lack of self-consciousness&#8221;. He claims
+merging of action and awareness, and a lack of self-consciousness&rdquo;. He claims
 that there are eight contributing factors to this feeling (p.49):</p>
 
 <ol>
-<li> A challenging activity which requires skills</li>
-<li> The ability to concentrate on the task</li>
-<li>The task has clear goals</li>
-<li>There is immediate feedback</li>
-<li>There is deep involvement in the task</li>
-<li>There is a perception of control</li>
-<li> Sense of self disappears</li>
-<li>Sense of time is altered
+<li>  A challenging activity which requires skills</li>
+<li>  The ability to concentrate on the task</li>
+<li> The task has clear goals</li>
+<li> There is immediate feedback</li>
+<li> There is deep involvement in the task</li>
+<li> There is a perception of control</li>
+<li>  Sense of self disappears</li>
+<li> Sense of time is altered
 The experience of these is so rewarding that people spend their lives in
 search of activities that can cause it. Csikszentmihlyi studies flow using a
 survey technique he invented called ESM (experiential sampling method). Over
@@ -2305,7 +2305,7 @@ both correlated to this part of the brain as well.</p>
 <p><strong>Is dopamine the cause of flow?</strong><br/>
 It has been shown that the neurotransmitter dopamine is part of the attention
 regulation system (Nieoullon, A. 2002). Dopamine is one of the primary
-mechanisms in the brain&#8217;s reward circuit and takes part in the inhibitory part
+mechanisms in the brain&rsquo;s reward circuit and takes part in the inhibitory part
 of executive control (pg. 63). Dopaminergic system deficiencies are often
 cited as causing attention deficit hyperactivity disorder and the primary
 treatment for ADHD is via drugs such as Ritalin (pg. 57). Ritalin is an
@@ -2325,7 +2325,7 @@ ideation, and learning. The dopamine pathway increases both arousal and goal-
 directedness and at the same time decreases inhibition and suppresses
 competing behaviors (Flaherty, A. W., 2005. pg. 149). To confirm the
 connection between dopamine and attention, one particular study used Positron
-Emission Tomography (PET) scanning &#8211; dopamine receptors were tagged with
+Emission Tomography (PET) scanning &mdash; dopamine receptors were tagged with
 radio isotopes and the subjects were asked to perform working memory and
 sustained attention tasks. The scans then showed if dopamine receptors were
 activated during the tasks and in which brain areas (Aalto, S., Bruck, A.,
@@ -2355,7 +2355,7 @@ motivation in and of itself (Csikszentmihalyi, M., 1990, pg. 67). Usually we
 start an activity because of an external goal, however as we continue that
 activity there is the possibility of starting to enjoy it for its own sake.
 That is one of the preconditions for flow and it is also evident in the
-learning patterns of toddlers &#8211; for instance a child after just starting to
+learning patterns of toddlers &mdash; for instance a child after just starting to
 read will read everything in sight (pg. 130). However in the typical school
 system flow is hindered by many factors: the distractions of the classroom,
 the uneven skill level of the class, the anxiety inducing difficulty of
@@ -2376,18 +2376,18 @@ attainable steps (pg. 131). Eric Jensen (1995) has this message for teachers:</p
 <blockquote><p>Teaching in a way that encourages students to reach the flow state may be
 one of the most important roles you have. In this state, learners are highly
 internally motivated, and learning becomes enjoyable. Help learners reach flow
-by setting up favorable conditions for it. [&#8230;] learning will likely be
+by setting up favorable conditions for it. [&hellip;] learning will likely be
 stifled by a rigid structure. Keep challenge high but stress low. Let learners
 set the pace while you provide the support. Have them design a complex project
 that is personally relevant, and then vary the resources to keep the task
 appropriate to their ability levels. Make it exciting; use teams, simulations,
 technology, and deadlines while maintaining the appropriate levels of guidance
-[&#8230;] (pg. 137).</p></blockquote>
+[&hellip;] (pg. 137).</p></blockquote>
 
-<p>Hektner and Csikszentmihalyi (1996) say that &#8220;in order to maintain the
+<p>Hektner and Csikszentmihalyi (1996) say that &ldquo;in order to maintain the
 enjoyment of flow, people must continually engage in new challenges to match
 their increasing skills, and they must perfect their skills to meet the
-challenges&#8221; (p. 4). Csikszentmihalyi then proposes that some of the biggest
+challenges&rdquo; (p. 4). Csikszentmihalyi then proposes that some of the biggest
 <em>dangers</em> to flow are an overemphasis on rules, evaluation, focus on
 competition and the ensuing self-consciousness that arises from that
 (Csikszentmihalyi, M., 1990, pg. 137). These unfortunately are staples in many
@@ -2414,9 +2414,9 @@ methodology may be used to alleviate some of the need for amphetamines in
 schools.</p>
 
 <p>In 1933, John Dewey suggested that the best state of mind for learning is one
-that is &#8220;playful and serious at the same time&#8221; (p. 286). Today one can
+that is &ldquo;playful and serious at the same time&rdquo; (p. 286). Today one can
 certainly imagine an educational setting where: the material is custom
-tailored to each student&#8217;s ability level, the teacher enjoys the material, and
+tailored to each student&rsquo;s ability level, the teacher enjoys the material, and
 in which the student, excited to learn, can engage with the material fully to
 the point of losing track of time. In a traditional classroom this still seems
 difficult to accomplish, even with all the techniques that Csikszentmihalyi
@@ -2452,7 +2452,7 @@ behavior. Acta Neurobiol Exp, 67(4), 481-488.</p>
 
 <p>Csikszentmihalyi, M. (1990). Literacy and intrinsic motivation. Daedalus,
 119(2, Literacy in America), 115-140. Retrieved from
-http://www.jstor.org/stable/20025303</p>
+<a href="http://www.jstor.org/stable/20025303">http://www.jstor.org/stable/20025303</a></p>
 
 <p>Csikszentmihalyi, M. (1991; 1990). Flow :The psychology of optimal experience.
 New York: HarperPerennial.</p>
@@ -2468,7 +2468,7 @@ generation and creative drive. The Journal of Comparative Neurology, 493(1),
 
 <p>Genetic Science Learning Center. (2010, March 10). Ritalin and cocaine: The
 connection and the controversy. Retrieved March 10, 2010, from
-http://learn.genetics.utah.edu/content/addiction/issues/ritalin.html</p>
+<a href="http://learn.genetics.utah.edu/content/addiction/issues/ritalin.html">http://learn.genetics.utah.edu/content/addiction/issues/ritalin.html</a></p>
 
 <p>Goswami, U. (2008). Cognitive development: The learning brain New York, NY,
 US: Psychology Press.</p>
@@ -2486,11 +2486,11 @@ ed.). Thousand Oaks, CA.: Corwin Press.</p>
 <p>Koepp, M. J., Gunn, R. N., Lawrence, A. D., Cunningham, V. J., Dagher, A.,
 Jones, T., et al. (1998). Evidence for striatal dopamine release during a
 video game. Nature, 393(6682), 266-268. Retrieved from
-http://dx.doi.org/10.1038/30498</p>
+<a href="http://dx.doi.org/10.1038/30498">http://dx.doi.org/10.1038/30498</a></p>
 
 <p>Miller, E. K., &amp; Cohen, J. D. (2001). An integrative theory of prefrontal
 cortex function. Annual Review of Neuroscience, 24(1), 167-202. Retrieved from
-http://dx.doi.org/10.1146/annurev.neuro.24.1.167</p>
+<a href="http://dx.doi.org/10.1146/annurev.neuro.24.1.167">http://dx.doi.org/10.1146/annurev.neuro.24.1.167</a></p>
 
 <p>Morgan, H. (2004). Real learning :A bridge to cognitive neuroscience (1st
 ed.). Lanham, Md.: ScarecrowEducation.</p>
@@ -2500,32 +2500,32 @@ Progress in Neurobiology, 67(1), 53-83. doi:DOI: 10.1016/S0301-0082(02)00011-4</
 
 <p>Pettus, A. (2006, July-August 2006). Psychiatry By prescription: Do
 psychotropic drugs blur the boundaries between illness and health? Harvard
-Magazine. Retrieved from http://harvardmagazine.com/2006/07/psychiatry-by-
+Magazine. Retrieved from <a href="http://harvardmagazine.com/2006/07/psychiatry-by-">http://harvardmagazine.com/2006/07/psychiatry-by-</a>
 prescripti.html</p>
 
 <p>Posner, M. I., &amp; Petersen, S. E. (1990). The attention system of the human
-brain. Annual Review of Neuroscience, 13(1), 25-42. Retrieved from http://arjo
+brain. Annual Review of Neuroscience, 13(1), 25-42. Retrieved from <a href="http://arjo">http://arjo</a>
 urnals.annualreviews.org/doi/abs/10.1146/annurev.ne.13.030190.000325</p>
 
 <p>Rathunde, K., &amp; Csikszentmihalyi, M. (2005). Middle school students&#8217;
 motivation and quality of experience: A comparison of montessori and
 traditional school environments. American Journal of Education, 111(3),
-341-371. Retrieved from http://www.jstor.org/stable/3566831</p>
+341-371. Retrieved from <a href="http://www.jstor.org/stable/3566831">http://www.jstor.org/stable/3566831</a></p>
 
 <p>Schiefele, U., &amp; Csikszentmihalyi, M. (1995). Motivation and ability as
 factors in mathematics experience and achievement. Journal for Research in
 Mathematics Education, 26(2), 163-181. Retrieved from
-http://www.jstor.org/stable/749208</p>
+<a href="http://www.jstor.org/stable/749208">http://www.jstor.org/stable/749208</a></p>
 
 <p>Surguladze, S., Keedwell, P., &amp; Phillips, M. (2003). Neural systems underlying
 affective disorders. Advances in Psychiatric Treatment, 9(6), 446-455.
 doi:10.1192/apt.9.6.446</p>
 
 <p>Wise, R. A. (2004). Dopamine, learning and motivation. Nature Reviews.
-Neuroscience, 5(6), 483-494. Retrieved from http://dx.doi.org/10.1038/nrn1406</p>
+Neuroscience, 5(6), 483-494. Retrieved from <a href="http://dx.doi.org/10.1038/nrn1406">http://dx.doi.org/10.1038/nrn1406</a></p>
 
 <p>Wolk, S. (2008, September 2008). Joy in school. Educational Leadership, 66,
-8-15. Retrieved from http://www.ascd.org/publications/educational_leadership/s
+8-15. Retrieved from <a href="http://www.ascd.org/publications/educational_leadership/s">http://www.ascd.org/publications/educational_leadership/s</a>
 ept08/vol66/num01/Joy_in_School.aspx</p>
 ]]></content>
   </entry>
@@ -2539,14 +2539,14 @@ ept08/vol66/num01/Joy_in_School.aspx</p>
 my aching muscles allowed a brief respite. As I stand on its majestic craggy
 peak, I survey my mountain beneath me. My boulder is now far out of sight, but
 I can feel it down below in the darkness waiting for me. I send my thoughts
-out to it &#8211; my boulder you are my work, my affliction, my friend and my
+out to it &mdash; my boulder you are my work, my affliction, my friend and my
 enemy. I shall see you soon enough. In these seemingly countless days,
 logically countable but practically indistinguishable, my mind is not always
-so clear. At this instant I am aware &#8211; tomorrow I may not be. I grasp the
+so clear. At this instant I am aware &mdash; tomorrow I may not be. I grasp the
 moment, tenderly. Let me slow it down and take joy in my thoughts. Before my
-curse &#8211; I can barely remember &#8211; I took my thoughts for granted. Mortal, I
+curse &mdash; I can barely remember &mdash; I took my thoughts for granted. Mortal, I
 had a limited amount of time for thoughts, yet I did not enjoy them. Immortal,
-and now each thought is precious &#8211; I have forever and thus have infinite
+and now each thought is precious &mdash; I have forever and thus have infinite
 thoughts, yet I take joy in each, insignificant as it is. The absurdity
 continues, the one constant along with my rock and my mountain to keep me
 company. Yet as I stand there, the cold rare mountain air turning my breath
@@ -2556,24 +2556,24 @@ visible, I am happy.</p>
 
 
 <p>I remember the moment when first I became fully conscious of my eternal
-meaninglessness &#8211; the horror I felt. With time I came to understand that my
+meaninglessness &mdash; the horror I felt. With time I came to understand that my
 previous life, filled with hopes and dreams, was as absurd as my rock and
 mountain world. I lied to myself then in order to avoid becoming conscious of
 the true nature of existence. Now I have no such luxury, the stark landscape,
 unchanging except through my actions, reminds me continually of the futility
 of my labor.</p>
 
-<p>Mercury says that Camus once wrote about me, &#8220;His fate belongs to him.&#8221;<sup>1</sup> He
-calls me an &#8220;absurd hero.&#8221;<sup>2</sup>  I now accept this role. My existence is an
-analogy for the futility of rebellion &#8211; there is no escape from the absurd. I
-have no hope of completion and no hope of a purpose. Hope would be a lie &#8211; I
+<p>Mercury says that Camus once wrote about me, &ldquo;His fate belongs to him.&rdquo;<sup>1</sup> He
+calls me an &ldquo;absurd hero.&rdquo;<sup>2</sup>  I now accept this role. My existence is an
+analogy for the futility of rebellion &mdash; there is no escape from the absurd. I
+have no hope of completion and no hope of a purpose. Hope would be a lie &mdash; I
 can not console myself with lies. In my acknowledgment of my own
 ridiculousness I find freedom. I am free to experience, to find joy within
 myself or to not, and I am free to create my own happiness, even while I am
 not free from the binds of my curse.</p>
 
-<p>Another mortal writes, &#8220;Because there is no absolute certainty to which to
-turn, each person must discover ultimate purpose on his or her own.&#8221;<sup>3</sup> Is my
+<p>Another mortal writes, &ldquo;Because there is no absolute certainty to which to
+turn, each person must discover ultimate purpose on his or her own.&rdquo;<sup>3</sup> Is my
 revolt in spite of meaninglessness my purpose? More often than not I get so
 caught up in the pure action of my task, nothing else about my condition
 matters. However, I have accepted that although the task is itself futile, I
@@ -2585,8 +2585,8 @@ purpose.</p>
 
 <p>I listen to my breathing. I start my descent down my beloved hated mountain.
 My parting thought at Camus is this: He should not use me as an example of an
-&#8220;absurd hero,&#8221; as by that action he gives my existence semblance of meaning.
-He takes away my freedom to pursue my own meaning. Is his &#8220;absurdity&#8221; the lack
+&ldquo;absurd hero,&rdquo; as by that action he gives my existence semblance of meaning.
+He takes away my freedom to pursue my own meaning. Is his &ldquo;absurdity&rdquo; the lack
 of knowledge of the bigger context or the knowledge that any bigger context is
 meaningless? If the context of my existence is a persistent analogy for
 absurdity then it might cease itself to be absurd. Perhaps Camus was simply
@@ -2616,7 +2616,7 @@ experience. New York: HarperPerennial. (pg. 225)</p>
     <updated>2010-02-19T21:53:28-05:00</updated>
     <id>http://timofei7.github.com/blog/2010/02/19/assignment-write-about-where-i-see-myself-in-x-number-of-years</id>
     <content type="html"><![CDATA[<p>Instead of writing seriously, I wrote an imaginary interview. BTW:Living in a
-van&#8230; happened in real life; C.com/&#8221;light goop&#8221; &#8230;well it was supposed to be
+van&hellip; happened in real life; C.com/&ldquo;light goop&rdquo; &hellip;well it was supposed to be
 about the future!</p>
 
 <p><strong>FRAMBERG MAGAZINE INTERVIEW (Issue: March, 2018)</strong><br/>
@@ -2627,23 +2627,23 @@ about the future!</p>
 
 <p><em><strong>Framberg:</strong> So you are one of the founders of C.com? </em></p>
 
-<p><strong>Tim:</strong> Yep. Although it wasn&#8217;t like we just had a great brainstorming session and out popped a company.  In fact I&#8217;d say c.com isn&#8217;t a company at all, and it is my hope that it never will be!</p>
+<p><strong>Tim:</strong> Yep. Although it wasn&rsquo;t like we just had a great brainstorming session and out popped a company.  In fact I&rsquo;d say c.com isn&rsquo;t a company at all, and it is my hope that it never will be!</p>
 
 <p>It started as just a group of friends pulling allnighters in a computer lab at
 college.   We made a good team and had a blast doing it.  Then we all
-graduated and got &#8220;real&#8221; jobs.  We ended up working cold rainy nights sitting
+graduated and got &ldquo;real&rdquo; jobs.  We ended up working cold rainy nights sitting
 in front of computers in cubicles doing other peoples&#8217; bidding.  The good
-times were just a memory.  Many years later, we&#8217;d get laid-off from our jobs
-at the big corporations to be replaced by new dream-filled youth &#8211; youth just
+times were just a memory.  Many years later, we&rsquo;d get laid-off from our jobs
+at the big corporations to be replaced by new dream-filled youth &mdash; youth just
 as ready as we were to give up their dreams, creativity and energy in exchange
 for job security.</p>
 
-<p><em><strong>Framberg: </strong> So what happened, that&#8217;s not the end of the story right?</em></p>
+<p><em><strong>Framberg: </strong> So what happened, that&rsquo;s not the end of the story right?</em></p>
 
 <p>Tim: Not at all.  In fact, that never happened!  If it had happened, c.com
 never would have even been a twinkle in our eyes. I say this as a warning to
 anybody who has had an idea but wants to put it off in favor of making some
-money first.  Don&#8217;t put the golden handcuffs on, rather grab your friends,
+money first.  Don&rsquo;t put the golden handcuffs on, rather grab your friends,
 grab your idea and sprint out onto the playing field.  If there is one time in
 your life when you should do this it is now, not later.</p>
 
@@ -2651,30 +2651,30 @@ your life when you should do this it is now, not later.</p>
 bit grandiose and self involved but they were cute.  I have always been an
 excitable person and tend to dive right into an idea.  Not being a great
 swimmer I tend to cannonball.  This sets off lots of waves and people get wet.
-Diving right into this analogy &#8211; this would whet their appetite. Sometimes
+Diving right into this analogy &mdash; this would whet their appetite. Sometimes
 one of the ideas would spin off an idea wave that we could surf.  This is not
-to say all the ideas were mine &#8211; I&#8217;m going to get beat up back at the office
+to say all the ideas were mine &mdash; I&rsquo;m going to get beat up back at the office
 for this.</p>
 
-<p><em><strong>Framberg:</strong> Why do you say that c.com isn&#8217;t a company? What is it?</em></p>
+<p><em><strong>Framberg:</strong> Why do you say that c.com isn&rsquo;t a company? What is it?</em></p>
 
-<p><strong>Tim:</strong> c.com is really more of a family.  If you prefer the word company we insist on the older interpretation of the word &#8211; the theater company &#8211; the company of companionship.  The organizational structure of c.com is less of an &#8216;inc&#8217; and more of a fellowship.  This sort of company is based around the passion of the founders.  There are no employees per se, everybody is an owner. There is no boss.  We only work on projects we really love. We don&#8217;t compromise our projects for investors or clients but work for the love of the thing rather than for the monetizing of it.  From the beginning we knew we didn&#8217;t want to be VC controlled vaporware. What is our mission?  Simple. Create.</p>
+<p><strong>Tim:</strong> c.com is really more of a family.  If you prefer the word company we insist on the older interpretation of the word &mdash; the theater company &mdash; the company of companionship.  The organizational structure of c.com is less of an &lsquo;inc&rsquo; and more of a fellowship.  This sort of company is based around the passion of the founders.  There are no employees per se, everybody is an owner. There is no boss.  We only work on projects we really love. We don&rsquo;t compromise our projects for investors or clients but work for the love of the thing rather than for the monetizing of it.  From the beginning we knew we didn&rsquo;t want to be VC controlled vaporware. What is our mission?  Simple. Create.</p>
 
-<p><em><strong>Framberg:</strong>  Just to create?  Isn&#8217;t the company involved in certain
+<p><em><strong>Framberg:</strong>  Just to create?  Isn&rsquo;t the company involved in certain
 particular areas?</em></p>
 
-<p><strong>Tim: </strong> It isn&#8217;t &#8220;just&#8221;!   We create because it is imperative.  Your readers have perhaps heard of the existential maxim &#8220;existence precedes essence.&#8221;  We have a duty to create the world as we believe it should be. So it isn&#8217;t just lighthearted play. I believe strongly that once we realize that we are completely responsible for the world, and that by each of our actions we define the world, in part, according to our wishes &#8211; then it becomes clear that our actions do not simply exist in a void and certainly are not just harmless. Quite the contrary.  In fact, every action has meaning and at c.com we strive toward having a socially positive impact on the world.  Every project we undertake has a socially positive foundation.  Whether it is a new educational toy for improving math skills in preschoolers or a social network to promote micro-philanthropy for schools in Ghana, all our projects at their core try to focus on improving the human condition.</p>
+<p><strong>Tim: </strong> It isn&rsquo;t &ldquo;just&rdquo;!   We create because it is imperative.  Your readers have perhaps heard of the existential maxim &ldquo;existence precedes essence.&#8221;  We have a duty to create the world as we believe it should be. So it isn&rsquo;t just lighthearted play. I believe strongly that once we realize that we are completely responsible for the world, and that by each of our actions we define the world, in part, according to our wishes &mdash; then it becomes clear that our actions do not simply exist in a void and certainly are not just harmless. Quite the contrary.  In fact, every action has meaning and at c.com we strive toward having a socially positive impact on the world.  Every project we undertake has a socially positive foundation.  Whether it is a new educational toy for improving math skills in preschoolers or a social network to promote micro-philanthropy for schools in Ghana, all our projects at their core try to focus on improving the human condition.</p>
 
 <p><em><strong>Framberg: </strong> That is quite a philosophical underpinning for a company! Is
 this what you call engaged activism? Those sound like lofty ideals, but how do
 you manage in practice?</em></p>
 
-<p><strong>Tim:</strong> Yeah, this is definitely a part of <em>engaged activism</em>.  When we started we had two main goals. One was to do work which we personally found engaging.  In the lab we would pull allnighters not because we had to but because we were in the zone. We were fully &#8220;into&#8221; our work. We also enjoyed each others&#8217; company.  So our primary motivation was &#8220;engaging work with cool people.&#8221;</p>
+<p><strong>Tim:</strong> Yeah, this is definitely a part of <em>engaged activism</em>.  When we started we had two main goals. One was to do work which we personally found engaging.  In the lab we would pull allnighters not because we had to but because we were in the zone. We were fully &ldquo;into&rdquo; our work. We also enjoyed each others&#8217; company.  So our primary motivation was &ldquo;engaging work with cool people.&rdquo;</p>
 
 <p>Our second tenet was that our work had to be meaningful.  We wanted to
 contribute to society and be able to believe in what we were striving toward.
-So our secondary motivation was &#8220;socially positive projects that we all could
-believe in.&#8221;  Most importantly we didn&#8217;t want to simply donate some part of
+So our secondary motivation was &ldquo;socially positive projects that we all could
+believe in.&#8221;  Most importantly we didn&rsquo;t want to simply donate some part of
 our profits to good causes, we actually wanted our projects to be good causes
 themselves!  If you are working with people you like, on a project you believe
 in, and the work itself is rewarding then you are addicted and fulfilled and
@@ -2686,16 +2686,16 @@ happy.</p>
 
 <p><em><strong>Framberg:</strong>  Are you happier now that you have achieved some success?</em></p>
 
-<p><strong>Tim:</strong>  I wouldn&#8217;t say that the success has any bearing on my happiness.  I was happy homeless and I am happy now.  We have cooler toys in the office though now, and with the added success we can create better more interesting things.</p>
+<p><strong>Tim:</strong>  I wouldn&rsquo;t say that the success has any bearing on my happiness.  I was happy homeless and I am happy now.  We have cooler toys in the office though now, and with the added success we can create better more interesting things.</p>
 
 <p><em><strong>Framberg:</strong>  Homeless?  Would you like to share that story?</em></p>
 
-<p><strong>Tim: </strong> [Laughs] In college one summer I lived in a van.  It was my parents&#8217; van and I pimped it out so I wasn&#8217;t exactly being homeless.  I was however a bit persecuted by the campus police and had to park discreetly at night.  Some nights I spent in the Walmart parking lot. I showered at the computer science building, so it was really actually rather comfortable.</p>
+<p><strong>Tim: </strong> [Laughs] In college one summer I lived in a van.  It was my parents&#8217; van and I pimped it out so I wasn&rsquo;t exactly being homeless.  I was however a bit persecuted by the campus police and had to park discreetly at night.  Some nights I spent in the Walmart parking lot. I showered at the computer science building, so it was really actually rather comfortable.</p>
 
 <p><em><strong>Framberg: </strong> So tell us more about yourself.  When you are not living in a
 van what do you do in your free time?</em></p>
 
-<p><strong>Tim:</strong>  Free time?  Mostly I hang out at the studio.  That is what we call the office. I also hike a lot and spend time with the family.  I have an 8 month old daughter, Anki, we hang out at the studio together all the time.  She is a genius in the making I can tell.  Her favorite toy right now is this really expensive prototype &#8220;light goop&#8221;.  It glows and changes color depending on the shape it is in.  It is not yet practical to mass produce, but she loves being the only one in the world with one.</p>
+<p><strong>Tim:</strong>  Free time?  Mostly I hang out at the studio.  That is what we call the office. I also hike a lot and spend time with the family.  I have an 8 month old daughter, Anki, we hang out at the studio together all the time.  She is a genius in the making I can tell.  Her favorite toy right now is this really expensive prototype &ldquo;light goop&rdquo;.  It glows and changes color depending on the shape it is in.  It is not yet practical to mass produce, but she loves being the only one in the world with one.</p>
 
 <p><em><strong>Framberg:</strong> Is that a MultiPhen technology?</em></p>
 
@@ -2703,20 +2703,20 @@ van what do you do in your free time?</em></p>
 
 <p><em><strong>Framberg:</strong>  What is MultiPhen exactly?</em></p>
 
-<p><strong>Tim:</strong>  We don&#8217;t rightly know ourselves.  Actually, it is simply a buzzword I came up with to call our technology.  We were making things that interacted at multiple levels and exhibits multiple phenomenons?   MultiPhen simply sounded cool.   People love buzzwords.</p>
+<p><strong>Tim:</strong>  We don&rsquo;t rightly know ourselves.  Actually, it is simply a buzzword I came up with to call our technology.  We were making things that interacted at multiple levels and exhibits multiple phenomenons?   MultiPhen simply sounded cool.   People love buzzwords.</p>
 
 <p><em><strong>Framberg: </strong> We suspected that was the case all along.  It sounds like you
 are a bit of a free thinker.  Have you always been a rebel?  Did that help you
 get to where you are?</em></p>
 
-<p><strong>Tim:</strong>  I wouldn&#8217;t say I am a rebel.  [Laughs] I have not had a traditional path though.  My life used to be controlled by fear.  It made me not take the traditional path to college when I should have, instead I tried to start my own web design business after high school and failed.  Then I worked as a programmer for a short while and then as a sysadmin at the college where I eventually started taking classes, and even more eventually graduated from.  That experience changed me quite a bit, I became braver and started moving through life faster.  Went to grad school right after that and started c.com.</p>
+<p><strong>Tim:</strong>  I wouldn&rsquo;t say I am a rebel.  [Laughs] I have not had a traditional path though.  My life used to be controlled by fear.  It made me not take the traditional path to college when I should have, instead I tried to start my own web design business after high school and failed.  Then I worked as a programmer for a short while and then as a sysadmin at the college where I eventually started taking classes, and even more eventually graduated from.  That experience changed me quite a bit, I became braver and started moving through life faster.  Went to grad school right after that and started c.com.</p>
 
-<p>I&#8217;ve learned a lot from my mistakes.  It is unfortunate that wisdom cannot be
+<p>I&rsquo;ve learned a lot from my mistakes.  It is unfortunate that wisdom cannot be
 taught but must be learned from experience.  I know that my strange background
 has helped make me who I am and I do not regret it.  I only wish that I had
 gained the wisdom of how to be braver and happier earlier.  I still like to do
 things a bit differently, but now it is a choice and partially an affectation
-&#8211; I am much less subject to the anxieties that plagued me when I was younger.
+&mdash; I am much less subject to the anxieties that plagued me when I was younger.
 This path of discovery, though, made me open to learning and exploring and
 playing at points in my life when other people were concentrating on other
 things.  I think I was fairly self-restricted as a teen, more so than is
@@ -2752,10 +2752,10 @@ share. C.S. Lewis thought that true friendship, which he categorized as the
 love called philia, could only exist between people who share a common vision
 or activity. He claimed that because this was the least biologically necessary
 love, when it truly existed, it was the most admirable. He lauds friendship
-and says, &#8220;To the Ancients, Friendship [notice the capitalization] seemed the
-happiest and most fully human of all loves; the crown of life…&#8221;<sup>1</sup> Through
+and says, &ldquo;To the Ancients, Friendship [notice the capitalization] seemed the
+happiest and most fully human of all loves; the crown of life…&rdquo;<sup>1</sup> Through
 friends that I made over many shared hours in computer labs I now see more
-clearly what he meant. Lewis&#8217;s various categories become blurry at this point
+clearly what he meant. Lewis&rsquo;s various categories become blurry at this point
 yet the importance he places on shared interest remains.</p>
 
 <!--more-->
@@ -2796,7 +2796,7 @@ cold over and over.</p>
 or drawing or even having a stimulating conversation. Many people have written
 about the pleasure of <em>flow</em><sup>2</sup> and I can attest that I crave this state above
 many other things in life. This feeling of warm excitement mingled with
-conviction opens the mind&#8217;s gates. I become smarter, better, faster and
+conviction opens the mind&rsquo;s gates. I become smarter, better, faster and
 stronger when I am in this state. This kind of happiness begets more happiness
 and thus it is no wonder that it is so sought after. With enough happiness I
 feel invincible.</p>
@@ -2903,23 +2903,23 @@ on a whim I decided to go there to discover my roots. One of my goals was to
 visit parts of Moscow that my parents had told me about. This meant that I
 spent a lot of time on the subway going from place to place, taking pictures
 and meeting people. One experience on the subway changed how I thought about
-public education. The Moscow subway is one of the deepest in the world &#8211;
+public education. The Moscow subway is one of the deepest in the world &mdash;
 designed to function as a bomb shelter. This meant the escalator rides were
 steep and long. Along the way there was a city wide public announcement system
-that spouted such epitaphs as: &#8220;Protect the heritage of your Russian roots.
-Love the language of Pushkin and don&#8217;t swear&#8221; and &#8220;Be kind to people. They
-deserve your respect as you do theirs&#8221;. I was astounded at the blatant social
+that spouted such epitaphs as: &ldquo;Protect the heritage of your Russian roots.
+Love the language of Pushkin and don&rsquo;t swear&rdquo; and &ldquo;Be kind to people. They
+deserve your respect as you do theirs&rdquo;. I was astounded at the blatant social
 brainwashing and quickly learned to disdain the announcements. Later on the
 subway a large group of rowdy teens came into the car. At the next stop a few
 older people stepped onto the train and none of the teens moved. A bit later
-an announcement came on, &#8220;Be nice to those older or weaker than you. Give your
-seat to the elderly or to those with young children.&#8221; At the very next stop
+an announcement came on, &ldquo;Be nice to those older or weaker than you. Give your
+seat to the elderly or to those with young children.&rdquo; At the very next stop
 when some older people again came onto the car. This time however a few of the
 teens got up and let them sit down. I doubt they realized why they did this as
 even I had started blocking out the announcements.</p>
 
 <p>I was confused after seeing this. Moscow was dirty and people were mean. They
-needed this basic sort of public education which their parents weren&#8217;t able to
+needed this basic sort of public education which their parents weren&rsquo;t able to
 offer because they themselves did not know it. Was this a dystopian brain-
 washing or was it an example of proper use of educational policy because it
 was for a social good? I was surprised how strongly I was affected by this
@@ -2952,11 +2952,11 @@ would read to me certainly and we would do a little bit of alphabet work in
 Russian, but it was a struggle for both of us. What amazes me so much is how
 much time and effort she is more than willing to put in herself. She would
 rather play alphabet games on starfall than play with her toys. This is
-because the learning is a game in itself. Since she plays on the adult&#8217;s
+because the learning is a game in itself. Since she plays on the adult&rsquo;s
 computer she gets to play with a toy that belongs to her parents. Often she
-will exclaim, &#8220;I go work on starfall now!&#8221;. She may use the word &#8216;work&#8217; but
+will exclaim, &ldquo;I go work on starfall now!&rdquo;. She may use the word &lsquo;work&rsquo; but
 she very clearly enjoys it (most likely she uses that word because her parents
-will often &#8216;work&#8217; on the computer).</p>
+will often &lsquo;work&rsquo; on the computer).</p>
 
 <p>That a three year old is so interested in the animated colorful world of a
 computer game should come as no surprise. For me, watching her enjoy learning
@@ -3009,11 +3009,11 @@ that this area is growing and new is exciting.</p>
 <p>Still, exciting is not necessarily happy. In my case however, simply being
 creatively busy does make me happy. My parents are both artists and when I was
 growing up I remember in the evening after a late European style dinner ending
-around 10pm my dad would say, &#8220;ok I&#8217;m going downstairs to work some more.&#8221; I
+around 10pm my dad would say, &ldquo;ok I&rsquo;m going downstairs to work some more.&rdquo; I
 grew up in a house where it was never OK to not have a project going. Now I
 find that I am unable to simply do nothing. Even when on vacation I have a
 hard time relaxing without some purpose tugging at me. I have noticed that
-during those times when I don&#8217;t have a project in the works, I not only feel
+during those times when I don&rsquo;t have a project in the works, I not only feel
 useless but almost physically feel sick. This is the antithesis of happiness.
 Thus being busy with projects in an area I am interested (especially one that
 can bring inspiration and learning to others) brings me a lot of joy.</p>
@@ -3031,7 +3031,7 @@ enjoy it.</p>
     <link href="http://timofei7.github.com/blog/2009/11/09/geopolitical-representations-in-a-networked-world-current-and-future/"/>
     <updated>2009-11-09T23:32:21-05:00</updated>
     <id>http://timofei7.github.com/blog/2009/11/09/geopolitical-representations-in-a-networked-world-current-and-future</id>
-    <content type="html"><![CDATA[<p>They are afraid &#8211; the great firewall of China, the blocking of Facebook in
+    <content type="html"><![CDATA[<p>They are afraid &mdash; the great firewall of China, the blocking of Facebook in
 Pakistan, Bangladesh and others, Iran’s blocking of foreign media and the
 eventual temporary internet and text message blackout following 2009
 presidential elections (Zuckerman, 2010), these are just a few instances of
@@ -3096,7 +3096,7 @@ and the riots in the streets from their mobile phones and indirectly to
 YouTube. At the height of the protests Iran related Twitter tweets came in at
 a rate of 15,000 per hour (ibid).</p>
 
-<p>In the foreign media these videos and posts were shown over and over &#8211; in
+<p>In the foreign media these videos and posts were shown over and over &mdash; in
 particular a harrowing mobile phone video of a young woman, Neda Agha-Soltan,
 dieing from gunfire on the street. However, the official Iranian government
 news attempted to downplay the size of the protests and showed the protesters
@@ -3134,7 +3134,7 @@ military success. The internet in those days was fledgling and largely
 inaccessible to anyone but researchers and military. The majority of Americans
 only had traditional mainstream media access through TV or print media.
 According to one reporter on the ground in Iraq at the time, the mainstream
-media in the U.S. was self-censoring &#8211; only showing anesthetized images and
+media in the U.S. was self-censoring &mdash; only showing anesthetized images and
 shielding the public from some of the more horrific aspects of Desert Storm
 (Gregory, D. 2004).</p>
 
@@ -3149,7 +3149,7 @@ the U.S. were going to online sources for their information about the war
 (Madanmohan Rao 2003). With this war came the major advent of “warblogs.” “The
 Iraq War represents a significant online-news milestone. We now have the
 content and the infrastructure in place for serious purveyors of Internet news
-to call themselves mainstream media [&#8230;] it truly is a defining moment”
+to call themselves mainstream media [&hellip;] it truly is a defining moment”
 (ibid, pg. 6).</p>
 
 <p>Warblogs such as Salam Pax, Riverbend, and Juan Cole’s Informed Comment have
@@ -3161,7 +3161,7 @@ than the embedded journalistic establishment. Part of what makes blogs so
 effective is that</p>
 
 <blockquote><p>“for readers worldwide, blogs can act as the “man on the street,” supplying
-unfiltered eyewitness accounts from foreign countries [&#8230;] For salient topics
+unfiltered eyewitness accounts from foreign countries [&hellip;] For salient topics
 in global affairs, the blogosphere functions as a rare combination of
 distributed expertise, real-time collective response to breaking news, and
 public- opinion barometer.” (ibid, pg. 3)</p></blockquote>
@@ -3240,7 +3240,7 @@ networks to identify and arrest Green Revolution leaders. In Belarus in 2007
 “smart mob” protests were thwarted by government monitoring of LiveJournal
 blog sites. As one Belarusian commentator wrote, “Social media created a
 digital panopticon that thwarted the revolution; [it was] infiltrated and
-hopelessly outgunned by the power of the state&#8230;The emergence of new digital
+hopelessly outgunned by the power of the state&hellip;The emergence of new digital
 spaces for dissent also lead to new ways of tracking it” (Drezner, D. 2010, pg
 36). This of course works both ways in a virtual media race.</p>
 
@@ -3312,19 +3312,19 @@ Retrieved July 20, 2010, from Project MUSE database. Dodds, K. (2007).</p>
 <p>Geopolitics: A very short introduction. Oxford: Oxford University Press.
 Drezner, D.W. (05/01/2010).</p>
 
-<p>&#8220;Weighing the Scales: The Internet&#8217;s Effect On
-State-Society Relations.&#8221;. The Brown journal of world affairs(1080-0786), 16
+<p>&ldquo;Weighing the Scales: The Internet&rsquo;s Effect On
+State-Society Relations.&rdquo;. The Brown journal of world affairs(1080-0786), 16
 (2), p. 31. Drezner, D., &amp; Farrell, H. (2004).</p>
 
 <p>Web of Influence. Foreign
 Policy, (145), 32-40. Retrieved from MasterFILE Select database. Glassman, J.
 (2002).</p>
 
-<p>&#8220;From Seattle (and Ubon) to Bangkok: the scales of resistance to
-corporate globalization&#8221;. Environment and planning. D, Society &amp; space
+<p>&ldquo;From Seattle (and Ubon) to Bangkok: the scales of resistance to
+corporate globalization&rdquo;. Environment and planning. D, Society &amp; space
 (0263-7758), 20 (5), p. 513. Hamedani, N. (2009).</p>
 
-<p>&#8220;The World Is Watching&#8221;&#8230;a
+<p>&ldquo;The World Is Watching&rdquo;&hellip;a
 Blurry Picture in Iran. The Washington Report on Middle East Affairs, 28(6),
 11-13,16. Retrieved August 12, 2010, from Research Library. (Document ID:
 1875867041). Häkli, J. (2001).</p>
@@ -3337,11 +3337,11 @@ ID: 1082224611). Juris, J. S. (2005).</p>
 <p>The new digital media and activist
 networking within anti-corporate globalization movements. Annals of the
 American Academy of Political and Social Science, 597(, Cultural Production in
-a Digital Age), 189-208. Retrieved from http://www.jstor.org/stable/25046069
+a Digital Age), 189-208. Retrieved from <a href="http://www.jstor.org/stable/25046069">http://www.jstor.org/stable/25046069</a>
 Kaplan, C. (2009-12).</p>
 
-<p>&#8220;The Biopolitics of Technoculture in the Mumbai
-Attacks&#8221;. Theory, culture &amp; society (0263-2764), 26 (7-8), p. 301. Lithgow,
+<p>&ldquo;The Biopolitics of Technoculture in the Mumbai
+Attacks&rdquo;. Theory, culture &amp; society (0263-2764), 26 (7-8), p. 301. Lithgow,
 M.. (2007, October). The cultures of citizenship: Exploring the ties between
 media literacy, blogging and democracy. Our Schools, Our Selves, 17(1),
 177-189. Retrieved August 13, 2010, from CBCA Complete. (Document ID:
@@ -3353,7 +3353,7 @@ Mainstream Media Views in Iraq War I and Iraq War II. Media Asia, 30(3),
 Reference. (Document ID: 548340201). Sohrabi-Haghighat, M., Mansouri, S.
 (2010).</p>
 
-<p>&#8216;WHERE IS MY VOTE?&#8217; ICT Politics in the Aftermath of Iran&#8217;s
+<p>&lsquo;WHERE IS MY VOTE?&rsquo; ICT Politics in the Aftermath of Iran&rsquo;s
 Presidential Election. International Journal of Emerging Technologies and
 Society, 8(1), 24-41. Retrieved August 12, 2010, from ABI/INFORM Global.
 (Document ID: 2082649231). Zuckerman, E.. (2010).</p>
@@ -3374,7 +3374,7 @@ the age of participatory media. Daedalus, 139(2), 66-75,154. Retrieved August
 
 <p>(Divya Gunasekaran and Tim Tregubov, Summer 2009)</p>
 
-<p>Our goal for this project was to create a simple, but addicting game that played off of old-fashioned handheld and vintage arcade games, but utilized newer technology that allowed for a more modern feel and the implementation of more exciting features. We succeeded in creating a challenging game that takes the user&#8217;s movements as inputs via an accelerometer to move the player on the board, which consists of a small 8x8 RGB LED matrix with a seven-segment display showing the timer and score. A piezo is also included to produce different sounds for specific actions in the game. These components contribute to a gaming experience that is stimulating both tactilely, visually and aurally. The game design also makes the game easy to reprogram to include more levels and additional features.</p>
+<p>Our goal for this project was to create a simple, but addicting game that played off of old-fashioned handheld and vintage arcade games, but utilized newer technology that allowed for a more modern feel and the implementation of more exciting features. We succeeded in creating a challenging game that takes the user&rsquo;s movements as inputs via an accelerometer to move the player on the board, which consists of a small 8x8 RGB LED matrix with a seven-segment display showing the timer and score. A piezo is also included to produce different sounds for specific actions in the game. These components contribute to a gaming experience that is stimulating both tactilely, visually and aurally. The game design also makes the game easy to reprogram to include more levels and additional features.</p>
 
 <!--more-->
 
@@ -3414,7 +3414,7 @@ the age of participatory media. Daedalus, 139(2), 66-75,154. Retrieved August
 
 <p>The Greenlite Project: An animated polar bear which aims to educate students about the impact of electricity and other resource use.</p>
 
-<p>This was a Siggraph 2009 information aesthetics video submission we made. Although we didn&#8217;t get into the information aesthetics category we did end up with a Siggraph Poster and were invited to a Panel. This video provides a good summary of what the project was about.</p>
+<p>This was a Siggraph 2009 information aesthetics video submission we made. Although we didn&rsquo;t get into the information aesthetics category we did end up with a Siggraph Poster and were invited to a Panel. This video provides a good summary of what the project was about.</p>
 
 <!--more-->
 
